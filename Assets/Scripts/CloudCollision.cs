@@ -7,19 +7,23 @@ public class CloudCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("Player") && !playerMovement.isCloud)
+        if (other.gameObject.CompareTag("Player"))
         {
-            playerMovement.isExitCloud = false;
-            playerMovement.isCloud = true;
-            playerMovement.cloudBoxCollider = boxCollider;
-            if (playerMovement.isPlane)
+            playerMovement = other.gameObject.GetComponent<PlayerMovement>();
+            if (!playerMovement.isCloud)
             {
-                boxCollider.isTrigger = true;
-            }
-            else
-            {
-                playerMovement.speed = playerMovement.boatSpeed;
-                playerMovement.fallSpeed = 0;
+                playerMovement.isExitCloud = false;
+                playerMovement.isCloud = true;
+                playerMovement.cloudBoxCollider = boxCollider;
+                if (playerMovement.isPlane)
+                {
+                    boxCollider.isTrigger = true;
+                }
+                else
+                {
+                    playerMovement.speed = playerMovement.boatSpeed;
+                    playerMovement.fallSpeed = 0;
+                }
             }
         }
     }
