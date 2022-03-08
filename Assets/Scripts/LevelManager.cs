@@ -13,6 +13,8 @@ public class LevelManager : MonoBehaviour
     private int zPositionIndex;
     private int zScale;
 
+    private GameObject currentObstacle;
+
     [SerializeField] private CloudHeightData[] cloudHeightData;
     [SerializeField] private CloudData cloudData;
     [SerializeField] private LevelData leveldata;
@@ -116,6 +118,14 @@ public class LevelManager : MonoBehaviour
                     break;
             }
         }
+
+        for (int i = 0; i < leveldata.maxObstacles; i++)
+        {
+            currentObstacle = Pooler.instance.Pop(poolers[Random.Range(0, poolers.Length)]);
+            currentObstacle.transform.position = new Vector3(Random.Range(-leveldata.maxHorizontalPosition, leveldata.maxHorizontalPosition),
+                0,
+                cloudHeightData[0].positions[Random.Range(0,cloudHeightData[0].positions.Length)]);
+        }
     }
 }
 
@@ -140,7 +150,7 @@ public class CloudHeightData
 [Serializable]
 public class LevelData
 {
-    public int minHorizontalPosition;
     public int maxHorizontalPosition;
     public int areaSize;
+    public int maxObstacles;
 }
