@@ -1361,7 +1361,7 @@ MonoBehaviour:
       refreshSpeed: 1
   - key: LittleTree
     pool:
-      prefab: {fileID: 5879225021111660827, guid: fd2e605e0d6eea84793f3ef0162216f0, type: 3}
+      prefab: {fileID: 1697282203210368288, guid: 688273dfdc6e4b645a96c5e5b49f10aa, type: 3}
       baseCount: 50
       baseRefreshSpeed: 1
       refreshSpeed: 1
@@ -1948,25 +1948,27 @@ MonoBehaviour:
   - LongTree
   heights: 05000000060000000b000000
   maxHorizontalPosition: 4.5
+  layer:
+    serializedVersion: 2
+    m_Bits: 2147483647
+  boxSize: {x: 1.1, y: 50, z: 1.1}
+  boxLenght: 1
   cloudHeightData:
   - minNbCloud: 3
     maxNbCloud: 5
     minCloudHeight: 3
     maxCloudHeight: 5
     maxCloudHorizontalPosition: 4
-    positions: 
   - minNbCloud: 2
     maxNbCloud: 4
     minCloudHeight: 6
     maxCloudHeight: 10
     maxCloudHorizontalPosition: 4
-    positions: 
   - minNbCloud: 1
     maxNbCloud: 3
     minCloudHeight: 11
     maxCloudHeight: 14
     maxCloudHorizontalPosition: 4
-    positions: 
   cloudData:
     minCloudScale: 10
     maxCloudScale: 15
