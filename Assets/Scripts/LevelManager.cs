@@ -14,8 +14,8 @@ public class LevelManager : MonoBehaviour
     private int zPositionIndex;
     private int zScale;
 
-    [SerializeField] private List<Vector3> cloudPositions;
-    private Vector3[] obstaclesPositions;
+    private List<Vector3> cloudPositions;
+    private List<Vector3> obstaclesPositions;
 
     private GameObject currentObstacle;
     private int currentObstacleIndex;
@@ -54,6 +54,7 @@ public class LevelManager : MonoBehaviour
         
         //cloud
         cloudPositions = new List<Vector3>();
+        obstaclesPositions = new List<Vector3>();
         for (int j = 0; j<heights.Length; j++)
         {
             switch (j)
@@ -167,6 +168,17 @@ public class LevelManager : MonoBehaviour
                 }
             }
         }
+        
+        for (int i = 0; i < obstaclesPositions.Count; i++)
+        {
+            if ((currentObstacle.transform.position.x>=obstaclesPositions[i].x-1 && currentObstacle.transform.position.x<=obstaclesPositions[i].x+1) && (currentObstacle.transform.position.z>=obstaclesPositions[i].z-1 && currentObstacle.transform.position.z<=obstaclesPositions[i].z+1))
+            {
+                Pooler.instance.DePop(poolers[currentObstacleIndex],currentObstacle);
+                MakeObstacle();
+                return;
+            }
+        }
+        obstaclesPositions.Add(currentObstacle.transform.position);
     }
 }
 
