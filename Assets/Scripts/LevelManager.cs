@@ -153,19 +153,18 @@ public class LevelManager : MonoBehaviour
         currentObstacle.transform.position = new Vector3(Random.Range(-leveldata.maxHorizontalPosition, leveldata.maxHorizontalPosition),
             0,
             Random.Range(0,leveldata.areaSize));
-        Debug.Log(cloudPositions.Count);
         for (int i = 0; i < cloudPositions.Count; i++)
         {
-            Debug.Log((currentObstacle.transform.position.x>=(cloudPositions[i].x-2) && currentObstacle.transform.position.x<=(cloudPositions[i].x+2)) && (currentObstacle.transform.position.z>=(cloudPositions[i].z-6) && currentObstacle.transform.position.z<=(cloudPositions[i].z+6)));
             if ((currentObstacle.transform.position.x>=(cloudPositions[i].x-2) && currentObstacle.transform.position.x<=(cloudPositions[i].x+2)) && (currentObstacle.transform.position.z>=(cloudPositions[i].z-6) && currentObstacle.transform.position.z<=(cloudPositions[i].z+6)))
             {
-                Pooler.instance.DePop(poolers[currentObstacleIndex],currentObstacle);
-                MakeObstacle();
-                /*if (currentObstacle.transform.position.y>cloudPositions[i].y)
+                /*Pooler.instance.DePop(poolers[currentObstacleIndex],currentObstacle);
+                MakeObstacle();*/
+                if (currentObstacle.transform.position.y+currentObstacle.transform.localScale.y/2>=cloudPositions[i].y-0.5f)
                 {
                     Pooler.instance.DePop(poolers[currentObstacleIndex],currentObstacle);
                     MakeObstacle();
-                }*/
+                    return;
+                }
             }
         }
     }
