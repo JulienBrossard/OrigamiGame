@@ -1208,7 +1208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155690564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 15.38, z: -3.27}
+  m_LocalPosition: {x: 0, y: 260.3, z: -3.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1231,7 +1231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1155690570}
-  speed: 12
+  speed: 30
   planeSpeed: 12
   boatSpeed: 8.5
   boostSpeed: 0.1
@@ -1948,11 +1948,7 @@ MonoBehaviour:
   - LongTree
   heights: 05000000060000000b000000
   maxHorizontalPosition: 4.5
-  layer:
-    serializedVersion: 2
-    m_Bits: 2147483647
-  boxSize: {x: 1.1, y: 50, z: 1.1}
-  boxLenght: 1
+  player: {fileID: 1155690568}
   cloudHeightData:
   - minNbCloud: 3
     maxNbCloud: 5
