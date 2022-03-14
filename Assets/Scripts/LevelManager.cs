@@ -25,10 +25,13 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform player;
     private float lastPlanePosition;
 
-    [SerializeField] private CloudHeightData[] cloudHeightData;
+    private GameObject lastLevelStruct;
+    private GameObject levelStruct;
+
+        [SerializeField] private CloudHeightData[] cloudHeightData;
     [SerializeField] private CloudData cloudData;
     [SerializeField] private LevelData leveldata;
-    
+
 
     private void Awake()
     {
@@ -61,9 +64,12 @@ public class LevelManager : MonoBehaviour
         {
             lastClouds = clouds;
             lastObstacles = obstacles;
+            lastLevelStruct = levelStruct;
         }
         clouds= new List<GameObject>();
         obstacles= new List<GameObject>();
+        levelStruct = Pooler.instance.Pop("Level Struct");
+        levelStruct.transform.position = new Vector3(0, 0, planePosition + 10 + leveldata.areaSize / 2);
         for (int j = 0; j<heights.Length; j++)
         {
             switch (j)
@@ -81,7 +87,7 @@ public class LevelManager : MonoBehaviour
                                 cloudHeightData[j].maxCloudHorizontalPosition + 1),
                             Random.Range(cloudHeightData[j].minCloudHeight,
                                 cloudHeightData[j].maxCloudHeight + 1),
-                            Random.Range(planePosition+10,planePosition + leveldata.areaSize+10)
+                            Random.Range(planePosition+10,planePosition + leveldata.areaSize)
                             );
                         
                         //Tools.instance.AddVariableInArray(cloudPositions,currentCloud.transform.position);
@@ -107,7 +113,7 @@ public class LevelManager : MonoBehaviour
                                 cloudHeightData[j].maxCloudHorizontalPosition + 1),
                             Random.Range(cloudHeightData[j].minCloudHeight,
                                 cloudHeightData[j].maxCloudHeight + 1),
-                            Random.Range(planePosition+10,planePosition + leveldata.areaSize+10)
+                            Random.Range(planePosition+10,planePosition + leveldata.areaSize)
                         );
                         
                         //Tools.instance.AddVariableInArray(cloudPositions,currentCloud.transform.position);
@@ -133,7 +139,7 @@ public class LevelManager : MonoBehaviour
                                 cloudHeightData[j].maxCloudHorizontalPosition + 1),
                             Random.Range(cloudHeightData[j].minCloudHeight,
                                 cloudHeightData[j].maxCloudHeight + 1),
-                            Random.Range(planePosition+10,planePosition + leveldata.areaSize+10)
+                            Random.Range(planePosition+10,planePosition + leveldata.areaSize)
                         );
                         
                         //Tools.instance.AddVariableInArray(cloudPositions,currentCloud.transform.position);
@@ -162,7 +168,7 @@ public class LevelManager : MonoBehaviour
         currentObstacle = Pooler.instance.Pop(poolers[currentObstacleIndex]);
         currentObstacle.transform.position = new Vector3(Random.Range(-leveldata.maxHorizontalPosition, leveldata.maxHorizontalPosition),
             0,
-            Random.Range(planePosition+10,planePosition + leveldata.areaSize+10));
+            Random.Range(planePosition+10,planePosition + leveldata.areaSize));
         for (int i = 0; i < clouds.Count; i++)
         {
             if ((currentObstacle.transform.position.x>=(clouds[i].transform.position.x-2) && currentObstacle.transform.position.x<=(clouds[i].transform.position.x+2)) && (currentObstacle.transform.position.z>=(clouds[i].transform.position.z-6) && currentObstacle.transform.position.z<=(clouds[i].transform.position.z+6)))
@@ -192,6 +198,7 @@ public class LevelManager : MonoBehaviour
 
     void DePopLevel()
     {
+        Pooler.instance.DePop("Level Struct",lastLevelStruct);
         for (int i = 0; i < lastClouds.Count; i++)
         {
             Pooler.instance.DePop("Cloud",lastClouds[i]);

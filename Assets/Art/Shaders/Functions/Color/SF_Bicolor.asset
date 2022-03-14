@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78b2425a2284af743826c689403a4924, type: 3}
+  m_Name: SF_Bicolor
+  m_EditorClassIdentifier: 
+  m_functionInfo: "// Made with Amplify Shader Editor\n// Available at the Unity
+    Asset Store - http://u3d.as/y3X \n/*ASEBEGIN\nVersion=18707\n1920;31;1920;988;1164.05;498.1456;1;True;False\nNode;AmplifyShaderEditor.SimpleAddOpNode;7;-366,219;Inherit;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.SmoothstepOpNode;5;-245,86;Inherit;False;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;1;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;1;-532,96;Inherit;False;Alpha;1;2;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionInput;10;-194,-248.5;Inherit;False;CA;5;1;False;1;0;COLOR;0,0,0,0;False;1;COLOR;0\nNode;AmplifyShaderEditor.FunctionInput;9;-271,-96.5;Inherit;False;CB;5;0;False;1;0;COLOR;0,0,0,0;False;1;COLOR;0\nNode;AmplifyShaderEditor.ColorNode;2;-483,-318;Inherit;False;Property;_ColorA;ColorA;0;1;[HDR];Create;True;0;0;False;2;Header(Bicolor);HideIf(_NOBICOLOR_ON);False;0,0,0,1;1,1,1,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4\nNode;AmplifyShaderEditor.ColorNode;3;-580,-122;Inherit;False;Property;_ColorB;ColorB;1;1;[HDR];Create;True;0;0;False;1;HideIf(_NOBICOLOR_ON);False;1,1,1,1;1,1,1,1;True;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4\nNode;AmplifyShaderEditor.RangedFloatNode;8;-555,286;Inherit;False;Property;_BicolorSmoothness;BicolorSmoothness;3;0;Create;True;0;0;False;1;HideIf(_NOBICOLOR_ON);False;1;0;0;0;0;1;FLOAT;0\nNode;AmplifyShaderEditor.RangedFloatNode;6;-622,163;Inherit;False;Property;_BicolorThreshold;BicolorThreshold;2;0;Create;True;0;0;False;1;HideIf(_NOBICOLOR_ON);False;0;0;0;0;0;1;FLOAT;0\nNode;AmplifyShaderEditor.LerpOp;4;311,-85;Inherit;False;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0\nNode;AmplifyShaderEditor.OneMinusNode;11;-59.05005,-1.145569;Inherit;False;1;0;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.LerpOp;12;165.95,55.85443;Inherit;False;3;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;1;FLOAT;0\nNode;AmplifyShaderEditor.RangedFloatNode;13;-53.05005,175.8544;Inherit;False;Property;_Bicolor_OneMinus;Bicolor_OneMinus;4;1;[Toggle];Create;True;0;0;False;0;False;0;0;0;0;0;1;FLOAT;0\nNode;AmplifyShaderEditor.FunctionOutput;0;553,15;Inherit;False;True;-1;Color;0;False;1;0;COLOR;0,0,0,0;False;1;COLOR;0\nWireConnection;7;0;6;0\nWireConnection;7;1;8;0\nWireConnection;5;0;1;0\nWireConnection;5;1;6;0\nWireConnection;5;2;7;0\nWireConnection;10;0;2;0\nWireConnection;9;0;3;0\nWireConnection;4;0;10;0\nWireConnection;4;1;9;0\nWireConnection;4;2;12;0\nWireConnection;11;0;5;0\nWireConnection;12;0;5;0\nWireConnection;12;1;11;0\nWireConnection;12;2;13;0\nWireConnection;0;0;4;0\nASEEND*/\n//CHKSM=4CCD80A3E1EE915B4725DBC94C663FB2C7B79238"
+  m_functionName: 
+  m_description: 
+  m_additionalIncludes:
+    m_additionalIncludes: []
+    m_outsideIncludes: []
+  m_additionalPragmas:
+    m_additionalPragmas: []
+    m_outsidePragmas: []
+  m_additionalDirectives:
+    m_validData: 0
+    m_isDirty: 0
+    m_moduleName: ' Additional Directives'
+    m_independentModule: 1
+    m_additionalDirectives: []
+    m_shaderFunctionDirectives: []
+    m_nativeDirectives: []
+    m_nativeDirectivesIndex: -1
+    m_nativeDirectivesFoldout: 0
+    m_directivesSaveItems: []
+  m_nodeCategory: 3
+  m_customNodeCategory: 
+  m_previewPosition: 0
+  m_hidden: 0
