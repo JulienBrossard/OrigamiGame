@@ -1961,7 +1961,7 @@ MonoBehaviour:
   boatFallSpeed: 10
   ascendSpeed: -7
   isPlane: 1
-  origamiText: {fileID: 0}
+  origamiText: {fileID: 1326876310}
   cloudBoxCollider: {fileID: 0}
   isExitCloud: 0
   isCloud: 0
@@ -2057,6 +2057,24 @@ MonoBehaviour:
       baseCount: 50
       baseRefreshSpeed: 1
       refreshSpeed: 1
+  - key: LittleTree
+    pool:
+      prefab: {fileID: 1697282203210368288, guid: 688273dfdc6e4b645a96c5e5b49f10aa, type: 3}
+      baseCount: 50
+      baseRefreshSpeed: 1
+      refreshSpeed: 1
+  - key: MiddleTree
+    pool:
+      prefab: {fileID: 8146991267212215542, guid: e44ebd6888f8064499d28d2629fda6b2, type: 3}
+      baseCount: 50
+      baseRefreshSpeed: 1
+      refreshSpeed: 1
+  - key: LongTree
+    pool:
+      prefab: {fileID: 8324609357403125485, guid: 84e24879ceae24e4a9f0fb1037659580, type: 3}
+      baseCount: 50
+      baseRefreshSpeed: 1
+      refreshSpeed: 1
 --- !u!1 &1879729847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2102,10 +2120,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolers:
-  - Cloud
+  - LittleTree
+  - MiddleTree
+  - LongTree
   heights: 05000000060000000b000000
   maxHorizontalPosition: 4.5
-  player: {fileID: 0}
+  player: {fileID: 1712430862}
   cloudHeightData:
   - minNbCloud: 2
     maxNbCloud: 4
@@ -2128,7 +2148,7 @@ MonoBehaviour:
   leveldata:
     maxHorizontalPosition: 4
     areaSize: 100
-    maxObstacles: 0
+    maxObstacles: 10
 --- !u!1 &1936232330
 GameObject:
   m_ObjectHideFlags: 0
