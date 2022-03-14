@@ -865,9 +865,9 @@ RectTransform:
   m_Father: {fileID: 33146926}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1291}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 189}
   m_SizeDelta: {x: 320, y: 320}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &965980133
@@ -2083,13 +2083,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1712430861}
-  speed: 11
-  planeSpeed: 11
+  speed: 12
+  planeSpeed: 12
   boatSpeed: 10
   boostSpeed: 0.3
   reduceSpeed: 0.1
-  fallSpeed: 1.1
-  planeFallSpeed: 1.1
+  fallSpeed: 0.9
+  planeFallSpeed: 0.9
   boatFallSpeed: 10
   ascendSpeed: -7
   isPlane: 1
