@@ -2116,6 +2116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetButton: {fileID: 574387474}
+  mainMenu: {fileID: 562912866}
 --- !u!1 &1712430856
 GameObject:
   m_ObjectHideFlags: 0
@@ -2198,7 +2199,7 @@ MonoBehaviour:
   fallSpeed: 1
   planeFallSpeed: 1
   boatFallSpeed: 10
-  ascendSpeed: -7
+  ascendSpeed: -5
   isPlane: 1
   origamiText: {fileID: 1326876310}
   cloudBoxCollider: {fileID: 0}
@@ -2364,10 +2365,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e513c76122784941985e57064cc50f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolers:
+  obstaclesPooler:
   - LittleTree
   - MiddleTree
   - LongTree
+  cloudsPooler:
+  - Cloud
   heights: 05000000060000000b000000
   maxHorizontalPosition: 4.5
   player: {fileID: 1712430862}
