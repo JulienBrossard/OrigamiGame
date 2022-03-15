@@ -1,3 +1,5 @@
+using System;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
@@ -33,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Vector3 boatCollider;
     [SerializeField] private float planeCenter;
     [SerializeField] private float boatCenter;
+
+    [SerializeField] private float fov;
 
     private void Awake()
     {
@@ -110,7 +114,11 @@ public class PlayerMovement : MonoBehaviour
 
     void ExitCloud()
     {
-        if (!isExitCloud) return;
+        if (!isExitCloud)
+        {
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60, Time.deltaTime);
+            return;
+        }
         if (isPlane)
         {
             if (speed>planeSpeed)
@@ -124,9 +132,14 @@ public class PlayerMovement : MonoBehaviour
                 fallSpeed = planeFallSpeed;
                 isExitCloud = false;
             }
+
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, fov, Time.deltaTime);
+            /*DOTween.To(()=> Camera.main.fieldOfView, x=> fov = x, 52, 1);
+            DOTween.To(()=> Camera.main.fieldOfView, x=> fov = x, 52, 1);*/
         }
         else
         {
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60, Time.deltaTime);
             fallSpeed = boatFallSpeed;
             if (speed>0)
             {
