@@ -88,7 +88,7 @@ public class LevelManager : MonoBehaviour
                                 cloudHeightData[j].maxCloudHorizontalPosition + 1),
                             Random.Range(cloudHeightData[j].minCloudHeight,
                                 cloudHeightData[j].maxCloudHeight + 1),
-                            Random.Range(planePosition+10,planePosition + leveldata.areaSize)
+                            Random.Range(planePosition+10,planePosition + leveldata.areaSize+2)
                             );
                         
                         //Tools.instance.AddVariableInArray(cloudPositions,currentCloud.transform.position);
@@ -114,7 +114,7 @@ public class LevelManager : MonoBehaviour
                                 cloudHeightData[j].maxCloudHorizontalPosition + 1),
                             Random.Range(cloudHeightData[j].minCloudHeight,
                                 cloudHeightData[j].maxCloudHeight + 1),
-                            Random.Range(planePosition+10,planePosition + leveldata.areaSize)
+                            Random.Range(planePosition+10,planePosition + leveldata.areaSize+2)
                         );
                         
                         //Tools.instance.AddVariableInArray(cloudPositions,currentCloud.transform.position);
@@ -140,7 +140,7 @@ public class LevelManager : MonoBehaviour
                                 cloudHeightData[j].maxCloudHorizontalPosition + 1),
                             Random.Range(cloudHeightData[j].minCloudHeight,
                                 cloudHeightData[j].maxCloudHeight + 1),
-                            Random.Range(planePosition+10,planePosition + leveldata.areaSize)
+                            Random.Range(planePosition+10,planePosition + leveldata.areaSize+2)
                         );
                         
                         //Tools.instance.AddVariableInArray(cloudPositions,currentCloud.transform.position);
@@ -169,7 +169,7 @@ public class LevelManager : MonoBehaviour
         currentObstacle = Pooler.instance.Pop(obstaclesPooler[currentObstacleIndex]);
         currentObstacle.transform.position = new Vector3(Random.Range(-leveldata.maxHorizontalPosition, leveldata.maxHorizontalPosition),
             0,
-            Random.Range(planePosition+10,planePosition + leveldata.areaSize));
+            Random.Range(planePosition+10,planePosition + leveldata.areaSize+2));
         for (int i = 0; i < clouds.Count; i++)
         {
             if ((currentObstacle.transform.position.x>=(clouds[i].transform.position.x-2) && currentObstacle.transform.position.x<=(clouds[i].transform.position.x+2)) && (currentObstacle.transform.position.z>=(clouds[i].transform.position.z-6) && currentObstacle.transform.position.z<=(clouds[i].transform.position.z+6)))
