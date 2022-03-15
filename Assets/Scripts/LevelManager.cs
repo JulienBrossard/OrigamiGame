@@ -5,7 +5,8 @@ using Random = UnityEngine.Random;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private string[] poolers;
+    [SerializeField] private string[] obstaclesPooler;
+    [SerializeField] private string[] cloudsPooler;
     [SerializeField] private int[] heights;
     public float maxHorizontalPosition;
     public static LevelManager instance;
@@ -14,16 +15,24 @@ public class LevelManager : MonoBehaviour
     private int zPositionIndex;
     private int zScale;
 
-    private List<Vector3> cloudPositions;
-    private List<Vector3> obstaclesPositions;
+    private List<GameObject> clouds;
+    private List<GameObject> obstacles;
+    private List<GameObject> lastClouds;
+    private List<GameObject> lastObstacles;
 
     private GameObject currentObstacle;
     private int currentObstacleIndex;
 
-    [SerializeField] private CloudHeightData[] cloudHeightData;
+    [SerializeField] private Transform player;
+    private float lastPlanePosition;
+
+    private GameObject lastLevelStruct;
+    private GameObject levelStruct;
+
+        [SerializeField] private CloudHeightData[] cloudHeightData;
     [SerializeField] private CloudData cloudData;
     [SerializeField] private LevelData leveldata;
-    
+
 
     private void Awake()
     {
@@ -32,29 +41,36 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        MakeLevel();
+        lastPlanePosition = player.position.z;
+        MakeLevel(lastPlanePosition);
+        MakeLevel(lastPlanePosition+leveldata.areaSize);
     }
 
-    /*private void Update()
+    private void Update()
     {
-        if (currentObstacle!=null)
+        if (player.position.z>=lastPlanePosition+leveldata.areaSize)
         {
-            hits = Physics.BoxCastAll(currentObstacle.transform.position, boxSize/2, transform.forward,
-                Quaternion.identity, boxLenght, layer);
-            for (int i = 0; i < hits.Length; i++)
-            {
-                Debug.Log(hits[i].transform.name);
-            }
+            lastPlanePosition = player.position.z;
+            DePopLevel();
+            MakeLevel(lastPlanePosition+leveldata.areaSize);
         }
-    }*/
+    }
 
 
-    void MakeLevel()
+    void MakeLevel(float planePosition)
     {
         
         //cloud
-        cloudPositions = new List<Vector3>();
-        obstaclesPositions = new List<Vector3>();
+        if (clouds!=null && obstacles!=null)
+        {
+            lastClouds = clouds;
+            lastObstacles = obstacles;
+            lastLevelStruct = levelStruct;
+        }
+        clouds= new List<GameObject>();
+        obstacles= new List<GameObject>();
+        levelStruct = Pooler.instance.Pop("Level Struct");
+        levelStruct.transform.position = new Vector3(0, 0, planePosition + 10 + leveldata.areaSize / 2);
         for (int j = 0; j<heights.Length; j++)
         {
             switch (j)
@@ -64,7 +80,7 @@ public class LevelManager : MonoBehaviour
                     //cloudHeightData[j].positions = Tools.instance.FillArray(0,leveldata.areaSize,cloudHeightData[j].positions);
                     for (int i = 0; i < Random.Range(cloudHeightData[j].minNbCloud,cloudHeightData[j].maxNbCloud); i++)
                     {
-                        currentCloud = Pooler.instance.Pop("Cloud");
+                        currentCloud = Pooler.instance.Pop(cloudsPooler[Random.Range(0,cloudsPooler.Length)]);
                         
 
                         currentCloud.transform.position = new Vector3(
@@ -72,18 +88,18 @@ public class LevelManager : MonoBehaviour
                                 cloudHeightData[j].maxCloudHorizontalPosition + 1),
                             Random.Range(cloudHeightData[j].minCloudHeight,
                                 cloudHeightData[j].maxCloudHeight + 1),
-                            Random.Range(0,leveldata.areaSize)
+                            Random.Range(planePosition+10,planePosition + leveldata.areaSize)
                             );
                         
                         //Tools.instance.AddVariableInArray(cloudPositions,currentCloud.transform.position);
-                        cloudPositions.Add(currentCloud.transform.position);
+                        clouds.Add(currentCloud);
 
-                        zScale = Random.Range(cloudData.minCloudScale, cloudData.maxCloudScale);
+                        //zScale = Random.Range(cloudData.minCloudScale, cloudData.maxCloudScale);
 
-                        currentCloud.transform.localScale = new Vector3(
+                        /*currentCloud.transform.localScale = new Vector3(
                             currentCloud.transform.localScale.x,
                             currentCloud.transform.localScale.y,
-                            zScale);
+                            zScale);*/
                     }
                     break;
                 case 1 :
@@ -91,25 +107,25 @@ public class LevelManager : MonoBehaviour
                     //cloudHeightData[j].positions = Tools.instance.FillArray(0,leveldata.areaSize,cloudHeightData[j].positions);
                     for (int i = 0; i < Random.Range(cloudHeightData[j].minNbCloud,cloudHeightData[j].maxNbCloud); i++)
                     {
-                        currentCloud = Pooler.instance.Pop("Cloud");
+                        currentCloud = Pooler.instance.Pop(cloudsPooler[Random.Range(0,cloudsPooler.Length)]);
 
                         currentCloud.transform.position = new Vector3(
                             Random.Range(-cloudHeightData[j].maxCloudHorizontalPosition,
                                 cloudHeightData[j].maxCloudHorizontalPosition + 1),
                             Random.Range(cloudHeightData[j].minCloudHeight,
                                 cloudHeightData[j].maxCloudHeight + 1),
-                            Random.Range(0,leveldata.areaSize)
+                            Random.Range(planePosition+10,planePosition + leveldata.areaSize)
                         );
                         
                         //Tools.instance.AddVariableInArray(cloudPositions,currentCloud.transform.position);
-                        cloudPositions.Add(currentCloud.transform.position);
+                        clouds.Add(currentCloud);
 
-                        zScale = Random.Range(cloudData.minCloudScale, cloudData.maxCloudScale);
+                        //zScale = Random.Range(cloudData.minCloudScale, cloudData.maxCloudScale);
 
-                        currentCloud.transform.localScale = new Vector3(
+                        /*currentCloud.transform.localScale = new Vector3(
                             currentCloud.transform.localScale.x,
                             currentCloud.transform.localScale.y,
-                            zScale);
+                            zScale);*/
                     }
                     break;
                 case 2 :
@@ -117,25 +133,25 @@ public class LevelManager : MonoBehaviour
                     //cloudHeightData[j].positions = Tools.instance.FillArray(0,leveldata.areaSize,cloudHeightData[j].positions);
                     for (int i = 0; i < Random.Range(cloudHeightData[j].minNbCloud,cloudHeightData[j].maxNbCloud); i++)
                     {
-                        currentCloud = Pooler.instance.Pop("Cloud");
+                        currentCloud = Pooler.instance.Pop(cloudsPooler[Random.Range(0,cloudsPooler.Length)]);
 
                         currentCloud.transform.position = new Vector3(
                             Random.Range(-cloudHeightData[j].maxCloudHorizontalPosition,
                                 cloudHeightData[j].maxCloudHorizontalPosition + 1),
                             Random.Range(cloudHeightData[j].minCloudHeight,
                                 cloudHeightData[j].maxCloudHeight + 1),
-                            Random.Range(0,leveldata.areaSize)
+                            Random.Range(planePosition+10,planePosition + leveldata.areaSize)
                         );
                         
                         //Tools.instance.AddVariableInArray(cloudPositions,currentCloud.transform.position);
-                        cloudPositions.Add(currentCloud.transform.position);
+                        clouds.Add(currentCloud);
 
-                        zScale = Random.Range(cloudData.minCloudScale, cloudData.maxCloudScale);
+                        //zScale = Random.Range(cloudData.minCloudScale, cloudData.maxCloudScale);
 
-                        currentCloud.transform.localScale = new Vector3(
+                        /*currentCloud.transform.localScale = new Vector3(
                             currentCloud.transform.localScale.x,
                             currentCloud.transform.localScale.y,
-                            zScale);
+                            zScale);*/
                     }
                     break;
             }
@@ -143,42 +159,56 @@ public class LevelManager : MonoBehaviour
 
         for (int i = 0; i < leveldata.maxObstacles; i++)
         {
-            MakeObstacle();
+            MakeObstacle(planePosition);
         }
     }
 
-    void MakeObstacle()
+    void MakeObstacle(float planePosition)
     {
-        currentObstacleIndex = Random.Range(0, poolers.Length);
-        currentObstacle = Pooler.instance.Pop(poolers[currentObstacleIndex]);
+        currentObstacleIndex = Random.Range(0, obstaclesPooler.Length);
+        currentObstacle = Pooler.instance.Pop(obstaclesPooler[currentObstacleIndex]);
         currentObstacle.transform.position = new Vector3(Random.Range(-leveldata.maxHorizontalPosition, leveldata.maxHorizontalPosition),
             0,
-            Random.Range(0,leveldata.areaSize));
-        for (int i = 0; i < cloudPositions.Count; i++)
+            Random.Range(planePosition+10,planePosition + leveldata.areaSize));
+        for (int i = 0; i < clouds.Count; i++)
         {
-            if ((currentObstacle.transform.position.x>=(cloudPositions[i].x-2) && currentObstacle.transform.position.x<=(cloudPositions[i].x+2)) && (currentObstacle.transform.position.z>=(cloudPositions[i].z-6) && currentObstacle.transform.position.z<=(cloudPositions[i].z+6)))
+            if ((currentObstacle.transform.position.x>=(clouds[i].transform.position.x-2) && currentObstacle.transform.position.x<=(clouds[i].transform.position.x+2)) && (currentObstacle.transform.position.z>=(clouds[i].transform.position.z-6) && currentObstacle.transform.position.z<=(clouds[i].transform.position.z+6)))
             {
                 /*Pooler.instance.DePop(poolers[currentObstacleIndex],currentObstacle);
                 MakeObstacle();*/
-                if (currentObstacle.transform.position.y+currentObstacle.transform.localScale.y/2>=cloudPositions[i].y-0.5f)
+                if (currentObstacle.transform.position.y+currentObstacle.transform.localScale.y/2>=clouds[i].transform.position.y-0.5f)
                 {
-                    Pooler.instance.DePop(poolers[currentObstacleIndex],currentObstacle);
-                    MakeObstacle();
+                    Pooler.instance.DePop(obstaclesPooler[currentObstacleIndex],currentObstacle);
+                    MakeObstacle(planePosition);
                     return;
                 }
             }
         }
         
-        for (int i = 0; i < obstaclesPositions.Count; i++)
+        for (int i = 0; i < obstacles.Count; i++)
         {
-            if ((currentObstacle.transform.position.x>=obstaclesPositions[i].x-1 && currentObstacle.transform.position.x<=obstaclesPositions[i].x+1) && (currentObstacle.transform.position.z>=obstaclesPositions[i].z-1 && currentObstacle.transform.position.z<=obstaclesPositions[i].z+1))
+            if ((currentObstacle.transform.position.x>=obstacles[i].transform.position.x-1 && currentObstacle.transform.position.x<=obstacles[i].transform.position.x+1) && (currentObstacle.transform.position.z>=obstacles[i].transform.position.z-1 && currentObstacle.transform.position.z<=obstacles[i].transform.position.z+1))
             {
-                Pooler.instance.DePop(poolers[currentObstacleIndex],currentObstacle);
-                MakeObstacle();
+                Pooler.instance.DePop(obstaclesPooler[currentObstacleIndex],currentObstacle);
+                MakeObstacle(planePosition);
                 return;
             }
         }
-        obstaclesPositions.Add(currentObstacle.transform.position);
+        obstacles.Add(currentObstacle);
+    }
+
+    void DePopLevel()
+    {
+        Pooler.instance.DePop("Level Struct",lastLevelStruct);
+        for (int i = 0; i < lastClouds.Count; i++)
+        {
+            Pooler.instance.DePop(lastClouds[i].name.Replace("(Clone)",String.Empty),lastClouds[i]);
+        }
+
+        for (int i = 0; i < lastObstacles.Count; i++)
+        {
+            Pooler.instance.DePop(lastObstacles[i].name.Replace("(Clone)",String.Empty),lastObstacles[i]);
+        }
     }
 }
 

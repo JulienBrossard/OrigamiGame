@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     
-    void Update()
+    void FixedUpdate()
     {
         rb.velocity = Vector3.forward * speed - new Vector3(rb.velocity.x,fallSpeed,rb.velocity.z);
         ExitCloud();

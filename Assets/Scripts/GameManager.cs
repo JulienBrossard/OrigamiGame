@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [SerializeField] private GameObject resetButton;
+    [SerializeField] private GameObject mainMenu;
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
         // Read the data from the file
         Debug.Log(Application.persistentDataPath + "/" + "testImage");
         resetButton.SetActive(true);
+        mainMenu.SetActive(true);
         Time.timeScale = 0;
     }
     
