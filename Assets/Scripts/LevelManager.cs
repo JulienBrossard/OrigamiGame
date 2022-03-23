@@ -30,8 +30,7 @@ public class LevelManager : MonoBehaviour
     private GameObject levelStruct;
 
         [SerializeField] private CloudHeightData[] cloudHeightData;
-    [SerializeField] private CloudData cloudData;
-    [SerializeField] private LevelData leveldata;
+        [SerializeField] private LevelData leveldata;
 
 
     private void Awake()
@@ -76,8 +75,6 @@ public class LevelManager : MonoBehaviour
             switch (j)
             {
                 case 0 :
-                    //Tools.instance.AddVariablesInArray(poolers,"Cloud",Random.Range(cloudANdObstaclesData[j].minNbCloud,cloudANdObstaclesData[j].maxNbCloud));
-                    //cloudHeightData[j].positions = Tools.instance.FillArray(0,leveldata.areaSize,cloudHeightData[j].positions);
                     for (int i = 0; i < Random.Range(cloudHeightData[j].minNbCloud,cloudHeightData[j].maxNbCloud); i++)
                     {
                         currentCloud = Pooler.instance.Pop(cloudsPooler[Random.Range(0,cloudsPooler.Length)]);
@@ -91,20 +88,10 @@ public class LevelManager : MonoBehaviour
                             Random.Range(planePosition+10,planePosition + leveldata.areaSize+2)
                             );
                         
-                        //Tools.instance.AddVariableInArray(cloudPositions,currentCloud.transform.position);
                         clouds.Add(currentCloud);
-
-                        //zScale = Random.Range(cloudData.minCloudScale, cloudData.maxCloudScale);
-
-                        /*currentCloud.transform.localScale = new Vector3(
-                            currentCloud.transform.localScale.x,
-                            currentCloud.transform.localScale.y,
-                            zScale);*/
                     }
                     break;
                 case 1 :
-                    //Tools.instance.AddVariablesInArray(poolers,"Cloud",Random.Range(cloudANdObstaclesData[j].minNbCloud,cloudANdObstaclesData[j].maxNbCloud));
-                    //cloudHeightData[j].positions = Tools.instance.FillArray(0,leveldata.areaSize,cloudHeightData[j].positions);
                     for (int i = 0; i < Random.Range(cloudHeightData[j].minNbCloud,cloudHeightData[j].maxNbCloud); i++)
                     {
                         currentCloud = Pooler.instance.Pop(cloudsPooler[Random.Range(0,cloudsPooler.Length)]);
@@ -117,20 +104,10 @@ public class LevelManager : MonoBehaviour
                             Random.Range(planePosition+10,planePosition + leveldata.areaSize+2)
                         );
                         
-                        //Tools.instance.AddVariableInArray(cloudPositions,currentCloud.transform.position);
                         clouds.Add(currentCloud);
-
-                        //zScale = Random.Range(cloudData.minCloudScale, cloudData.maxCloudScale);
-
-                        /*currentCloud.transform.localScale = new Vector3(
-                            currentCloud.transform.localScale.x,
-                            currentCloud.transform.localScale.y,
-                            zScale);*/
                     }
                     break;
                 case 2 :
-                    //Tools.instance.AddVariablesInArray(poolers,"Cloud",Random.Range(cloudANdObstaclesData[j].minNbCloud,cloudANdObstaclesData[j].maxNbCloud));
-                    //cloudHeightData[j].positions = Tools.instance.FillArray(0,leveldata.areaSize,cloudHeightData[j].positions);
                     for (int i = 0; i < Random.Range(cloudHeightData[j].minNbCloud,cloudHeightData[j].maxNbCloud); i++)
                     {
                         currentCloud = Pooler.instance.Pop(cloudsPooler[Random.Range(0,cloudsPooler.Length)]);
@@ -143,20 +120,14 @@ public class LevelManager : MonoBehaviour
                             Random.Range(planePosition+10,planePosition + leveldata.areaSize+2)
                         );
                         
-                        //Tools.instance.AddVariableInArray(cloudPositions,currentCloud.transform.position);
                         clouds.Add(currentCloud);
-
-                        //zScale = Random.Range(cloudData.minCloudScale, cloudData.maxCloudScale);
-
-                        /*currentCloud.transform.localScale = new Vector3(
-                            currentCloud.transform.localScale.x,
-                            currentCloud.transform.localScale.y,
-                            zScale);*/
                     }
                     break;
             }
         }
 
+        //Obstacles
+        
         for (int i = 0; i < leveldata.maxObstacles; i++)
         {
             MakeObstacle(planePosition);
@@ -174,8 +145,6 @@ public class LevelManager : MonoBehaviour
         {
             if ((currentObstacle.transform.position.x>=(clouds[i].transform.position.x-2) && currentObstacle.transform.position.x<=(clouds[i].transform.position.x+2)) && (currentObstacle.transform.position.z>=(clouds[i].transform.position.z-6) && currentObstacle.transform.position.z<=(clouds[i].transform.position.z+6)))
             {
-                /*Pooler.instance.DePop(poolers[currentObstacleIndex],currentObstacle);
-                MakeObstacle();*/
                 if (currentObstacle.transform.position.y+currentObstacle.transform.localScale.y/2>=clouds[i].transform.position.y-0.5f)
                 {
                     Pooler.instance.DePop(obstaclesPooler[currentObstacleIndex],currentObstacle);
@@ -210,13 +179,6 @@ public class LevelManager : MonoBehaviour
             Pooler.instance.DePop(lastObstacles[i].name.Replace("(Clone)",String.Empty),lastObstacles[i]);
         }
     }
-}
-
-[Serializable]
-public class CloudData
-{
-    public int minCloudScale;
-    public int maxCloudScale;
 }
 
 [Serializable]
