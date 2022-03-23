@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
         resetButton.SetActive(true);
         mainMenu.SetActive(true);
         Time.timeScale = 0;
+        ScoreManager.instance.SaveBestScore();
     }
     
 }
