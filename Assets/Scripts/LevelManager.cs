@@ -29,8 +29,8 @@ public class LevelManager : MonoBehaviour
     private GameObject lastLevelStruct;
     private GameObject levelStruct;
 
-        [SerializeField] private CloudHeightData[] cloudHeightData;
-        [SerializeField] private LevelData leveldata;
+    [SerializeField] private CloudHeightData[] cloudHeightData;
+    [SerializeField] private LevelData leveldata;
 
 
     private void Awake()
