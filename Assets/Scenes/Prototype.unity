@@ -581,7 +581,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 334076980}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d5c51c8a01862349a0e6cc1ed54e823, type: 3}
+  m_Script: {fileID: 11500000, guid: 569d3f5d11fcd3a43ab5e76febc3bc5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &345494172
@@ -1170,33 +1170,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolKeys:
-  - key: SmallCloud
+  - key: CloudSmall
     pool:
-      prefab: {fileID: 919132147576684629}
+      prefab: {fileID: 2588425082117834659, guid: 5c24006fe4ab86b46886ebfcbdb3d400, type: 3}
       baseCount: 50
       baseRefreshSpeed: 1
       refreshSpeed: 1
   - key: LittleTree
     pool:
-      prefab: {fileID: 1034599144048618785}
+      prefab: {fileID: 2932070468219917144, guid: cfb0fa54795513748887caf5f4497a8f, type: 3}
       baseCount: 50
       baseRefreshSpeed: 1
       refreshSpeed: 1
   - key: MiddleTree
     pool:
-      prefab: {fileID: 4234953614431194572}
+      prefab: {fileID: 7501131734418319537, guid: a65a8997063aa7746890dc509ad409e5, type: 3}
       baseCount: 50
       baseRefreshSpeed: 1
       refreshSpeed: 1
   - key: LongTree
     pool:
-      prefab: {fileID: 919132147576684629}
+      prefab: {fileID: 8854069775564208246, guid: e05db238bb92b81499dfa155c9cf9050, type: 3}
       baseCount: 50
       baseRefreshSpeed: 1
       refreshSpeed: 1
   - key: Level Struct
     pool:
       prefab: {fileID: 1497737241}
+      baseCount: 5
+      baseRefreshSpeed: 1
+      refreshSpeed: 1
+  - key: CloudMedium
+    pool:
+      prefab: {fileID: 1446244970752233642, guid: 702d1bcc0f5ceac4fba1c65482815668, type: 3}
+      baseCount: 5
+      baseRefreshSpeed: 1
+      refreshSpeed: 1
+  - key: CloudBig
+    pool:
+      prefab: {fileID: 6530755628320213407, guid: cc38b51ba677af44ca9a8919a519c59d, type: 3}
       baseCount: 5
       baseRefreshSpeed: 1
       refreshSpeed: 1
@@ -1940,7 +1952,9 @@ MonoBehaviour:
   - MiddleTree
   - LongTree
   cloudsPooler:
-  - SmallCloud
+  - CloudSmall
+  - CloudMedium
+  - CloudBig
   heights: 05000000060000000b000000
   maxHorizontalPosition: 4.5
   player: {fileID: 1155690568}
@@ -2697,9 +2711,17 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4291496036925801362, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: boostSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291496036925801362, guid: f55345b846657234f9479dbf3508c276, type: 3}
       propertyPath: origamiText
       value: 
       objectReference: {fileID: 1496168819}
+    - target: {fileID: 4291496036925801362, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: reduceSpeed
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4291496036925801363, guid: f55345b846657234f9479dbf3508c276, type: 3}
       propertyPath: m_RootOrder
       value: 4
