@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -8,6 +9,7 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField] private string[] obstaclesPooler;
     [SerializeField] private string[] cloudsPooler;
+    [SerializeField] private string[] cloudPaperPieces;
     [SerializeField] private int[] heights;
     public float maxHorizontalPosition;
     public static LevelManager instance;
@@ -16,10 +18,14 @@ public class LevelManager : MonoBehaviour
     private int zPositionIndex;
     private int zScale;
 
+    private GameObject paperPiece;
+
     private List<GameObject> clouds;
     private List<GameObject> obstacles;
     private List<GameObject> lastClouds;
     private List<GameObject> lastObstacles;
+    private List<GameObject> paperPieces;
+    private List<GameObject> lastpaperPieces;
 
     private GameObject currentObstacle;
     private int currentObstacleIndex;
@@ -29,6 +35,7 @@ public class LevelManager : MonoBehaviour
 
     private GameObject lastLevelStruct;
     private GameObject levelStruct;
+    
 
     [SerializeField] private CloudHeightData[] cloudHeightData;
     [SerializeField] private LevelData leveldata;
@@ -188,9 +195,11 @@ public class LevelManager : MonoBehaviour
             lastClouds = clouds;
             lastObstacles = obstacles;
             lastLevelStruct = levelStruct;
+            lastpaperPieces = paperPieces;
         }
         clouds= new List<GameObject>();
         obstacles= new List<GameObject>();
+        paperPieces = new List<GameObject>();
         levelStruct = Pooler.instance.Pop("Level Struct");
         levelStruct.transform.position = new Vector3(0, 0, planePosition + 10 + leveldata.areaSize / 2);
         for (int j = 0; j<heights.Length; j++)
@@ -214,7 +223,11 @@ public class LevelManager : MonoBehaviour
                                         cloudHeightData[j].maxCloudHeight + 1),
                                     Random.Range(planePosition+10+leveldata.areaSize/10*k + 10,planePosition +leveldata.areaSize/10*k + leveldata.areaSize/10 + 10)
                                 );
-                            
+                                
+                                paperPiece = Pooler.instance.Pop(cloudPaperPieces[Random.Range(0, cloudPaperPieces.Length)]);
+
+                                paperPiece.transform.position = currentCloud.transform.position + Vector3.up*1.5f;
+                                
                                 clouds.Add(currentCloud);
                             }
                         }
@@ -233,7 +246,11 @@ public class LevelManager : MonoBehaviour
                                         cloudHeightData[j].maxCloudHeight + 1),
                                     Random.Range(planePosition+10+leveldata.areaSize/10*k + 10,planePosition +leveldata.areaSize/10*k + leveldata.areaSize/10 + 10)
                                 );
-                            
+                                
+                                paperPiece = Pooler.instance.Pop(cloudPaperPieces[Random.Range(0, cloudPaperPieces.Length)]);
+
+                                paperPiece.transform.position = currentCloud.transform.position + Vector3.up*1.5f;
+                                
                                 clouds.Add(currentCloud);
                             }
                         }
@@ -252,6 +269,10 @@ public class LevelManager : MonoBehaviour
                                         cloudHeightData[j].maxCloudHeight + 1),
                                     Random.Range(planePosition+10+leveldata.areaSize/10*k + 10,planePosition +leveldata.areaSize/10*k + leveldata.areaSize/10 + 10)
                                 );
+                                
+                                paperPiece = Pooler.instance.Pop(cloudPaperPieces[Random.Range(0, cloudPaperPieces.Length)]);
+
+                                paperPiece.transform.position = currentCloud.transform.position + Vector3.up*1.5f;
                             
                                 clouds.Add(currentCloud);
                             }
