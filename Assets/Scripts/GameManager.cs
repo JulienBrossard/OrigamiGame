@@ -21,6 +21,14 @@ public class GameManager : MonoBehaviour
         resetButton.SetActive(true);
         mainMenu.SetActive(true);
         Time.timeScale = 0;
+        ScoreManager.instance.SaveBestScore();
+        PaperPieceManager.instance.SavePiece();
+        Save();
+    }
+
+    void Save()
+    {
+        PlayerPrefs.Save();
     }
     
 }
