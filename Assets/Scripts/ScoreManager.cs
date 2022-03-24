@@ -31,7 +31,6 @@ public class ScoreManager : MonoBehaviour
         {
             bestScore = score;
             PlayerPrefs.SetInt("BestScore",bestScore);
-            PlayerPrefs.Save();
             newRecordText.SetActive(true);
         }
     }

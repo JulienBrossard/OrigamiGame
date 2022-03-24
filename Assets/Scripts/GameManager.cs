@@ -22,6 +22,13 @@ public class GameManager : MonoBehaviour
         mainMenu.SetActive(true);
         Time.timeScale = 0;
         ScoreManager.instance.SaveBestScore();
+        PaperPieceManager.instance.SavePiece();
+        Save();
+    }
+
+    void Save()
+    {
+        PlayerPrefs.Save();
     }
     
 }
