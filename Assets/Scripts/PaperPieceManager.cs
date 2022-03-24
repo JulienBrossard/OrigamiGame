@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -12,10 +13,17 @@ public class PaperPieceManager : MonoBehaviour
         instance = this;
     }
 
+    private void Start()
+    {
+        pieces = PlayerPrefs.GetInt("PaperPieces", 0);
+        piecesText.text = pieces.ToString();
+    }
+
     private void Update()
     {
         if (pieces != PlayerPrefs.GetInt("PaperPieces", 0))
         {
+            pieces = PlayerPrefs.GetInt("PaperPieces", 0);
             piecesText.text = pieces.ToString();
         }
     }
