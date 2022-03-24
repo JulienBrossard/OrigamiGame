@@ -39,6 +39,7 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private CloudHeightData[] cloudHeightData;
     [SerializeField] private LevelData leveldata;
+    [SerializeField] private PaperPieceData paperPieceData;
 
 
     private void Awake()
@@ -206,6 +207,7 @@ public class LevelManager : MonoBehaviour
         {
             for (int k = 0; k < leveldata.areaSize/10; k++)
             {
+                Debug.Log((1-paperPieceData.cloudPaperPiecesProbability));
                 switch (j)
                 {
                     case 0 :
@@ -223,10 +225,13 @@ public class LevelManager : MonoBehaviour
                                         cloudHeightData[j].maxCloudHeight + 1),
                                     Random.Range(planePosition+10+leveldata.areaSize/10*k + 10,planePosition +leveldata.areaSize/10*k + leveldata.areaSize/10 + 10)
                                 );
-                                
-                                paperPiece = Pooler.instance.Pop(cloudPaperPieces[Random.Range(0, cloudPaperPieces.Length)]);
 
-                                paperPiece.transform.position = currentCloud.transform.position + Vector3.up*1.5f;
+                                if (Random.Range(0, 10)>=(1-paperPieceData.cloudPaperPiecesProbability)*10)
+                                {
+                                    paperPiece = Pooler.instance.Pop(cloudPaperPieces[Random.Range(0, cloudPaperPieces.Length)]);
+
+                                    paperPiece.transform.position = currentCloud.transform.position + Vector3.up*1.5f;
+                                }
                                 
                                 clouds.Add(currentCloud);
                             }
@@ -247,9 +252,12 @@ public class LevelManager : MonoBehaviour
                                     Random.Range(planePosition+10+leveldata.areaSize/10*k + 10,planePosition +leveldata.areaSize/10*k + leveldata.areaSize/10 + 10)
                                 );
                                 
-                                paperPiece = Pooler.instance.Pop(cloudPaperPieces[Random.Range(0, cloudPaperPieces.Length)]);
+                                if (Random.Range(0, 10)>=(1-paperPieceData.cloudPaperPiecesProbability)*10)
+                                {
+                                    paperPiece = Pooler.instance.Pop(cloudPaperPieces[Random.Range(0, cloudPaperPieces.Length)]);
 
-                                paperPiece.transform.position = currentCloud.transform.position + Vector3.up*1.5f;
+                                    paperPiece.transform.position = currentCloud.transform.position + Vector3.up*1.5f;
+                                }
                                 
                                 clouds.Add(currentCloud);
                             }
@@ -270,9 +278,12 @@ public class LevelManager : MonoBehaviour
                                     Random.Range(planePosition+10+leveldata.areaSize/10*k + 10,planePosition +leveldata.areaSize/10*k + leveldata.areaSize/10 + 10)
                                 );
                                 
-                                paperPiece = Pooler.instance.Pop(cloudPaperPieces[Random.Range(0, cloudPaperPieces.Length)]);
+                                if (Random.Range(0, 10)>=(1-paperPieceData.cloudPaperPiecesProbability)*10)
+                                {
+                                    paperPiece = Pooler.instance.Pop(cloudPaperPieces[Random.Range(0, cloudPaperPieces.Length)]);
 
-                                paperPiece.transform.position = currentCloud.transform.position + Vector3.up*1.5f;
+                                    paperPiece.transform.position = currentCloud.transform.position + Vector3.up*1.5f;
+                                }
                             
                                 clouds.Add(currentCloud);
                             }
@@ -359,4 +370,10 @@ public class LevelData
     public int maxHorizontalPosition;
     public int areaSize;
     public int maxObstacles;
+}
+
+[Serializable]
+public class PaperPieceData
+{
+    public float cloudPaperPiecesProbability;
 }
