@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -50,8 +51,7 @@ public class LevelManager : MonoBehaviour
         if (player.position.z>=lastPlanePosition+leveldata.areaSize)
         {
             lastPlanePosition = player.position.z;
-            DePopLevel();
-            MakeLevel(lastPlanePosition+leveldata.areaSize);
+            StartCoroutine(NewLevel());
         }
     }
 
@@ -127,7 +127,6 @@ public class LevelManager : MonoBehaviour
         }
 
         //Obstacles
-        
         for (int i = 0; i < leveldata.maxObstacles; i++)
         {
             MakeObstacle(planePosition);
@@ -178,6 +177,13 @@ public class LevelManager : MonoBehaviour
         {
             Pooler.instance.DePop(lastObstacles[i].name.Replace("(Clone)",String.Empty),lastObstacles[i]);
         }
+    }
+
+    IEnumerator NewLevel()
+    {
+        yield return new WaitForSeconds(5f);
+        DePopLevel();
+        MakeLevel(lastPlanePosition+leveldata.areaSize);
     }
 }
 
