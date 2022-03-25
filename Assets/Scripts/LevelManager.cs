@@ -206,7 +206,6 @@ public class LevelManager : MonoBehaviour
         {
             for (int k = 0; k < leveldata.areaSize/10; k++)
             {
-                Debug.Log((1-paperPieceData.cloudPaperPiecesProbability));
                 switch (j)
                 {
                     case 0 :
