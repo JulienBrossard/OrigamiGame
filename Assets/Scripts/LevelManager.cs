@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -207,7 +206,6 @@ public class LevelManager : MonoBehaviour
         {
             for (int k = 0; k < leveldata.areaSize/10; k++)
             {
-                Debug.Log((1-paperPieceData.cloudPaperPiecesProbability));
                 switch (j)
                 {
                     case 0 :
@@ -231,6 +229,7 @@ public class LevelManager : MonoBehaviour
                                     paperPiece = Pooler.instance.Pop(cloudPaperPieces[Random.Range(0, cloudPaperPieces.Length)]);
 
                                     paperPiece.transform.position = currentCloud.transform.position + Vector3.up*1.5f;
+                                    paperPieces.Add(paperPiece);
                                 }
                                 
                                 clouds.Add(currentCloud);
@@ -257,6 +256,7 @@ public class LevelManager : MonoBehaviour
                                     paperPiece = Pooler.instance.Pop(cloudPaperPieces[Random.Range(0, cloudPaperPieces.Length)]);
 
                                     paperPiece.transform.position = currentCloud.transform.position + Vector3.up*1.5f;
+                                    paperPieces.Add(paperPiece);
                                 }
                                 
                                 clouds.Add(currentCloud);
@@ -283,6 +283,7 @@ public class LevelManager : MonoBehaviour
                                     paperPiece = Pooler.instance.Pop(cloudPaperPieces[Random.Range(0, cloudPaperPieces.Length)]);
 
                                     paperPiece.transform.position = currentCloud.transform.position + Vector3.up*1.5f;
+                                    paperPieces.Add(paperPiece);
                                 }
                             
                                 clouds.Add(currentCloud);
@@ -343,6 +344,11 @@ public class LevelManager : MonoBehaviour
         for (int i = 0; i < lastObstacles.Count; i++)
         {
             Pooler.instance.DePop(lastObstacles[i].name.Replace("(Clone)",String.Empty),lastObstacles[i]);
+        }
+
+        for (int i = 0; i < lastpaperPieces.Count; i++)
+        {
+            Pooler.instance.DePop(lastpaperPieces[i].name.Replace("(Clone)",String.Empty),lastpaperPieces[i]);
         }
     }
 

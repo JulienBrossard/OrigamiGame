@@ -23,4 +23,14 @@ public class Menu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void Continue()
+    {
+        Time.timeScale = 1;
+    }
 }
