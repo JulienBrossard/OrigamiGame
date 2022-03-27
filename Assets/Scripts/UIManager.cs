@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour
@@ -15,16 +14,22 @@ public class UIManager : MonoBehaviour
 
     public void SpawnControllers(Vector3 position)
     {
-        backController.SetActive(true);
-        controller.SetActive(true);
-        backController.transform.position = position;
-        controller.transform.position = position;
-        startPosition = position;
+        if (Time.timeScale!=0)
+        {
+            backController.SetActive(true);
+            controller.SetActive(true);
+            backController.transform.position = position;
+            controller.transform.position = position;
+            startPosition = position;
+        }
     }
 
     public void FollowController(Vector3 position)
     {
-        controller.transform.position = new Vector3(Mathf.Clamp(position.x,startPosition.x-150,startPosition.x+150),startPosition.y,startPosition.z);
+        if (Time.timeScale !=0)
+        {
+            controller.transform.position = new Vector3(Mathf.Clamp(position.x,startPosition.x-150,startPosition.x+150),startPosition.y,startPosition.z);
+        }
     }
 
     public void DePopControllers()

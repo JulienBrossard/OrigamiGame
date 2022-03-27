@@ -18,9 +18,18 @@ public class GameManager : MonoBehaviour
 
         // Read the data from the file
         Debug.Log(Application.persistentDataPath + "/" + "testImage");
+        
         resetButton.SetActive(true);
         mainMenu.SetActive(true);
         Time.timeScale = 0;
+        ScoreManager.instance.SaveBestScore();
+        PaperPieceManager.instance.SavePiece();
+        Save();
+    }
+
+    void Save()
+    {
+        PlayerPrefs.Save();
     }
     
 }

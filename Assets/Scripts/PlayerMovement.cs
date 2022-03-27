@@ -1,5 +1,3 @@
-using System;
-using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
@@ -134,8 +132,6 @@ public class PlayerMovement : MonoBehaviour
             }
 
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, fov, Time.deltaTime);
-            /*DOTween.To(()=> Camera.main.fieldOfView, x=> fov = x, 52, 1);
-            DOTween.To(()=> Camera.main.fieldOfView, x=> fov = x, 52, 1);*/
         }
         else
         {

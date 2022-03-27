@@ -18,4 +18,19 @@ public class Menu : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(mainMenu);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void Continue()
+    {
+        Time.timeScale = 1;
+    }
 }
