@@ -41,6 +41,12 @@ public class InputManager : MonoBehaviour
             {
                 UIManager.instance.DePopControllers();
             }
+
+            if (!PlayerController.instance.isChangeOrigami)
+            {
+                Debug.Log("ok");
+                AnimationManager.instance.Idle(difference);
+            }
         }
     }
 }
