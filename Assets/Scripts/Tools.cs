@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Tools : MonoBehaviour
 {
@@ -34,6 +36,22 @@ public class Tools : MonoBehaviour
         }
 
         return array;
+    }
+    
+    public bool IsPointerOverUI()
+    {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return true;
+        }
+
+        var pe = new PointerEventData(EventSystem.current)
+        {
+            position = Input.GetTouch(0).position
+        };
+        var hits = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pe, hits);
+        return hits.Count > 0;
     }
 
 }

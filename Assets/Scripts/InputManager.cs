@@ -17,7 +17,7 @@ public class InputManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (Input.touchCount > 0 && !Tools.instance.IsPointerOverUI())
         {
             touch = Input.GetTouch(Input.touchCount - 1);
             PlayerController.instance.Controller(difference,startTouchPosition);
@@ -25,13 +25,14 @@ public class InputManager : MonoBehaviour
             {
                 difference = (touch.position.x-(Screen.width/2))/Screen.width - startTouchPosition;
                 
-                UIManager.instance.FollowController(touch.position);
+                //UIManager.instance.FollowController(touch.position);
+                AnimationManager.instance.Movement(difference);
             }
 
             if (touch.phase == TouchPhase.Began)
             {
                 //Debug.Log("Ui : "+touch.position + "World : "+cam.ScreenToWorldPoint(touch.position).x);
-                UIManager.instance.SpawnControllers(touch.position);
+                //UIManager.instance.SpawnControllers(touch.position);
                 startTouchPosition = (touch.position.x - (Screen.width / 2)) / Screen.width;
                 //startTouchPosition = cam.ScreenToWorldPoint(touch.position).x - startTouchPosition;
                 difference = startTouchPosition;
@@ -39,13 +40,8 @@ public class InputManager : MonoBehaviour
 
             if (touch.phase == TouchPhase.Ended)
             {
-                UIManager.instance.DePopControllers();
-            }
-
-            if (!PlayerController.instance.isChangeOrigami)
-            {
-                Debug.Log("ok");
-                AnimationManager.instance.Idle(difference);
+                //UIManager.instance.DePopControllers();
+                AnimationManager.instance.Idle();
             }
         }
     }

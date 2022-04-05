@@ -28,10 +28,17 @@ public class AnimationManager : MonoBehaviour
     }
 
 
-    public void Idle(float direction)
+    public void Idle()
     {
         playerAnimator.runtimeAnimatorController = planeAnim;
+        playerAnimator.SetBool("isIdle",true);
+    }
+
+    public void Movement(float direction)
+    {
+        Debug.Log(direction);
+        playerAnimator.runtimeAnimatorController = planeAnim;
+        playerAnimator.SetBool("isIdle",false);
         playerAnimator.SetFloat("Movement",direction);
-        Debug.Log(playerAnimator.GetFloat("Movement"));
     }
 }
