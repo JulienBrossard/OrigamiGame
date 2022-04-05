@@ -6,6 +6,7 @@ public class Menu : MonoBehaviour
 
     [SerializeField] private string resetSceneName;
     [SerializeField] private string mainMenu;
+    [SerializeField] AudioClip buttonPress;
     
     public void Reset()
     {
@@ -15,6 +16,7 @@ public class Menu : MonoBehaviour
 
     public void MainMenu()
     {
+        //AudioManager.PlaySound(f, 1, 1, 1);
         Time.timeScale = 1;
         SceneManager.LoadScene(mainMenu);
     }
