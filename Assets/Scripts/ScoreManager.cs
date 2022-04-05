@@ -9,7 +9,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private int score;
     [SerializeField] private int bestScore;
     [SerializeField] private Transform playerTransform;
-    [SerializeField] private GameObject newRecordText;
+    [SerializeField] private GameObject newRecord;
+    [SerializeField] private TextMeshProUGUI newRecordText;
 
     public static ScoreManager instance;
 
@@ -31,7 +32,8 @@ public class ScoreManager : MonoBehaviour
         {
             bestScore = score;
             PlayerPrefs.SetInt("BestScore",bestScore);
-            newRecordText.SetActive(true);
+            newRecord.SetActive(true);
+            newRecordText.text = "Best Score" + bestScore;
         }
     }
 }
