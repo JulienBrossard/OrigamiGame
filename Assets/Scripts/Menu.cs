@@ -16,23 +16,26 @@ public class Menu : MonoBehaviour
 
     public void MainMenu()
     {
-        //AudioManager.PlaySound(f, 1, 1, 1);
+        AudioManager.instance.PlaySound(buttonPress, 1, 1, 0);
         Time.timeScale = 1;
         SceneManager.LoadScene(mainMenu);
     }
 
     public void Quit()
     {
+        AudioManager.instance.PlaySound(buttonPress, 1, 1, 0);
         Application.Quit();
     }
 
     public void Pause()
     {
+        AudioManager.instance.PlaySound(buttonPress, 1, 1, 0);
         Time.timeScale = 0;
     }
 
     public void Continue()
     {
+        AudioManager.instance.PlaySound(buttonPress, 1, 1, 0);
         Time.timeScale = 1;
     }
 }

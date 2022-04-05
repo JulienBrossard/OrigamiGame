@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
                 audioSources[i].volume = volume;
                 audioSources[i].time = time;
                 audioSources[i].pitch = speed;
+                audioSources[i].Play();
                 return;
             }
         }
