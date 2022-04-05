@@ -36,7 +36,6 @@ public class AnimationManager : MonoBehaviour
 
     public void Movement(float direction)
     {
-        Debug.Log(direction);
         playerAnimator.runtimeAnimatorController = planeAnim;
         playerAnimator.SetBool("isIdle",false);
         playerAnimator.SetFloat("Movement",direction);
