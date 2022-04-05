@@ -51,8 +51,9 @@ public class PlayerMovement : MonoBehaviour
             isPlane = !isPlane;
             UpdateText();
             TriggerCloud();
-            plane.SetActive(!plane.activeSelf);
-            boat.SetActive(!boat.activeSelf);
+            //plane.SetActive(!plane.activeSelf);
+            //boat.SetActive(!boat.activeSelf);
+            AnimationManager.instance.OrigamiTransition(isPlane);
         }
     }
     
