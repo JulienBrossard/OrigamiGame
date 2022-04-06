@@ -67,12 +67,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isPlane)
         {
-            origamiText.text = "Plane";
+            origamiText.text = "Boat";
         }
 
         else
         {
-            origamiText.text = "Boat";
+            origamiText.text = "Plane";
         }
     }
 
