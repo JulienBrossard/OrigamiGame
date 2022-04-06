@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement instance;
+    
     [SerializeField] private Rigidbody rb;
     
     public float speed;
@@ -25,9 +27,6 @@ public class PlayerMovement : MonoBehaviour
     public bool isExitCloud;
     public bool isCloud;
 
-    [SerializeField] private GameObject plane;
-    [SerializeField] private GameObject boat;
-
     [SerializeField] private BoxCollider boxCollider;
     [SerializeField] private Vector3 planeCollider;
     [SerializeField] private Vector3 boatCollider;
@@ -38,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        instance = this;
         speed = planeSpeed;
         fallSpeed = planeFallSpeed;
     }
