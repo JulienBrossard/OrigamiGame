@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private float maxHorizontalPosition;
     [SerializeField] private float sensibility;
-    public bool isChangeOrigami;
 
     private void Awake()
     {

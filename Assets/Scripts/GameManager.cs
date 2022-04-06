@@ -13,10 +13,10 @@ public class GameManager : MonoBehaviour
 
     public void Failed()
     {
-        ScreenCapture.CaptureScreenshot ("testImage");
+        //ScreenCapture.CaptureScreenshot ("testImage");
 
         // Read the data from the file
-        Debug.Log(Application.persistentDataPath + "/" + "testImage");
+        //Debug.Log(Application.persistentDataPath + "/" + "testImage");
         
         deathMenu.SetActive(true);
         Time.timeScale = 0;

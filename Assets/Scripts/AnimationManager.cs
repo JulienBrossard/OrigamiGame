@@ -30,14 +30,20 @@ public class AnimationManager : MonoBehaviour
 
     public void Idle()
     {
-        playerAnimator.runtimeAnimatorController = planeAnim;
-        playerAnimator.SetBool("isIdle",true);
+        if (PlayerMovement.instance.isPlane)
+        {
+            playerAnimator.runtimeAnimatorController = planeAnim;
+            playerAnimator.SetBool("isIdle",true);
+        }
     }
 
     public void Movement(float direction)
     {
-        playerAnimator.runtimeAnimatorController = planeAnim;
-        playerAnimator.SetBool("isIdle",false);
-        playerAnimator.SetFloat("Movement",direction);
+        if (PlayerMovement.instance.isPlane)
+        {
+            playerAnimator.runtimeAnimatorController = planeAnim;
+            playerAnimator.SetBool("isIdle",false);
+            playerAnimator.SetFloat("Movement",direction);
+        }
     }
 }

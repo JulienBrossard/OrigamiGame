@@ -18,7 +18,6 @@ public class PlaneManager : MonoBehaviour
     {
         if (Physics.Raycast(transform.position,Vector3.down,out hit,Mathf.Infinity,layer))
         {
-            Debug.Log(hit.point.y);
             shadow.transform.position = hit.point;
         }
     }
