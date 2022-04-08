@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: bdbb31974655a8340a5da48bf0972fdc, type: 2}
     - target: {fileID: 919132149155446097, guid: 77e9c03a29c925c4ba7098cfa9e715d9, type: 3}
       propertyPath: m_Name
-      value: CloudMedium
+      value: CloudMediumMoving
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 77e9c03a29c925c4ba7098cfa9e715d9, type: 3}
       propertyPath: m_TagString
@@ -81,8 +81,22 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.053774565, y: 0.14305636, z: 0.0321248}
-  m_Center: {x: 0.0018436431, y: -0.0008174133, z: -1.9332534e-19}
+  m_Size: {x: 0.053774565, y: 0.14305636, z: 0.01327407}
+  m_Center: {x: 0.0018436431, y: -0.0008174134, z: 0.0017526674}
+--- !u!114 &-7813334620788855917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446244970752233642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f12a6fc2c1289d45a133942f7472455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloudSpeed: 5
+  direction: 
 --- !u!114 &5025844817014716163
 MonoBehaviour:
   m_ObjectHideFlags: 0
