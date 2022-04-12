@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float planeSpeed;
     public float boatSpeed;
     public float boostSpeed;
+    public float boostRainSpeed;
     [SerializeField] private float reduceSpeed;
     
     public float fallSpeed;

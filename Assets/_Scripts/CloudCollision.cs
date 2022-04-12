@@ -4,6 +4,7 @@ public class CloudCollision : MonoBehaviour
 {
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private BoxCollider boxCollider;
+    [SerializeField] private bool rainyCloud;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -34,7 +35,14 @@ public class CloudCollision : MonoBehaviour
         {
             playerMovement.isExitCloud = false;
             playerMovement.isCloud = true;
-            playerMovement.speed += playerMovement.boostSpeed;
+            if (rainyCloud)
+            {
+                playerMovement.speed += playerMovement.boostRainSpeed;
+            }
+            else
+            {
+                playerMovement.speed += playerMovement.boostSpeed;
+            }
         }
     }
 
