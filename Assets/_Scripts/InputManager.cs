@@ -19,15 +19,14 @@ public class InputManager : MonoBehaviour
     {
         if (Input.touchCount > 0)
         {
-            Debug.Log(!Tools.instance.IsPointerOverUI());
             touch = Input.GetTouch(Input.touchCount - 1);
+            PlayerController.instance.Controller(difference,startTouchPosition);
             if (touch.phase == TouchPhase.Moved)
             {
                 difference = (touch.position.x-(Screen.width/2))/Screen.width - startTouchPosition;
                 
                 UIManager.instance.FollowController(touch.position);
                 AnimationManager.instance.Movement(difference);
-                PlayerController.instance.Controller(difference,startTouchPosition);
             }
 
             if (touch.phase == TouchPhase.Began && !Tools.instance.IsPointerOverUI())
@@ -46,7 +45,15 @@ public class InputManager : MonoBehaviour
                 {
                     AnimationManager.instance.Idle();
                 }
+
+                difference = 0;
+                startTouchPosition = 0;
             }
+        }
+
+        else
+        {
+            PlayerController.instance.Controller(difference,startTouchPosition);
         }
     }
 }
