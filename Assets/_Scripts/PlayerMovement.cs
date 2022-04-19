@@ -1,6 +1,8 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody), typeof(BoxCollider), typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
 {
     #region Declarations
@@ -8,9 +10,18 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement instance;
     
     [SerializeField] private Rigidbody rb;
+    
+    [HideInInspector] public bool isPlane;
+    
+    [SerializeField] private TextMeshProUGUI origamiText;
+    
+    [SerializeField] private float fov;
+    
+    [Space(20)]
 
     #region Speeds
 
+    [Header("Speeds")]
     public float speed;
     [SerializeField] private float planeSpeed;
     public float boatSpeed;
@@ -20,39 +31,40 @@ public class PlayerMovement : MonoBehaviour
     
     #endregion
 
+    [Space(20)]
+    
     #region Fall Speeds
 
+    [Header("Fall Speeds")]
     public float fallSpeed;
     [SerializeField] private float planeFallSpeed;
     public float boatFallSpeed;
     [SerializeField] private float ascendSpeed;
     
     #endregion
-
-    [HideInInspector] public bool isPlane;
     
-    [SerializeField] private TextMeshProUGUI origamiText;
-
-    #region Cloud Boolean
-
+    [Space(20)]
+    
+    #region Cloud Booleans
     [HideInInspector] public bool isExitCloud;
     [HideInInspector] public bool isCloud;
     
     #endregion
+    
+    [Space(20)]
 
     #region Collider
 
-    [HideInInspector] public BoxCollider cloudBoxCollider;
+    [Header("Colliders")]
     [SerializeField] private BoxCollider boxCollider;
     [SerializeField] private Vector3 planeCollider;
     [SerializeField] private Vector3 boatCollider;
     [SerializeField] private float planeCenter;
     [SerializeField] private float boatCenter;
+    [HideInInspector] public BoxCollider cloudBoxCollider;
     
     #endregion
 
-    [SerializeField] private float fov;
-    
     #endregion
 
     float origamiSpeed
@@ -109,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
         #endregion
     }
 
+    [ContextMenu("Change Origami")]
     public void ChangeOrigami()
     {
         if (speed == boatSpeed || speed == planeSpeed || speed == 0)
@@ -143,7 +156,6 @@ public class PlayerMovement : MonoBehaviour
             origamiSpeed = speed;
         }
     }
-
     void TriggerCloud()
     {
         if (cloudBoxCollider != null)
