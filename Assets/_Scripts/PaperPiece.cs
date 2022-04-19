@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class PaperPiece : MonoBehaviour, ICollectible
 {
+    #region Declarations
+
     [SerializeField] private int pieces;
+    
+    #endregion
 
     public void Collect()
     {

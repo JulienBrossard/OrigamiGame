@@ -5,12 +5,18 @@ using UnityEngine.EventSystems;
 
 public class Tools : MonoBehaviour
 {
+    #region Declarations
+
     public static Tools instance;
+    
+    #endregion
 
     private void Awake()
     {
         instance = this;
     }
+
+    #region Array
 
     public void AddVariableInArray <T>(T[] array, T variable)
     {
@@ -38,6 +44,11 @@ public class Tools : MonoBehaviour
         return array;
     }
     
+    #endregion
+
+
+    #region UI
+    
     public bool IsPointerOverUI()
     {
         if (EventSystem.current.IsPointerOverGameObject())
@@ -53,5 +64,7 @@ public class Tools : MonoBehaviour
         EventSystem.current.RaycastAll(pe, hits);
         return hits.Count > 0;
     }
+    
+    #endregion
 
 }
