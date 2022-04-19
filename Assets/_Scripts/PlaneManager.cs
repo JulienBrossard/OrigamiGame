@@ -1,12 +1,15 @@
-using System;
 using UnityEngine;
 
 public class PlaneManager : MonoBehaviour
 {
-    [SerializeField] private GameObject shadow;
-    [SerializeField] private LayerMask layer;
+    #region Declarations
 
+    [SerializeField] private GameObject shadow;
+    
+    [SerializeField] private LayerMask layer;
     private RaycastHit hit;
+    
+    #endregion
 
 
     private void FixedUpdate()

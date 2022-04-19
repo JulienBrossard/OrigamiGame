@@ -5,14 +5,18 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
 
+    #region Declarations
+
     [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private int score;
-    [SerializeField] private int bestScore;
+    private int score;
+    private int bestScore;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private GameObject newRecord;
     [SerializeField] private TextMeshProUGUI newRecordText;
 
     public static ScoreManager instance;
+    
+    #endregion
 
     private void Awake()
     {

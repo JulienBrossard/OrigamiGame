@@ -3,7 +3,11 @@ using UnityEngine.Audio;
 
 public class Settings : MonoBehaviour
 {
+    #region Declarations
+
     [SerializeField] AudioMixer audioMixer;
+    
+    #endregion
 
     public void SetMainVolume(float volume)
     {

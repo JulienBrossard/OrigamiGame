@@ -1,13 +1,18 @@
-using System;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
 {
+    #region Declarations
+
     public static PlayerController instance;
+    
     [SerializeField] private Rigidbody rb;
-    [SerializeField] private float maxHorizontalPosition;
+    private float maxHorizontalPosition;
     [SerializeField] private float sensibility;
     public Vector3 externalForce;
+    
+    #endregion
 
     private void Awake()
     {
