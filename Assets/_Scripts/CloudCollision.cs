@@ -25,7 +25,7 @@ public class CloudCollision : MonoBehaviour
 
                 #region Plane
 
-                if (playerMovement.isPlane)
+                if (PlayerManager.state == PlayerManager.Shapes.PLANE)
                 {
                     boxCollider.isTrigger = true;
                 }
@@ -36,7 +36,7 @@ public class CloudCollision : MonoBehaviour
                 
                 else
                 {
-                    playerMovement.speed = playerMovement.boatSpeed;
+                    playerMovement.speed = PlayerManager.origami[PlayerManager.state].speed;
                     playerMovement.fallSpeed = 0;
                 }
                 

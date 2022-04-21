@@ -17,33 +17,17 @@ public class AnimationManager : MonoBehaviour
         instance = this;
     }
 
-    public void OrigamiTransition(bool isPlane)
+    public void OrigamiTransition()
     {
-        #region Transition plane to boat
-        
-        if (!isPlane)
-        {
-            playerAnimator.runtimeAnimatorController = origamiTransition;
-            playerAnimator.SetInteger("TransitionIndex",1);
-        }
-        
-        #endregion
-
-        #region Transition boat to plane
-        
-        else
-        {
-            playerAnimator.runtimeAnimatorController = origamiTransition;
-            playerAnimator.SetInteger("TransitionIndex",2);
-        }
-        #endregion
-        
+        playerAnimator.runtimeAnimatorController = origamiTransition;
+        Debug.Log(PlayerManager.origami[PlayerManager.state].transitionAnimationIndex);
+        playerAnimator.SetInteger("TransitionIndex",PlayerManager.origami[PlayerManager.state].transitionAnimationIndex);
     }
 
 
     public void Idle()
     {
-        if (PlayerMovement.instance.isPlane)
+        if (PlayerManager.state == PlayerManager.Shapes.PLANE)
         {
             playerAnimator.runtimeAnimatorController = planeAnim;
             playerAnimator.SetBool("isIdle",true);
@@ -52,7 +36,7 @@ public class AnimationManager : MonoBehaviour
 
     public void Movement(float direction)
     {
-        if (PlayerMovement.instance.isPlane)
+        if (PlayerManager.state == PlayerManager.Shapes.PLANE)
         {
             playerAnimator.runtimeAnimatorController = planeAnim;
             playerAnimator.SetBool("isIdle",false);

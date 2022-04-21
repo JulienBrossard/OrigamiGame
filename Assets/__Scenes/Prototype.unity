@@ -398,7 +398,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &190126789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2177,11 +2177,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1697282203210368292, guid: 688273dfdc6e4b645a96c5e5b49f10aa, type: 3}
   m_PrefabInstance: {fileID: 1697282203576341739}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1098897145 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4291496036925801375, guid: f55345b846657234f9479dbf3508c276, type: 3}
-  m_PrefabInstance: {fileID: 4291496038052131803}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1155690568 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4291496036925801363, guid: f55345b846657234f9479dbf3508c276, type: 3}
@@ -2192,7 +2187,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4291496036925801362, guid: f55345b846657234f9479dbf3508c276, type: 3}
   m_PrefabInstance: {fileID: 4291496038052131803}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098897145}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b213085313bab34ea620201a862f2c1, type: 3}
@@ -2502,18 +2497,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 1293900901, guid: f55345b846657234f9479dbf3508c276, type: 3}
   m_PrefabInstance: {fileID: 4291496038052131803}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1293900907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098897145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d34777a1e2c01fd45836f3d82eca5957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1362202494
 GameObject:
   m_ObjectHideFlags: 0
@@ -2702,6 +2685,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377881043}
   m_CullTransparentMesh: 1
+--- !u!1 &1431281322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1431281323}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1431281323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431281322}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.512793, y: 15.886536, z: 14.287081}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1434384271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2977,7 +2991,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Plane
+  m_text: Boat
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4592,6 +4606,78 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 3a6e88e3717edc6439623d63f0feb763, type: 2}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: state
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[0].name
+      value: Plane
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[1].name
+      value: Boat
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[0].speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[1].speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[0].fallSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[1].fallSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[0].collider.x
+      value: 2.1792173
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[0].collider.y
+      value: 0.36593056
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[0].collider.z
+      value: 2.8505707
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[1].collider.x
+      value: 0.44281787
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[1].collider.y
+      value: 1.4735289
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[1].collider.z
+      value: 2.6739087
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[0].colliderCenter
+      value: -0.1561527
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[1].colliderCenter
+      value: 0.3812962
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[0].transitionAnimationIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293900907, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[1].transitionAnimationIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1788654613039467577, guid: f55345b846657234f9479dbf3508c276, type: 3}
       propertyPath: m_Name
       value: Armature
@@ -4605,9 +4691,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4291496036925801362, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291496036925801362, guid: f55345b846657234f9479dbf3508c276, type: 3}
       propertyPath: plane
       value: 
       objectReference: {fileID: 1578750133}
+    - target: {fileID: 4291496036925801362, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4291496036925801362, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: isPlane
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4291496036925801362, guid: f55345b846657234f9479dbf3508c276, type: 3}
       propertyPath: origamiText
       value: 

@@ -1,49 +1,38 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(BoxCollider), typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
 {
     #region Declarations
-
-    public static PlayerMovement instance;
     
     [SerializeField] private Rigidbody rb;
-    
-    [HideInInspector] public bool isPlane;
-    
+
     [SerializeField] private TextMeshProUGUI origamiText;
     
     [SerializeField] private float fov;
-    
-    [Space(20)]
+
+    Origami origamiChangement;
 
     #region Speeds
 
-    [Header("Speeds")]
+    [Header("Speeds", order = 1)]
     public float speed;
-    [SerializeField] private float planeSpeed;
-    public float boatSpeed;
     public float boostSpeed;
     public float boostRainSpeed;
     [SerializeField] private float reduceSpeed;
     
     #endregion
-
-    [Space(20)]
+    
     
     #region Fall Speeds
 
-    [Header("Fall Speeds")]
+    [Header("Fall Speeds", order =1)]
     public float fallSpeed;
-    [SerializeField] private float planeFallSpeed;
-    public float boatFallSpeed;
     [SerializeField] private float ascendSpeed;
     
     #endregion
     
-    [Space(20)]
     
     #region Cloud Booleans
     [HideInInspector] public bool isExitCloud;
@@ -51,16 +40,11 @@ public class PlayerMovement : MonoBehaviour
     
     #endregion
     
-    [Space(20)]
 
     #region Collider
 
-    [Header("Colliders")]
+    [Header("Colliders", order =1)]
     [SerializeField] private BoxCollider boxCollider;
-    [SerializeField] private Vector3 planeCollider;
-    [SerializeField] private Vector3 boatCollider;
-    [SerializeField] private float planeCenter;
-    [SerializeField] private float boatCenter;
     [HideInInspector] public BoxCollider cloudBoxCollider;
     
     #endregion
@@ -73,24 +57,23 @@ public class PlayerMovement : MonoBehaviour
         set
         {
             speed = value;
-            isPlane = !isPlane;
-            UpdateText();
-            TriggerCloud();
+            origamiChangement();
             //plane.SetActive(!plane.activeSelf);
             //boat.SetActive(!boat.activeSelf);
-            AnimationManager.instance.OrigamiTransition(isPlane);
+            AnimationManager.instance.OrigamiTransition();
         }
     }
-    
-    private void Awake()
-    {
-        instance = this;
 
+    private void Start()
+    {
+        origamiChangement += UpdateText;
+        origamiChangement += TriggerCloud;
+        
         #region Initialize Speed
 
-        speed = planeSpeed;
-        fallSpeed = planeFallSpeed;
-        
+        speed = PlayerManager.origami[PlayerManager.state].speed;
+        fallSpeed = PlayerManager.origami[PlayerManager.state].fallSpeed;
+
         #endregion
     }
 
@@ -102,50 +85,35 @@ public class PlayerMovement : MonoBehaviour
 
     void UpdateText()
     {
-        #region Plane
-        
-        if (isPlane)
-        {
-            origamiText.text = "Boat";
-        }
-        
-        #endregion
-
-        #region Boat
-
-        else
-        {
-            origamiText.text = "Plane";
-        }
-        
-        #endregion
+        origamiText.text = PlayerManager.origami[PlayerManager.state].name;
     }
+
+    delegate void Origami();
 
     [ContextMenu("Change Origami")]
     public void ChangeOrigami()
     {
-        if (speed == boatSpeed || speed == planeSpeed || speed == 0)
+        PlayerManager.instance.ChangeState();
+        if (speed == PlayerManager.origami[PlayerManager.Shapes.BOAT].speed || speed == PlayerManager.origami[PlayerManager.Shapes.PLANE].speed || speed == 0)
         {
-            #region Boat
+            fallSpeed = PlayerManager.origami[PlayerManager.state].fallSpeed;
+            boxCollider.center = new Vector3(boxCollider.center.x, PlayerManager.origami[PlayerManager.state].colliderCenter, boxCollider.center.z);
+            boxCollider.size = PlayerManager.origami[PlayerManager.state].collider;
+            
+            #region Boat speed
 
-            if (isPlane)
+            if (PlayerManager.state == PlayerManager.Shapes.BOAT)
             {
                 origamiSpeed = 0;
-                fallSpeed = boatFallSpeed;
-                boxCollider.center = new Vector3(boxCollider.center.x, boatCenter, boxCollider.center.z);
-                boxCollider.size = boatCollider;
             }
             
             #endregion
 
-            #region Plane
+            #region Plane speed
 
             else
             {
-                origamiSpeed = planeSpeed;
-                fallSpeed = planeFallSpeed;
-                boxCollider.center = new Vector3(boxCollider.center.x, planeCenter, boxCollider.center.z);
-                boxCollider.size = planeCollider;
+                origamiSpeed = PlayerManager.origami[PlayerManager.state].speed;
             }
             
             #endregion
@@ -174,20 +142,20 @@ public class PlayerMovement : MonoBehaviour
 
         #region Plane
 
-        if (isPlane)
+        if (PlayerManager.state == PlayerManager.Shapes.PLANE)
         {
-            if (speed>planeSpeed)
+            if (speed>PlayerManager.origami[PlayerManager.state].speed)
             {
                 speed -= reduceSpeed;
                 fallSpeed = ascendSpeed;
             }
             else
             {
-                speed = planeSpeed;
-                fallSpeed = planeFallSpeed;
+                speed = PlayerManager.origami[PlayerManager.state].speed;
+                fallSpeed = PlayerManager.origami[PlayerManager.state].fallSpeed;
                 isExitCloud = false;
             }
-
+            
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, fov, Time.deltaTime);
         }
         
@@ -198,7 +166,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60, Time.deltaTime);
-            fallSpeed = boatFallSpeed;
+            fallSpeed = PlayerManager.origami[PlayerManager.state].fallSpeed;
             if (speed>0)
             {
                 speed -= reduceSpeed;
