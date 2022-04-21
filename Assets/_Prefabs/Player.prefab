@@ -267,28 +267,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4291496036925801361}
+  isPlane: 1
+  origamiText: {fileID: 0}
+  fov: 90
   speed: 11
   planeSpeed: 11
   boatSpeed: 10
   boostSpeed: 0.3
+  boostRainSpeed: 0.5
   reduceSpeed: 0.3
   fallSpeed: 1
   planeFallSpeed: 1
   boatFallSpeed: 10
   ascendSpeed: -7
-  isPlane: 1
-  origamiText: {fileID: 0}
-  cloudBoxCollider: {fileID: 0}
   isExitCloud: 0
   isCloud: 0
-  plane: {fileID: 8482068412530953303}
-  boat: {fileID: 3985436326130118584}
   boxCollider: {fileID: 4291496036925801366}
   planeCollider: {x: 2.1792173, y: 0.36593056, z: 2.8505707}
   boatCollider: {x: 0.44281787, y: 1.4735289, z: 2.6739087}
   planeCenter: -0.1561527
   boatCenter: 0.3812962
-  fov: 90
+  cloudBoxCollider: {fileID: 0}
 --- !u!114 &4291496036925801360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,9 +301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4291496036925801361}
-  maxHorizontalPosition: 4.5
   sensibility: 65
-  isChangeOrigami: 0
+  externalForce: {x: 0, y: 0, z: 0}
 --- !u!114 &4291496036925801367
 MonoBehaviour:
   m_ObjectHideFlags: 0
