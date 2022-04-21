@@ -6,9 +6,9 @@ public class InputManager : MonoBehaviour
     
     private Touch touch;
 
-    float startTouchPosition;
+    float startTouchPosition; //Position du premier toucher
 
-    float difference;
+    float difference; //Détecte si le joueur va à gauche ou à droite
     
     #endregion
 
@@ -18,26 +18,22 @@ public class InputManager : MonoBehaviour
         {
             touch = Input.GetTouch(Input.touchCount - 1);
 
-            #region Controller
-
-            PlayerController.instance.Controller(difference,startTouchPosition);
-            
-            #endregion
-
             #region Moved
             
             if (touch.phase == TouchPhase.Moved)
             {
-                difference = (touch.position.x-(Screen.width/2))/Screen.width - startTouchPosition;
+                difference = (touch.position.x-(Screen.width/2))/Screen.width - startTouchPosition; //ScreenToWorldPoint ne fontionne qu'avec cam ortho sur mobile
 
                 #region UI
                 
+                //UI du controller qui suit le joueur
                 UIManager.instance.FollowController(touch.position);
                 
                 #endregion
 
                 #region Animation
                 
+                //Animation de mouvement
                 AnimationManager.instance.Movement(difference);
                 
                 #endregion
@@ -51,6 +47,7 @@ public class InputManager : MonoBehaviour
             {
                 #region UI
                 
+                //Spawn de l'UI du controller
                 UIManager.instance.SpawnControllers(touch.position);
                 
                 #endregion
@@ -67,19 +64,22 @@ public class InputManager : MonoBehaviour
             {
                 #region UI
                 
+                //Depop l'UI du controller
                 UIManager.instance.DePopControllers();
                 
                 #endregion
 
                 #region Animation
                 
+                //Joue l'animation seulement si le joueur n'appuie pas sur une UI
                 if (!Tools.instance.IsPointerOverUI())
                 {
                     AnimationManager.instance.Idle();
                 }
                 
                 #endregion
-
+                
+                //Reset les variables
                 difference = 0;
                 startTouchPosition = 0;
             }
@@ -87,13 +87,10 @@ public class InputManager : MonoBehaviour
             #endregion
         }
 
-        else
-        {
-            #region Controller
+        #region Controller
 
-            PlayerController.instance.Controller(difference,startTouchPosition);
+        PlayerController.instance.Controller(difference,startTouchPosition);
             
-            #endregion
-        }
+        #endregion
     }
 }

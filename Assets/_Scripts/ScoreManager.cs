@@ -6,11 +6,14 @@ public class ScoreManager : MonoBehaviour
 {
 
     #region Declarations
-
+    
+    [Header("Score Text")]
     [SerializeField] private TextMeshProUGUI scoreText;
     private int score;
     private int bestScore;
+    [Header("Player Transform")]
     [SerializeField] private Transform playerTransform;
+    [Header("New Record")]
     [SerializeField] private GameObject newRecord;
     [SerializeField] private TextMeshProUGUI newRecordText;
 

@@ -22,8 +22,10 @@ public class GameManager : MonoBehaviour
         // Read the data from the file
         //Debug.Log(Application.persistentDataPath + "/" + "testImage");
         
+        //Active le menu de mort
         deathMenu.SetActive(true);
         Time.timeScale = 0;
+        //Sauvegarde le jeu
         ScoreManager.instance.SaveBestScore();
         PaperPieceManager.instance.SavePiece();
         Save();

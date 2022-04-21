@@ -6,7 +6,10 @@ public class AnimationManager : MonoBehaviour
 
     public static AnimationManager instance;
     
+    [Header("Animator")]
     public Animator playerAnimator;
+    
+    [Header("Animator Controllers")]
     [SerializeField] private RuntimeAnimatorController origamiTransition;
     [SerializeField] private RuntimeAnimatorController planeAnim;
     
@@ -17,14 +20,14 @@ public class AnimationManager : MonoBehaviour
         instance = this;
     }
 
+    // Animation de changement d'Origami
     public void OrigamiTransition()
     {
         playerAnimator.runtimeAnimatorController = origamiTransition;
-        Debug.Log(PlayerManager.origami[PlayerManager.state].transitionAnimationIndex);
         playerAnimator.SetInteger("TransitionIndex",PlayerManager.origami[PlayerManager.state].transitionAnimationIndex);
     }
 
-
+    // Animation statique de notre joueur
     public void Idle()
     {
         if (PlayerManager.state == PlayerManager.Shapes.PLANE)
@@ -34,6 +37,7 @@ public class AnimationManager : MonoBehaviour
         }
     }
 
+    // ANimation de mouvement de l'origami
     public void Movement(float direction)
     {
         if (PlayerManager.state == PlayerManager.Shapes.PLANE)

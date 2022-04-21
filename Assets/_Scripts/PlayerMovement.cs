@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     Origami origamiChangement;
 
-    #region Speeds
+    #region Horizontal Speeds
 
     [Header("Speeds", order = 1)]
     public float speed;
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
     #endregion
     
     
-    #region Fall Speeds
+    #region Vertical Speeds
 
     [Header("Fall Speeds", order =1)]
     public float fallSpeed;
@@ -66,10 +66,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        //Initialise le delegate
         origamiChangement += UpdateText;
         origamiChangement += TriggerCloud;
         
-        #region Initialize Speed
+        #region Initialize Speeds
 
         speed = PlayerManager.origami[PlayerManager.state].speed;
         fallSpeed = PlayerManager.origami[PlayerManager.state].fallSpeed;
@@ -79,10 +80,12 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        //Vitesse du joueur
         rb.velocity = Vector3.forward * speed - new Vector3(rb.velocity.x,fallSpeed,rb.velocity.z);
         ExitCloud();
     }
 
+    //Update le texte afficher sur le bouton de changement d'origami
     void UpdateText()
     {
         origamiText.text = PlayerManager.origami[PlayerManager.state].name;
@@ -90,16 +93,20 @@ public class PlayerMovement : MonoBehaviour
 
     delegate void Origami();
 
+    //Changement d'origami
     [ContextMenu("Change Origami")]
     public void ChangeOrigami()
     {
-        PlayerManager.instance.ChangeState();
+        // Update le changement d'état
+        PlayerManager.instance.ChangeState(); 
+        boxCollider.center = new Vector3(boxCollider.center.x, PlayerManager.origami[PlayerManager.state].colliderCenter, boxCollider.center.z);
+        boxCollider.size = PlayerManager.origami[PlayerManager.state].collider;
+        
+        //Quand le joueur ne décolle pas
         if (speed == PlayerManager.origami[PlayerManager.Shapes.BOAT].speed || speed == PlayerManager.origami[PlayerManager.Shapes.PLANE].speed || speed == 0)
         {
             fallSpeed = PlayerManager.origami[PlayerManager.state].fallSpeed;
-            boxCollider.center = new Vector3(boxCollider.center.x, PlayerManager.origami[PlayerManager.state].colliderCenter, boxCollider.center.z);
-            boxCollider.size = PlayerManager.origami[PlayerManager.state].collider;
-            
+
             #region Boat speed
 
             if (PlayerManager.state == PlayerManager.Shapes.BOAT)
@@ -124,6 +131,8 @@ public class PlayerMovement : MonoBehaviour
             origamiSpeed = speed;
         }
     }
+    
+    //Change l'état Trigger du dernier nuage touché
     void TriggerCloud()
     {
         if (cloudBoxCollider != null)
@@ -132,6 +141,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    //Décollage quand le joueur sort du nuage
     void ExitCloud()
     {
         if (!isExitCloud)

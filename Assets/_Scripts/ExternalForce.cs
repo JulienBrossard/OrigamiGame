@@ -10,6 +10,7 @@ public class ExternalForce : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        //Ajoute de la force quand le joueur rentre en collision avec l'objet
         if (other.CompareTag("Player"))
         {
             PlayerController.instance.externalForce += externalForce;
@@ -18,6 +19,7 @@ public class ExternalForce : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        //Supprime la force quand le joueur sort du point de contact avec l'objet
         if (other.CompareTag("Player"))
         {
             PlayerController.instance.externalForce -= externalForce;

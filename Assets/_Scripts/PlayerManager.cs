@@ -24,6 +24,7 @@ public class PlayerManager : MonoBehaviour
         instance = this;
     }
 
+    //Initialise le dictionnaire
     [ContextMenu("InitDictionary")]
     void InitDictionary()
     {
@@ -48,6 +49,7 @@ public class PlayerManager : MonoBehaviour
         state = 0;
     }
 
+    //Change l'état du joueur
     [ContextMenu("AddState")]
     public void ChangeState()
     {
@@ -65,11 +67,15 @@ public class PlayerManager : MonoBehaviour
 [Serializable]
 public class Origami
 {
+    [Header("Name")]
     public string name;
+    [Header("Speeds")]
     public float speed;
     public float fallSpeed;
+    [Header("Collider")]
     public Vector3 collider;
     public float colliderCenter;
+    [Header("Animation")]
     public int transitionAnimationIndex;
 }
 

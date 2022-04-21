@@ -7,10 +7,12 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController instance;
     
+    [Header("Rigidbody")]
     [SerializeField] private Rigidbody rb;
     private float maxHorizontalPosition;
+    [Header("Sensibility")]
     [SerializeField] private float sensibility;
-    public Vector3 externalForce;
+    [HideInInspector] public Vector3 externalForce;
     
     #endregion
 
@@ -28,9 +30,10 @@ public class PlayerController : MonoBehaviour
     {
         if (Time.timeScale!=0)
         {
+            //Cacule de la vitesse
             rb.velocity = new Vector3((startPositionX - positionX) * sensibility, rb.velocity.y, rb.velocity.z) - externalForce;
+            // Clamp de la position sur le jeu
             transform.position = new Vector3(Mathf.Clamp(transform.position.x,-maxHorizontalPosition,maxHorizontalPosition), transform.position.y, transform.position.z);
-            //transform.position = new Vector3(Mathf.Clamp(transform.position.x + positionX,-maxHorizontalPosition,maxHorizontalPosition), transform.position.y, transform.position.z);
         }
     }
 }

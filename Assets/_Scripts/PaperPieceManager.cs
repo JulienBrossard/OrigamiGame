@@ -18,6 +18,7 @@ public class PaperPieceManager : MonoBehaviour
 
     private void Start()
     {
+        //Récupère la dernière sauvegarde des pièces
         pieces = PlayerPrefs.GetInt("PaperPieces", 0);
         piecesText.text = pieces.ToString();
     }
