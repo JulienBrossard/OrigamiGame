@@ -13,20 +13,20 @@ public class PlayerMovement : MonoBehaviour
 
     #region Horizontal Speeds
 
-    [Header("Speeds", order = 1)]
-    public float speed;
+    [Header("Horizontal Speeds", order = 1)]
     public float boostSpeed;
     public float boostRainSpeed;
     [SerializeField] private float reduceSpeed;
+    [HideInInspector] public float speed;
     
     #endregion
     
     
     #region Vertical Speeds
 
-    [Header("Fall Speeds", order =1)]
-    public float fallSpeed;
+    [Header("Vertcial Speed", order =1)]
     [SerializeField] private float ascendSpeed;
+    [HideInInspector] public float fallSpeed;
     
     #endregion
     
