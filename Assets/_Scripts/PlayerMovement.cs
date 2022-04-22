@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(BoxCollider), typeof(Animator))]
@@ -8,8 +7,6 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] private Rigidbody rb;
 
-    [SerializeField] private TextMeshProUGUI origamiText;
-    
     [SerializeField] private float fov;
 
     Origami origamiChangement;
@@ -45,8 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Colliders", order =1)]
     [SerializeField] private BoxCollider boxCollider;
-    [HideInInspector] public BoxCollider cloudBoxCollider;
-    
+
     #endregion
 
     #endregion
@@ -57,19 +53,12 @@ public class PlayerMovement : MonoBehaviour
         set
         {
             speed = value;
-            origamiChangement();
-            //plane.SetActive(!plane.activeSelf);
-            //boat.SetActive(!boat.activeSelf);
             AnimationManager.instance.OrigamiTransition();
         }
     }
 
     private void Start()
     {
-        //Initialise le delegate
-        origamiChangement += UpdateText;
-        origamiChangement += TriggerCloud;
-        
         #region Initialize Speeds
 
         speed = PlayerManager.origami[PlayerManager.state].speed;
@@ -85,12 +74,6 @@ public class PlayerMovement : MonoBehaviour
         ExitCloud();
     }
 
-    //Update le texte afficher sur le bouton de changement d'origami
-    void UpdateText()
-    {
-        origamiText.text = PlayerManager.origami[PlayerManager.state].name;
-    }
-
     delegate void Origami();
 
     //Changement d'origami
@@ -98,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
     public void ChangeOrigami()
     {
         // Update le changement d'état
-        PlayerManager.instance.ChangeState(); 
+        PlayerManager.instance.changeOrigami(); 
         boxCollider.center = new Vector3(boxCollider.center.x, PlayerManager.origami[PlayerManager.state].colliderCenter, boxCollider.center.z);
         boxCollider.size = PlayerManager.origami[PlayerManager.state].collider;
         
@@ -129,15 +112,6 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             origamiSpeed = speed;
-        }
-    }
-    
-    //Change l'état Trigger du dernier nuage touché
-    void TriggerCloud()
-    {
-        if (cloudBoxCollider != null)
-        {
-            cloudBoxCollider.isTrigger = !cloudBoxCollider.isTrigger;
         }
     }
 

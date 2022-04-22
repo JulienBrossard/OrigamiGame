@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -9,19 +10,35 @@ public class PlayerManager : MonoBehaviour
         PLANE,
         BOAT 
     }
-    
+
     public static Shapes state = Shapes.PLANE;
 
     public static Dictionary<Shapes, Origami> origami = new Dictionary<Shapes, Origami>();
-
-    [SerializeField] private Origami[] origamis;
-
+    
+    [HideInInspector] public BoxCollider cloudBoxCollider;
+    
     public static PlayerManager instance;
     
+    public delegate void ChangeOrigami();
+    public ChangeOrigami changeOrigami;
+
+    [Header("Origami Data")]
+    [SerializeField] private Origami[] origamis;
+
+    [Header("Text Button Origami")] 
+    [SerializeField] private TextMeshProUGUI origamiText;
+
     private void Awake()
     {
         InitDictionary();
         instance = this;
+    }
+
+    private void Start()
+    {
+        changeOrigami += UpdateText;
+        changeOrigami += TriggerCloud;
+        changeOrigami += ChangeState;
     }
 
     //Initialise le dictionnaire
@@ -60,6 +77,21 @@ public class PlayerManager : MonoBehaviour
         else
         {
             state = Shapes.PLANE;
+        }
+    }
+    
+    //Update le texte afficher sur le bouton de changement d'origami
+    void UpdateText()
+    {
+        origamiText.text = origami[state].name;
+    }
+    
+    //Change l'état Trigger du dernier nuage touché
+    void TriggerCloud()
+    {
+        if (cloudBoxCollider != null)
+        {
+            cloudBoxCollider.isTrigger = !cloudBoxCollider.isTrigger;
         }
     }
 }

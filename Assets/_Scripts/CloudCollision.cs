@@ -32,7 +32,8 @@ public class CloudCollision : MonoBehaviour
                 //Reset les variables
                 playerMovement.isExitCloud = false;
                 playerMovement.isCloud = true;
-                playerMovement.cloudBoxCollider = boxCollider;
+                
+                PlayerManager.instance.cloudBoxCollider = boxCollider;
 
                 #region Plane
 
