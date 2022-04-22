@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
         instance = this;
     }
 
+    //Spawn l'UI du controller
     public void SpawnControllers(Vector3 position)
     {
         if (Time.timeScale!=0)
@@ -28,6 +29,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    //Update la position de l'UI du controller
     public void FollowController(Vector3 position)
     {
         if (Time.timeScale !=0)
@@ -36,6 +38,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    //DePop le controller
     public void DePopControllers()
     {
         backController.SetActive(false);

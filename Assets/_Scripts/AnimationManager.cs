@@ -6,7 +6,10 @@ public class AnimationManager : MonoBehaviour
 
     public static AnimationManager instance;
     
+    [Header("Animator")]
     public Animator playerAnimator;
+    
+    [Header("Animator Controllers")]
     [SerializeField] private RuntimeAnimatorController origamiTransition;
     [SerializeField] private RuntimeAnimatorController planeAnim;
     
@@ -17,42 +20,27 @@ public class AnimationManager : MonoBehaviour
         instance = this;
     }
 
-    public void OrigamiTransition(bool isPlane)
+    // Animation de changement d'Origami
+    public void OrigamiTransition()
     {
-        #region Transition plane to boat
-        
-        if (!isPlane)
-        {
-            playerAnimator.runtimeAnimatorController = origamiTransition;
-            playerAnimator.SetInteger("TransitionIndex",1);
-        }
-        
-        #endregion
-
-        #region Transition boat to plane
-        
-        else
-        {
-            playerAnimator.runtimeAnimatorController = origamiTransition;
-            playerAnimator.SetInteger("TransitionIndex",2);
-        }
-        #endregion
-        
+        playerAnimator.runtimeAnimatorController = origamiTransition;
+        playerAnimator.SetInteger("TransitionIndex",PlayerManager.origami[PlayerManager.state].transitionAnimationIndex);
     }
 
-
+    // Animation statique de notre joueur
     public void Idle()
     {
-        if (PlayerMovement.instance.isPlane)
+        if (PlayerManager.state == PlayerManager.Shapes.PLANE)
         {
             playerAnimator.runtimeAnimatorController = planeAnim;
             playerAnimator.SetBool("isIdle",true);
         }
     }
 
+    // ANimation de mouvement de l'origami
     public void Movement(float direction)
     {
-        if (PlayerMovement.instance.isPlane)
+        if (PlayerManager.state == PlayerManager.Shapes.PLANE)
         {
             playerAnimator.runtimeAnimatorController = planeAnim;
             playerAnimator.SetBool("isIdle",false);

@@ -10,6 +10,7 @@ public class PaperPiece : MonoBehaviour, ICollectible
 
     public void Collect()
     {
+        //Collecte les pièces
         pieces = PlayerPrefs.GetInt("PaperPieces", 0);
         PlayerPrefs.SetInt("PaperPieces",++pieces);
         Pooler.instance.DePop("CloudPieces",gameObject);
