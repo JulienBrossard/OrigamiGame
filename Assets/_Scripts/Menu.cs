@@ -3,10 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
+    #region Declarations
 
     [SerializeField] private string resetSceneName;
     [SerializeField] private string mainMenu;
     [SerializeField] AudioClip buttonPress;
+    
+    #endregion
     
     public void Reset()
     {

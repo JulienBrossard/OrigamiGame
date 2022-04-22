@@ -2,10 +2,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    #region Declarations
+
     public static GameManager instance;
 
     [SerializeField] private GameObject deathMenu;
-
+    
+    #endregion
+    
     private void Awake()
     {
         instance = this;

@@ -1,14 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BoatManager : MonoBehaviour
 {
+
+    #region Declarations
+    
     [SerializeField] private GameObject shadow;
+    
     [SerializeField] private LayerMask layer;
-
     private RaycastHit hit;
-
+    
+    #endregion
 
     private void FixedUpdate()
     {

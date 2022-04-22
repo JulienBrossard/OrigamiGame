@@ -2,10 +2,14 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    #region Declarations
+
     [SerializeField] private GameObject backController;
     [SerializeField] private GameObject controller;
     public static UIManager instance;
-    [SerializeField] private Vector3 startPosition;
+    private Vector3 startPosition;
+    
+    #endregion
 
     private void Awake()
     {

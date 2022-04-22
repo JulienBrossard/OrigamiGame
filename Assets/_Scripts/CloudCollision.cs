@@ -1,9 +1,16 @@
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider))]
 public class CloudCollision : MonoBehaviour
 {
-    [SerializeField] private PlayerMovement playerMovement;
+
+    #region Declarations
+    
+    private PlayerMovement playerMovement;
     [SerializeField] private BoxCollider boxCollider;
+    [SerializeField] private bool rainyCloud;
+
+    #endregion
 
     private void OnCollisionEnter(Collision other)
     {
@@ -15,15 +22,26 @@ public class CloudCollision : MonoBehaviour
                 playerMovement.isExitCloud = false;
                 playerMovement.isCloud = true;
                 playerMovement.cloudBoxCollider = boxCollider;
+
+                #region Plane
+
                 if (playerMovement.isPlane)
                 {
                     boxCollider.isTrigger = true;
                 }
+                
+                #endregion
+
+                #region Boat
+                
                 else
                 {
                     playerMovement.speed = playerMovement.boatSpeed;
                     playerMovement.fallSpeed = 0;
                 }
+                
+                #endregion
+                
             }
         }
     }
@@ -34,7 +52,24 @@ public class CloudCollision : MonoBehaviour
         {
             playerMovement.isExitCloud = false;
             playerMovement.isCloud = true;
-            playerMovement.speed += playerMovement.boostSpeed;
+
+            #region Rainy Cloud
+            
+            if (rainyCloud)
+            {
+                playerMovement.speed += playerMovement.boostRainSpeed;
+            }
+            
+            #endregion
+
+            #region Cloud
+            
+            else
+            {
+                playerMovement.speed += playerMovement.boostSpeed;
+            }
+            
+            #endregion
         }
     }
 

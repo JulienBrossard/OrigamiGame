@@ -3,10 +3,14 @@ using UnityEngine;
 
 public class PaperPieceManager : MonoBehaviour
 {
-    public static PaperPieceManager instance;
-    [SerializeField] private int pieces;
-    [SerializeField] private TextMeshProUGUI piecesText;
+    #region Declarations
 
+    public static PaperPieceManager instance;
+    private int pieces;
+    [SerializeField] private TextMeshProUGUI piecesText;
+    
+    #endregion
+    
     private void Awake()
     {
         instance = this;
