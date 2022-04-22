@@ -60,6 +60,10 @@ PrefabInstance:
       value: CloudBigMoving
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a238ac42da240ab40b6541b3f8a5cf17, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a238ac42da240ab40b6541b3f8a5cf17, type: 3}
       propertyPath: m_TagString
       value: Cloud
       objectReference: {fileID: 0}
@@ -95,8 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09e3089e8e6846644b0800f454c06423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMovement: {fileID: 0}
   boxCollider: {fileID: 7436821115461464385}
+  rainyCloud: 0
 --- !u!114 &1979232811701578915
 MonoBehaviour:
   m_ObjectHideFlags: 0
