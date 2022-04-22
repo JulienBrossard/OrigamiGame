@@ -44,6 +44,8 @@ public class Tools : MonoBehaviour
         return array;
     }
 
+    #region Sort
+
     private AudioSource maxAudio;
     private int maxIndex;
     private int i;
@@ -63,12 +65,36 @@ public class Tools : MonoBehaviour
                     maxIndex = j;
                 }
             }
-            array[maxIndex] = array[j];
-            array[j] = maxAudio;
+            array[maxIndex] = array[j-1];
+            array[j-1] = maxAudio;
             maxIndex = 0;
             maxAudio = array[0];
         }
     }
+    
+    private GameObject maxGameObject;
+
+    public void Sort(GameObject[] array)
+    {
+        maxGameObject = array[0];
+        maxIndex = 0;
+        for (i = 0; i < array.Length-i; i++)
+        {
+            for (j = 0; j < array.Length-i; j++)
+            {
+                if (maxGameObject.transform.position.z<array[j].transform.position.z)
+                {
+                    maxGameObject = array[j];
+                    maxIndex = j;
+                }
+            }
+            array[maxIndex] = array[j-1];
+            array[j-1] = maxGameObject;
+            maxIndex = 0;
+            maxGameObject = array[0];
+        }
+    }
+    
     
     /*public void Quick_Sort(AudioSource[] arr, int left, int right) 
     {
@@ -125,6 +151,8 @@ public class Tools : MonoBehaviour
     }*/
 
     #endregion
+    
+    #endregion
 
 
     #region UI
@@ -146,5 +174,4 @@ public class Tools : MonoBehaviour
     }
     
     #endregion
-
 }

@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        maxHorizontalPosition = LevelManager.instance.maxHorizontalPosition;
+        maxHorizontalPosition = LevelManager.instance.levelWidth;
     }
 
     public void Controller(float positionX, float startPositionX)

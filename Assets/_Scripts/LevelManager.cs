@@ -1,11 +1,101 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public class LevelManager : MonoBehaviour
 {
+    public static LevelManager instance;
+
+    [Header("Subsection Data")] 
+    [SerializeField] private int nbSubsection;
+    [SerializeField] private float subSectionLenght;
+    [SerializeField] private Vector3 initialPosition;
+
+    [Header("Section Data")] 
+    [SerializeField] private int nbSection;
+    private float sectionLenght;
+
+    [Header("Level Data")]
+    [SerializeField] public float levelWidth;
+    private GameObject[] currentLevels;
+    public float lastZPosition;
+
+    [Header("Prefabs")] 
+    [TextArea] [SerializeField] private string prefabsInformation;
+    [SerializeField] private GameObject[] levels;
+    private GameObject currentSubSection;
+
+    [Header("Player Data")] 
+    [SerializeField] private Transform playerTransform;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    private void Start()
+    {
+        currentLevels = new GameObject[nbSection * nbSubsection];
+        lastZPosition = playerTransform.position.z;
+        sectionLenght = nbSubsection * subSectionLenght;
+        InitLevel();
+    }
+
+    private void Update()
+    {
+        if (lastZPosition + sectionLenght < playerTransform.position.z)
+        {
+            StartCoroutine(NewLevel());
+        }
+    }
+
+    [ContextMenu("Init Level")]
+    void InitLevel()
+    {
+        for (int i = 0; i < nbSection; i++)
+        {
+            for (int j = 0; j < nbSubsection; j++)
+            {
+                MakeLevel(subSectionLenght*(i*nbSubsection+j+1),i*nbSubsection+j );
+            }
+        }
+    }
+
+    private void MakeLevels()
+    {
+        for (int i = 0; i < nbSubsection; i++)
+        {
+            MakeLevel(subSectionLenght*((nbSubsection+i))+sectionLenght-subSectionLenght, i);
+        }
+    }
+    
+    private void MakeLevel(float zPosition, int index)
+    {
+        currentSubSection = Pooler.instance.Pop(levels[UnityEngine.Random.Range(0,levels.Length)].name);
+        currentSubSection.transform.position = initialPosition + new Vector3(0, 0, lastZPosition+zPosition);
+        currentLevels[index] = currentSubSection;
+    }
+
+    private void DePopLevels()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            Pooler.instance.DePop(currentLevels[i].name.Replace("(Clone)",String.Empty),currentLevels[i]);
+        }
+    }
+
+    IEnumerator NewLevel()
+    {
+        lastZPosition = (int) playerTransform.position.z;
+        yield return new WaitForSeconds(5);
+        Tools.instance.Sort(currentLevels);
+        DePopLevels();
+        MakeLevels();
+        Debug.Log("New Level");
+    }
+
+
+    /*
     [SerializeField] private string[] obstaclesPooler;
     [SerializeField] private string[] cloudsPooler;
     [SerializeField] private string[] cloudPaperPieces;
@@ -233,9 +323,10 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(5f);
         DePopLevel();
         MakeLevel(lastPlanePosition+leveldata.areaSize);
-    }
+    }*/
 }
 
+/*
 [Serializable]
 public class CloudHeightData
 {
@@ -258,4 +349,4 @@ public class LevelData
 public class PaperPieceData
 {
     public float cloudPaperPiecesProbability;
-}
+}*/
