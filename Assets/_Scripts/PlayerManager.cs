@@ -27,6 +27,14 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Text Button Origami")] 
     [SerializeField] private TextMeshProUGUI origamiText;
+    
+    [Header("Layer")]
+    [SerializeField] private LayerMask layer;
+    private RaycastHit hit;
+    
+    [Header("Shadow")]
+    private GameObject shadow;
+    
 
     private void Awake()
     {
@@ -39,6 +47,13 @@ public class PlayerManager : MonoBehaviour
         changeOrigami += UpdateText;
         changeOrigami += TriggerCloud;
         changeOrigami += ChangeState;
+        changeOrigami += ChangeShadow;
+        shadow = origami[state].shadow;
+    }
+    
+    private void FixedUpdate()
+    {
+        Shadow();
     }
 
     //Initialise le dictionnaire
@@ -80,6 +95,11 @@ public class PlayerManager : MonoBehaviour
         }
     }
     
+    public void ChangeShadow()
+    {
+        shadow = origami[state].shadow;
+    }
+    
     //Update le texte afficher sur le bouton de changement d'origami
     void UpdateText()
     {
@@ -92,6 +112,16 @@ public class PlayerManager : MonoBehaviour
         if (cloudBoxCollider != null)
         {
             cloudBoxCollider.isTrigger = !cloudBoxCollider.isTrigger;
+        }
+    }
+
+
+    //Update de la position de l'ombre
+    void Shadow()
+    {
+        if (Physics.Raycast(transform.position,Vector3.down,out hit,Mathf.Infinity,layer))
+        {
+            shadow.transform.position = hit.point;
         }
     }
 }
@@ -109,5 +139,7 @@ public class Origami
     public float colliderCenter;
     [Header("Animation")]
     public int transitionAnimationIndex;
+    [Header("SHadow")] 
+    public GameObject shadow;
 }
 
