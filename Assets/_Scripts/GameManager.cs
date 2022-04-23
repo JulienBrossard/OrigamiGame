@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
+    [Tooltip("Le parent qui regroupe tous les boutons/textes du menu de morts, à récupérer dans l'enfant du canvas")]
     [SerializeField] private GameObject deathMenu;
     
     #endregion
