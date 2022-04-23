@@ -7,25 +7,32 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
 
     [Header("Subsection Data")] 
+    [Tooltip("Le nombre de sous-section d'une section, de base à 2")]
     [SerializeField] private int nbSubsection;
+    [Tooltip("La longueur d'une sous-section, de base à 100")]
     [SerializeField] private float subSectionLenght;
+    [Tooltip("La position initiale du spawn de la première sous-section du jeu, de base à (0, 0, 0)")]
     [SerializeField] private Vector3 initialPosition;
 
     [Header("Section Data")] 
+    [Tooltip("Le nombre de section d'un level, de base à 2")]
     [SerializeField] private int nbSection;
     private float sectionLenght;
 
     [Header("Level Data")]
+    [Tooltip("La largeur du level, de base à 5")]
     [SerializeField] public float levelWidth;
     private GameObject[] currentLevels;
-    public float lastZPosition;
+    private float lastZPosition;
 
-    [Header("Prefabs")] 
+    [Header("Prefabs")]
     [TextArea] [SerializeField] private string prefabsInformation;
+    [Tooltip("Les prefabs des LD du jeu, à récupérer dans le dossier Level Design")]
     [SerializeField] private GameObject[] levels;
     private GameObject currentSubSection;
 
     [Header("Player Data")] 
+    [Tooltip("Le transform du joueur, à récupérer sur le joueur")]
     [SerializeField] private Transform playerTransform;
 
     private void Awake()
@@ -56,7 +63,7 @@ public class LevelManager : MonoBehaviour
         {
             for (int j = 0; j < nbSubsection; j++)
             {
-                MakeLevel(subSectionLenght*(i*nbSubsection+j+1),i*nbSubsection+j );
+                MakeLevel(subSectionLenght*(i*nbSubsection+j+1) - subSectionLenght/2,i*nbSubsection+j );
             }
         }
     }
@@ -65,7 +72,7 @@ public class LevelManager : MonoBehaviour
     {
         for (int i = 0; i < nbSubsection; i++)
         {
-            MakeLevel(subSectionLenght*((nbSubsection+i))+sectionLenght-subSectionLenght, i);
+            MakeLevel(subSectionLenght*((nbSubsection+i))+sectionLenght-subSectionLenght - subSectionLenght/2, i);
         }
     }
     

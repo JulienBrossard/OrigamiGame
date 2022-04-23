@@ -9,6 +9,7 @@ public class CloudCollision : MonoBehaviour
     private PlayerMovement playerMovement;
     
     [Header("Collider")]
+    [Tooltip("Le boxCollider du nuage, à récupérer sur le nuage actuel")]
     [SerializeField] private BoxCollider boxCollider;
     
     private enum Cloud
@@ -18,6 +19,7 @@ public class CloudCollision : MonoBehaviour
     }
 
     [Header("Type of cloud")]
+    [Tooltip("Le type de nuage, à changer en fonction du type de notre nuage")]
     [SerializeField] private Cloud cloud;
 
     #endregion

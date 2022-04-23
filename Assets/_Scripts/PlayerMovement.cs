@@ -5,8 +5,10 @@ public class PlayerMovement : MonoBehaviour
 {
     #region Declarations
     
+    [Tooltip("Le rigidbody du joueur, à récupérer sur le joueur")]
     [SerializeField] private Rigidbody rb;
 
+    [Tooltip("Le fov lors du décollage de l'avion, de base à 90")]
     [SerializeField] private float fov;
 
     Origami origamiChangement;
@@ -14,8 +16,11 @@ public class PlayerMovement : MonoBehaviour
     #region Horizontal Speeds
 
     [Header("Horizontal Speeds", order = 1)]
+    [Tooltip("Le boost de vitesse du bateau sur un nuage classique, de base à 0.3")]
     public float boostSpeed;
+    [Tooltip("Le boost de vitesse du bateau sur un nuage pluvieux, de base à ?")]
     public float boostRainSpeed;
+    [Tooltip("La réduction de vitesse lors du décollage de l'avion, de base à 0.3")]
     [SerializeField] private float reduceSpeed;
     [HideInInspector] public float speed;
     
@@ -25,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     #region Vertical Speeds
 
     [Header("Vertcial Speed", order =1)]
+    [Tooltip("La vitesse du décollage de l'avion, de base à -7")]
     [SerializeField] private float ascendSpeed;
     [HideInInspector] public float fallSpeed;
     
@@ -41,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
     #region Collider
 
     [Header("Colliders", order =1)]
+    [Tooltip("Le box collider du joueur, à récupérer sur le joueur")]
     [SerializeField] private BoxCollider boxCollider;
 
     #endregion

@@ -7,9 +7,11 @@ public class AudioManager : MonoBehaviour
     #region Declarations
     
     [Header("Music")]
+    [Tooltip("La musique du jeu, à récupérer dans le dossier Sounds")]
     [SerializeField] private AudioSource music;
     
     [Header("Sounds Effects")]
+    [Tooltip("La liste des AudioSources qui vont jouer les effets sonores du jeu, à récupérer directement sur l'objet actuel")]
     [SerializeField] private AudioSource[] audioSources;
 
     public static AudioManager instance;

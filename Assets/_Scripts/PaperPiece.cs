@@ -4,6 +4,7 @@ public class PaperPiece : MonoBehaviour, ICollectible
 {
     #region Declarations
 
+    [Tooltip("Le nombre de pièces du joueur, rien à changer ici, c'est juste un Debug")]
     [SerializeField] private int pieces;
     
     #endregion

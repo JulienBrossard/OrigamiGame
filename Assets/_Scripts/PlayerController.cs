@@ -8,9 +8,11 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
     
     [Header("Rigidbody")]
+    [Tooltip("Le rigidbody du joueur, à récupérer sur le joueur")]
     [SerializeField] private Rigidbody rb;
     private float maxHorizontalPosition;
     [Header("Sensibility")]
+    [Tooltip("La sensibilité du controller du joueur, de base à 65")]
     [SerializeField] private float sensibility;
     [HideInInspector] public Vector3 externalForce;
     
