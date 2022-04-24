@@ -7,10 +7,13 @@ public class AnimationManager : MonoBehaviour
     public static AnimationManager instance;
     
     [Header("Animator")]
+    [Tooltip("L'animator du joueur, à prendre directement sur le joueur")]
     public Animator playerAnimator;
     
     [Header("Animator Controllers")]
+    [Tooltip("L'animator controller de la transition d'origami, à récupérer dans le dossier Animation")]
     [SerializeField] private RuntimeAnimatorController origamiTransition;
+    [Tooltip("L'animator controller des mouvements de l'avion, à récupérer dans le dossier Animation")]
     [SerializeField] private RuntimeAnimatorController planeAnim;
     
     #endregion

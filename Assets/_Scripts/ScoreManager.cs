@@ -8,13 +8,17 @@ public class ScoreManager : MonoBehaviour
     #region Declarations
     
     [Header("Score Text")]
+    [Tooltip("Le score affiché dans le canvas, à récupérer dans l'enfant du canvas")]
     [SerializeField] private TextMeshProUGUI scoreText;
     private int score;
     private int bestScore;
     [Header("Player Transform")]
+    [Tooltip("Le transform du joueur, à récupérer dans le joueur")]
     [SerializeField] private Transform playerTransform;
     [Header("New Record")]
+    [Tooltip("Le game objet du nouveau record, à récupérer dans l'enfant du canvas")]
     [SerializeField] private GameObject newRecord;
+    [Tooltip("Le texte du nouveau record, à récupérer dans l'enfant du canvas")]
     [SerializeField] private TextMeshProUGUI newRecordText;
 
     public static ScoreManager instance;

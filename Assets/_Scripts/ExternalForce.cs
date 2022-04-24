@@ -4,6 +4,7 @@ public class ExternalForce : MonoBehaviour
 {
     #region Declarations
 
+    [Tooltip("La force de l'objet sur le joueur")]
     [SerializeField] private Vector3 externalForce;
     
     #endregion

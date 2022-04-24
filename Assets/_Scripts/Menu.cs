@@ -5,8 +5,11 @@ public class Menu : MonoBehaviour
 {
     #region Declarations
 
+    [Tooltip("Le nom de la scène chargée lors du reset")]
     [SerializeField] private string resetSceneName;
+    [Tooltip("Le nom de la scène du menu principal")]
     [SerializeField] private string mainMenu;
+    [Tooltip("Le son d'un bouton lorqu'il est pressé, à récupérer dans le dossier Sounds")]
     [SerializeField] AudioClip buttonPress;
     
     #endregion

@@ -4,7 +4,9 @@ public class UIManager : MonoBehaviour
 {
     #region Declarations
 
+    [Tooltip("L'image du fond du controller, à récupérer dans l'enfant du canvas")]
     [SerializeField] private GameObject backController;
+    [Tooltip("L'image qui suit le doigt du joueur, à récupérer dans l'enfant du canvas")]
     [SerializeField] private GameObject controller;
     public static UIManager instance;
     private Vector3 startPosition;
