@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEditor;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
@@ -12,9 +13,11 @@ public class AudioManager : MonoBehaviour
     
     [Header("Sounds Effects")]
     [Tooltip("La liste des AudioSources qui vont jouer les effets sonores du jeu, à récupérer directement sur l'objet actuel")]
-    [SerializeField] private AudioSource[] audioSources;
+    [SerializeField] public AudioSource[] audioSources;
 
     public static AudioManager instance;
+    [HideInInspector] public int audioSourceLenght = 0;
+    [HideInInspector] public AudioSource[] audioSourcesEditor; 
 
     #endregion
     
