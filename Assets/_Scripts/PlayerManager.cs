@@ -56,7 +56,10 @@ public class PlayerManager : MonoBehaviour
     
     private void FixedUpdate()
     {
-        Shadow();
+        if (Time.frameCount % 3 == 0)
+        {
+            Shadow();
+        }
     }
 
     //Initialise le dictionnaire

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,10 @@ public class Pooler : MonoBehaviour
 {
     public static Pooler instance;
     
-    private Dictionary<string, Pool> pools = new Dictionary<string, Pool>();
+    public Dictionary<string, Pool> pools = new Dictionary<string, Pool>();
 
     [Tooltip("La clé du pooler de l'objet attitré, attention pour les objets du level design le nom de l'objet et de sa clé doivent être exactement le même")]
-    [SerializeField] private List<PoolKey> poolKeys = new List<PoolKey>();
+    [SerializeField] public List<PoolKey> poolKeys = new List<PoolKey>();
 
     private int i;
 
