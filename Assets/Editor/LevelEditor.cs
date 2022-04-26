@@ -10,7 +10,7 @@ public class LevelEditor : EditorWindow
     private Pooler pooler;
     private string path;
 
-    [MenuItem("Assets/Level Editor")]
+    [MenuItem("Tools/Level Editor")]
     public static void ShowWindow()
     {
         GetWindow(typeof(LevelEditor));
