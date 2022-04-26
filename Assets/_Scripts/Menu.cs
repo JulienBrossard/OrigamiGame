@@ -18,11 +18,6 @@ public class Menu : MonoBehaviour
 
     #endregion
 
-    private void Awake()
-    {
-        
-    }
-
     public void Reset()
     {
         Time.timeScale = 1;
@@ -44,18 +39,16 @@ public class Menu : MonoBehaviour
 
     public void Pause()
     {
-        //AudioManager.instance.PlaySound(buttonPress, 1, 1, 0);
+        AudioManager.instance.PlaySound(buttonPress, 1, 1, 0);
         pauseMenu.gameObject.SetActive(true);
-        Debug.Log(Screen.width/2);
-        pauseMenu.DOMove(pauseMenu.position + Vector3.left * Screen.width / 2, 0.1f).SetEase(Ease.OutBack, 1.87f).SetUpdate(true);
+        AnimationManager.instance.DoMove(pauseMenu, -Screen.width / 2, 1);
         Time.timeScale = 0;
-        Debug.Log(DOTween.timeScale);
     }
 
     public void Continue()
     {
         AudioManager.instance.PlaySound(buttonPress, 1, 1, 0);
-        pauseMenu.DOMove(pauseMenu.position + Vector3.right * Screen.width / 2, 0.1f).SetEase(Ease.OutBack, 1.87f).SetUpdate(true);
+        AnimationManager.instance.DoMove(pauseMenu, Screen.width / 2,1);
         Time.timeScale = 1;
     }
 }
