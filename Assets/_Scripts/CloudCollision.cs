@@ -7,8 +7,20 @@ public class CloudCollision : MonoBehaviour
     #region Declarations
     
     private PlayerMovement playerMovement;
+    
+    [Header("Collider")]
+    [Tooltip("Le boxCollider du nuage, à récupérer sur le nuage actuel")]
     [SerializeField] private BoxCollider boxCollider;
-    [SerializeField] private bool rainyCloud;
+    
+    private enum Cloud
+    {
+        CLOUD,
+        RAINYCLOUD
+    }
+
+    [Header("Type of cloud")]
+    [Tooltip("Le type de nuage, à changer en fonction du type de notre nuage")]
+    [SerializeField] private Cloud cloud;
 
     #endregion
 
@@ -19,13 +31,16 @@ public class CloudCollision : MonoBehaviour
             playerMovement = other.gameObject.GetComponent<PlayerMovement>();
             if (!playerMovement.isCloud)
             {
+                //Reset les variables
                 playerMovement.isExitCloud = false;
                 playerMovement.isCloud = true;
-                playerMovement.cloudBoxCollider = boxCollider;
+                
+                PlayerManager.instance.cloudBoxCollider = boxCollider;
 
                 #region Plane
 
-                if (playerMovement.isPlane)
+                //L'avion passe à travers le nuage
+                if (PlayerManager.state == PlayerManager.Shapes.PLANE)
                 {
                     boxCollider.isTrigger = true;
                 }
@@ -34,9 +49,10 @@ public class CloudCollision : MonoBehaviour
 
                 #region Boat
                 
+                //Le bateau se pose sur le nuage
                 else
                 {
-                    playerMovement.speed = playerMovement.boatSpeed;
+                    playerMovement.speed = PlayerManager.origami[PlayerManager.state].speed;
                     playerMovement.fallSpeed = 0;
                 }
                 
@@ -50,12 +66,14 @@ public class CloudCollision : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            //Reset les variables
             playerMovement.isExitCloud = false;
             playerMovement.isCloud = true;
 
+            //Ajoute de la vitesse en fonction du type de nuage
             #region Rainy Cloud
             
-            if (rainyCloud)
+            if (cloud == Cloud.RAINYCLOUD)
             {
                 playerMovement.speed += playerMovement.boostRainSpeed;
             }
@@ -75,6 +93,7 @@ public class CloudCollision : MonoBehaviour
 
     private void OnCollisionExit(Collision other)
     {
+        //Reset les variables
         if (other.gameObject.CompareTag("Player"))
         {
             playerMovement.isExitCloud = true;

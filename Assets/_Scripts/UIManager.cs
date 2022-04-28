@@ -4,7 +4,9 @@ public class UIManager : MonoBehaviour
 {
     #region Declarations
 
+    [Tooltip("L'image du fond du controller, à récupérer dans l'enfant du canvas")]
     [SerializeField] private GameObject backController;
+    [Tooltip("L'image qui suit le doigt du joueur, à récupérer dans l'enfant du canvas")]
     [SerializeField] private GameObject controller;
     public static UIManager instance;
     private Vector3 startPosition;
@@ -16,6 +18,7 @@ public class UIManager : MonoBehaviour
         instance = this;
     }
 
+    //Spawn l'UI du controller
     public void SpawnControllers(Vector3 position)
     {
         if (Time.timeScale!=0)
@@ -28,6 +31,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    //Update la position de l'UI du controller
     public void FollowController(Vector3 position)
     {
         if (Time.timeScale !=0)
@@ -36,6 +40,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    //DePop le controller
     public void DePopControllers()
     {
         backController.SetActive(false);

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,18 +7,22 @@ public class Pooler : MonoBehaviour
 {
     public static Pooler instance;
     
-    private Dictionary<string, Pool> pools = new Dictionary<string, Pool>();
+    public Dictionary<string, Pool> pools = new Dictionary<string, Pool>();
 
-    [SerializeField] private List<PoolKey> poolKeys = new List<PoolKey>();
+    [Tooltip("La clé du pooler de l'objet attitré, attention pour les objets du level design le nom de l'objet et de sa clé doivent être exactement le même")]
+    [SerializeField] public List<PoolKey> poolKeys = new List<PoolKey>();
 
     private int i;
 
     [System.Serializable]
     public class Pool
     {
+        [Tooltip("Le préfab de l'objet, à récupérer dans le dossier Préfabs")]
         public GameObject prefab;
         public Queue<GameObject> queue = new Queue<GameObject>();
+        [Tooltip("Le nombre d'objet à pool")]
         public int baseCount;
+        [Tooltip("Le refresh de base pour pool, généralement entre 1 et 5")]
         public float baseRefreshSpeed = 5;
         public float refreshSpeed = 5;
     }

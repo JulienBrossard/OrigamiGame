@@ -7,10 +7,14 @@ public class PlayerController : MonoBehaviour
 
     public static PlayerController instance;
     
+    [Header("Rigidbody")]
+    [Tooltip("Le rigidbody du joueur, à récupérer sur le joueur")]
     [SerializeField] private Rigidbody rb;
     private float maxHorizontalPosition;
+    [Header("Sensibility")]
+    [Tooltip("La sensibilité du controller du joueur, de base à 65")]
     [SerializeField] private float sensibility;
-    public Vector3 externalForce;
+    [HideInInspector] public Vector3 externalForce;
     
     #endregion
 
@@ -21,16 +25,17 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        maxHorizontalPosition = LevelManager.instance.maxHorizontalPosition;
+        maxHorizontalPosition = LevelManager.instance.levelWidth;
     }
 
     public void Controller(float positionX, float startPositionX)
     {
         if (Time.timeScale!=0)
         {
+            //Cacule de la vitesse
             rb.velocity = new Vector3((startPositionX - positionX) * sensibility, rb.velocity.y, rb.velocity.z) - externalForce;
+            // Clamp de la position sur le jeu
             transform.position = new Vector3(Mathf.Clamp(transform.position.x,-maxHorizontalPosition,maxHorizontalPosition), transform.position.y, transform.position.z);
-            //transform.position = new Vector3(Mathf.Clamp(transform.position.x + positionX,-maxHorizontalPosition,maxHorizontalPosition), transform.position.y, transform.position.z);
         }
     }
 }

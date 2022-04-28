@@ -7,6 +7,7 @@ public class PaperPieceManager : MonoBehaviour
 
     public static PaperPieceManager instance;
     private int pieces;
+    [Tooltip("Le texte qui affiche les pièces du joueur, à récupérer dans l'enfant du canvas")]
     [SerializeField] private TextMeshProUGUI piecesText;
     
     #endregion
@@ -18,6 +19,7 @@ public class PaperPieceManager : MonoBehaviour
 
     private void Start()
     {
+        //Récupère la dernière sauvegarde des pièces
         pieces = PlayerPrefs.GetInt("PaperPieces", 0);
         piecesText.text = pieces.ToString();
     }

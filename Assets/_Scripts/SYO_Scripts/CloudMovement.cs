@@ -4,34 +4,31 @@ using UnityEngine;
 
 public class CloudMovement : MonoBehaviour
 {
-    public float cloudSpeed = 5f;
-    public string direction;
+    public float cloudSpeedX = 5f; //Only affects goRight & goLeft
+    public float cloudSpeedZ = 5f; //Only affects goPlayer & goForward
+    public bool goPlayer, goForward, goLeft, goRight;
     
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
-        if(direction == "Player")
+        if(goPlayer)
         {
-            transform.Translate(Vector3.up * cloudSpeed * Time.deltaTime);
+            transform.Translate(Vector3.up * cloudSpeedZ * Time.deltaTime);
         }
 
-        if (direction == "Right")
+        if (goRight)
         {
-            transform.Translate(Vector3.right * cloudSpeed * Time.deltaTime);
+            transform.Translate(Vector3.right * cloudSpeedX * Time.deltaTime);
         }
 
-        if (direction == "Left")
+        if (goLeft)
         {
-            transform.Translate(Vector3.left * cloudSpeed * Time.deltaTime);
+            transform.Translate(Vector3.left * cloudSpeedX * Time.deltaTime);
         }
 
-        if (direction == "Forward")
+        if (goForward)
         {
-            transform.Translate(Vector3.down * cloudSpeed * Time.deltaTime);
+            transform.Translate(Vector3.down * cloudSpeedZ * Time.deltaTime);
         }
     }
 }

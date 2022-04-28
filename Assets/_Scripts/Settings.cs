@@ -5,6 +5,7 @@ public class Settings : MonoBehaviour
 {
     #region Declarations
 
+    [Tooltip("L'audio mixer du jeu, à récupérer dans le dossier Audio Mixer")]
     [SerializeField] AudioMixer audioMixer;
     
     #endregion
