@@ -634,7 +634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &354173689
 Transform:
   m_ObjectHideFlags: 0
@@ -1286,11 +1286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2004fc30e4e50a249bca3ad6fcf33861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &854965593 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8134016517685656358, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
-  m_PrefabInstance: {fileID: 8134016518513329791}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &855091252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1372,11 +1367,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39ea7fb495735ca4db1bc20b02ea3f72, type: 3}
---- !u!1 &884768431 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8134016517648546000, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
-  m_PrefabInstance: {fileID: 8134016518513329791}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &902881741
 GameObject:
   m_ObjectHideFlags: 0
@@ -2879,17 +2869,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3262647865266245803, guid: 8f659bdb4e5c80644b6d4108bf978aa5, type: 3}
   m_PrefabInstance: {fileID: 1818886425}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1821373734 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8134016516710101849, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
-  m_PrefabInstance: {fileID: 8134016518513329791}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1834308444 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8134016516689548579, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
@@ -3740,7 +3719,7 @@ PrefabInstance:
     - target: {fileID: 5599533835445952774, guid: ba4638e181daa9445a5843d0535a41e7, type: 3}
       propertyPath: deathMenu
       value: 
-      objectReference: {fileID: 854965593}
+      objectReference: {fileID: 0}
     - target: {fileID: 5599533835445952795, guid: ba4638e181daa9445a5843d0535a41e7, type: 3}
       propertyPath: m_Name
       value: Game Manager
@@ -3792,7 +3771,7 @@ PrefabInstance:
     - target: {fileID: 5599533836111905519, guid: ba4638e181daa9445a5843d0535a41e7, type: 3}
       propertyPath: newRecord
       value: 
-      objectReference: {fileID: 884768431}
+      objectReference: {fileID: 0}
     - target: {fileID: 5599533836111905519, guid: ba4638e181daa9445a5843d0535a41e7, type: 3}
       propertyPath: scoreText
       value: 
@@ -3800,7 +3779,7 @@ PrefabInstance:
     - target: {fileID: 5599533836111905519, guid: ba4638e181daa9445a5843d0535a41e7, type: 3}
       propertyPath: newRecordText
       value: 
-      objectReference: {fileID: 1821373734}
+      objectReference: {fileID: 0}
     - target: {fileID: 5599533836111905519, guid: ba4638e181daa9445a5843d0535a41e7, type: 3}
       propertyPath: playerTransform
       value: 
