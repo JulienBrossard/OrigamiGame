@@ -11,7 +11,6 @@ public class ScoreManager : MonoBehaviour
     [Tooltip("Le score affiché dans le canvas, à récupérer dans l'enfant du canvas")]
     [SerializeField] private TextMeshProUGUI scoreText;
     private int score;
-    private int bestScore;
     [Header("Player Transform")]
     [Tooltip("Le transform du joueur, à récupérer dans le joueur")]
     [SerializeField] private Transform playerTransform;
