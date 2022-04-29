@@ -28,7 +28,7 @@ public class LevelManager : MonoBehaviour
     [Header("Prefabs")]
     [TextArea] [SerializeField] private string prefabsInformation;
     [Tooltip("Les prefabs des LD du jeu, à récupérer dans le dossier Level Design")]
-    [SerializeField] private GameObject[] levels;
+    [SerializeField] public GameObject[] levels;
     private GameObject currentSubSection;
 
     [Header("Player Data")] 
