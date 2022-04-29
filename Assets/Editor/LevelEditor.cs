@@ -5,7 +5,8 @@ using UnityEditor;
 
 public class LevelEditor : EditorWindow
 {
-
+#if UNITY_EDITOR
+    
     private LevelManager levelManager;
     private Pooler pooler;
     private string path;
@@ -62,4 +63,6 @@ public class LevelEditor : EditorWindow
             pooler.poolKeys[i].pool.baseRefreshSpeed = 5;
         }
     }
+    
+#endif
 }

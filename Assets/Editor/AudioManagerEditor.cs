@@ -5,6 +5,8 @@ using UnityEngine;
 [CustomEditor(typeof(AudioManager))]
 public class AudioManagerEditor : Editor
 {
+#if UNITY_EDITOR
+    
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
@@ -49,4 +51,6 @@ public class AudioManagerEditor : Editor
 
         serializedObject.ApplyModifiedProperties();
     }
+    
+#endif
 }
