@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         deathMenu.SetActive(true);
         Time.timeScale = 0;
         //Sauvegarde le jeu
-        ScoreManager.instance.SaveBestScore();
+        ScoreManager.instance.SaveBestScores();
         PaperPieceManager.instance.SavePiece();
         Save();
     }
