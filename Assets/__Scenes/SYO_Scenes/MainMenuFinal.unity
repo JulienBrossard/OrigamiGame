@@ -3658,7 +3658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1460591564
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4574,7 +4574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b871abeba03318e4b9f18449f3052929, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b871abeba03318e4b9f18449f3052929, type: 3}
@@ -5362,6 +5362,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1957450587}
   - component: {fileID: 1957450588}
+  - component: {fileID: 1957450589}
   m_Layer: 0
   m_Name: Menu
   m_TagString: Untagged
@@ -5400,6 +5401,23 @@ MonoBehaviour:
   mainMenu: MainMenuFinal
   buttonPress: {fileID: 8300000, guid: 7e8f88f451ee1b4408aabe359aeafd38, type: 3}
   pauseMenu: {fileID: 0}
+--- !u!114 &1957450589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957450586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f3a33a13c69b4e4e8ffe91f1f0c05fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bestScores:
+  - {fileID: 1955177911}
+  - {fileID: 1565392601}
+  - {fileID: 397758226}
+  - {fileID: 337877196}
 --- !u!1 &1970590946
 GameObject:
   m_ObjectHideFlags: 0
