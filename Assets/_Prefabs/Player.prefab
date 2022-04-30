@@ -19647,7 +19647,7 @@ Transform:
   m_GameObject: {fileID: 6637581720828207560}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.00075, y: 0, z: 2.93145}
-  m_LocalScale: {x: 1.543043, y: 1, z: 2.2916331}
+  m_LocalScale: {x: 1.543043, y: 0.35, z: 2.2916331}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7463337047499756876}
@@ -19949,12 +19949,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7463337047499756878}
   fov: 90
-  speed: 11
   boostSpeed: 0.3
   boostRainSpeed: 0.5
   reduceSpeed: 0.3
-  fallSpeed: 1
+  speed: 11
   ascendSpeed: -7
+  fallSpeed: 1
   isExitCloud: 0
   isCloud: 0
   boxCollider: {fileID: 7463337047499756873}
@@ -19971,7 +19971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7463337047499756878}
-  sensibility: 65
+  sensibility: 45
   externalForce: {x: 0, y: 0, z: 0}
 --- !u!114 &7463337047499756872
 MonoBehaviour:
