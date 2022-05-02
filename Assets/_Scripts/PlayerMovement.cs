@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Vertcial Speed", order =1)]
     [Tooltip("La vitesse du décollage de l'avion, de base à -7")]
     [SerializeField] private float ascendSpeed;
-    [HideInInspector] public float fallSpeed;
+    [SerializeField] public float fallSpeed;
     
     #endregion
     
