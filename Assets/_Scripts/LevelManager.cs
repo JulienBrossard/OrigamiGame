@@ -80,6 +80,12 @@ public class LevelManager : MonoBehaviour
                 MakeLevel(subSectionLenght*(i*nbSubsection+j+1) - subSectionLenght/2,i*nbSubsection+j );
             }
         }
+        InitHighScore();
+    }
+
+    void InitHighScore()
+    {
+        Pooler.instance.Pop("HighScore").transform.position = new Vector3(0,0.5f,PlayerPrefs.GetInt("BestScore0"));
     }
 
     private void MakeLevels()

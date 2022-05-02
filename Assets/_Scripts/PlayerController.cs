@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         maxHorizontalPosition = LevelManager.instance.levelWidth;
+        sensibility = PlayerPrefs.GetInt("Sensibility", 45);
     }
 
     private void FixedUpdate()
