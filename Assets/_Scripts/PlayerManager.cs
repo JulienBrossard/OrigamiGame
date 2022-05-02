@@ -14,9 +14,7 @@ public class PlayerManager : MonoBehaviour
     public static Shapes state = Shapes.PLANE;
 
     public static Dictionary<Shapes, Origami> origami = new Dictionary<Shapes, Origami>();
-    
-    [HideInInspector] public BoxCollider cloudBoxCollider;
-    
+
     public static PlayerManager instance;
     
     public delegate void ChangeOrigami();
@@ -48,9 +46,9 @@ public class PlayerManager : MonoBehaviour
     private void Start()
     {
         changeOrigami += UpdateText;
-        changeOrigami += TriggerCloud;
         changeOrigami += ChangeState;
         changeOrigami += ChangeShadow;
+        changeOrigami += ChangeLayer;
         shadow = origami[state].shadow;
     }
     
@@ -105,22 +103,17 @@ public class PlayerManager : MonoBehaviour
     {
         shadow = origami[state].shadow;
     }
+
+    public void ChangeLayer()
+    {
+        gameObject.layer = LayerMask.NameToLayer(origami[state].layer);
+    }
     
     //Update le texte afficher sur le bouton de changement d'origami
     void UpdateText()
     {
         origamiText.text = origami[state].name;
     }
-    
-    //Change l'état Trigger du dernier nuage touché
-    void TriggerCloud()
-    {
-        if (cloudBoxCollider != null)
-        {
-            cloudBoxCollider.isTrigger = !cloudBoxCollider.isTrigger;
-        }
-    }
-
 
     //Update de la position de l'ombre
     void Shadow()
@@ -154,5 +147,7 @@ public class Origami
     [Header("SHadow")] 
     [Tooltip("L'ombre de cet origami")]
     public GameObject shadow;
+    [Header("Layer")] 
+    public string layer;
 }
 

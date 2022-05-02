@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
@@ -6,11 +7,18 @@ public class InputManager : MonoBehaviour
     
     private Touch touch;
 
-    float startTouchPosition; //Position du premier toucher
+    [HideInInspector] public float startTouchPosition; //Position du premier toucher
 
-    float difference; //Détecte si le joueur va à gauche ou à droite
+    [HideInInspector] public float difference; //Détecte si le joueur va à gauche ou à droite
+
+    public static InputManager instance;
     
     #endregion
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Update()
     {
@@ -86,11 +94,5 @@ public class InputManager : MonoBehaviour
             
             #endregion
         }
-
-        #region Controller
-
-        PlayerController.instance.Controller(difference,startTouchPosition);
-            
-        #endregion
     }
 }

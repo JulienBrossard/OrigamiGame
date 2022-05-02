@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resetSceneName: Final Scene
-  mainMenu: MainMenuFInal
+  mainMenu: MainMenuFinal
   buttonPress: {fileID: 8300000, guid: 7e8f88f451ee1b4408aabe359aeafd38, type: 3}
   pauseMenu: {fileID: 1614060813}
 --- !u!1 &248740495
@@ -223,10 +223,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2957479657316210973, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3002547590378150536, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6488108434131709125, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6637581720832346804, guid: f55345b846657234f9479dbf3508c276, type: 3}
       propertyPath: origamiText
       value: 
       objectReference: {fileID: 1614060816}
+    - target: {fileID: 6637581720832346804, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[0].layer
+      value: Plane
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637581720832346804, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[1].layer
+      value: Boat
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637581720832346804, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[0].layer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637581720832346804, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: origamis.Array.data[1].layer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 7463337047499756864, guid: f55345b846657234f9479dbf3508c276, type: 3}
       propertyPath: m_Name
       value: Player
@@ -273,6 +301,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7463337047499756876, guid: f55345b846657234f9479dbf3508c276, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7733367003832236391, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7733367003832236391, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -821,6 +857,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577d47abbf2b0754d926657899580017, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startTouchPosition: 0
+  difference: 0
 --- !u!1 &1464408275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,6 +1677,30 @@ PrefabInstance:
     - target: {fileID: 4406108789973313482, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
       propertyPath: m_Name
       value: BackgroundImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354968103595516580, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354968103595516580, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354968103595516580, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354968103595516580, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354968103595516580, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6354968103595516580, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 8134016516409867132, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

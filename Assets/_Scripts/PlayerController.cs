@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -28,12 +29,17 @@ public class PlayerController : MonoBehaviour
         maxHorizontalPosition = LevelManager.instance.levelWidth;
     }
 
-    public void Controller(float positionX, float startPositionX)
+    private void FixedUpdate()
+    {
+        Controller();
+    }
+
+    public void Controller()
     {
         if (Time.timeScale!=0)
         {
             //Cacule de la vitesse
-            rb.velocity = new Vector3((startPositionX - positionX) * sensibility, rb.velocity.y, rb.velocity.z) - externalForce;
+            rb.velocity = new Vector3((InputManager.instance.startTouchPosition - InputManager.instance.difference) * sensibility, rb.velocity.y, rb.velocity.z) - externalForce;
             // Clamp de la position sur le jeu
             transform.position = new Vector3(Mathf.Clamp(transform.position.x,-maxHorizontalPosition,maxHorizontalPosition), transform.position.y, transform.position.z);
         }
