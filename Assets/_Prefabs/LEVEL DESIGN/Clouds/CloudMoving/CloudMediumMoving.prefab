@@ -85,8 +85,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.053774565, y: 0.14305636, z: 0.01327407}
-  m_Center: {x: 0.0018436431, y: -0.0008174134, z: 0.0017526674}
+  m_Size: {x: 0.053774565, y: 0.14305636, z: 0.007179053}
+  m_Center: {x: 0.0018436431, y: -0.0008174133, z: 0.0068153255}
 --- !u!114 &-7813334620788855917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,8 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f12a6fc2c1289d45a133942f7472455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cloudSpeed: 5
-  direction: 
+  cloudSpeedX: 5
+  cloudSpeedZ: 5
+  goPlayer: 0
+  goForward: 0
+  goLeft: 0
+  goRight: 0
 --- !u!114 &5025844817014716163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,4 +118,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxCollider: {fileID: -5647010791586382479}
-  rainyCloud: 0
+  cloud: 0

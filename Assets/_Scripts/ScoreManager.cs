@@ -11,15 +11,13 @@ public class ScoreManager : MonoBehaviour
     [Tooltip("Le score affiché dans le canvas, à récupérer dans l'enfant du canvas")]
     [SerializeField] private TextMeshProUGUI scoreText;
     private int score;
-    private int bestScore;
     [Header("Player Transform")]
     [Tooltip("Le transform du joueur, à récupérer dans le joueur")]
     [SerializeField] private Transform playerTransform;
-    [Header("New Record")]
-    [Tooltip("Le game objet du nouveau record, à récupérer dans l'enfant du canvas")]
-    [SerializeField] private GameObject newRecord;
-    [Tooltip("Le texte du nouveau record, à récupérer dans l'enfant du canvas")]
-    [SerializeField] private TextMeshProUGUI newRecordText;
+    [Header("Texts")] 
+    [SerializeField] private TextMeshProUGUI scoreTextGameOver;
+    [SerializeField] private TextMeshProUGUI bestScoreText;
+    
 
     public static ScoreManager instance;
     
@@ -36,15 +34,21 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = "Score : " + score;
     }
 
-    public void SaveBestScore()
+    public void SaveBestScores()
     {
-        bestScore = PlayerPrefs.GetInt("BestScore", 0);
-        if (score>bestScore)
+        for (int i = 0; i < 4; i++)
         {
-            bestScore = score;
-            PlayerPrefs.SetInt("BestScore",bestScore);
-            newRecord.SetActive(true);
-            newRecordText.text = "Best Score" + bestScore;
+            if (score>PlayerPrefs.GetInt("BestScore"+i,0))
+            {
+                for (int j = 0; j < 3-i; j++)
+                {
+                    PlayerPrefs.SetInt("BestScore"+(3-j),PlayerPrefs.GetInt("BestScore"+(3-j-1),0));
+                }
+                PlayerPrefs.SetInt("BestScore" + i, score);
+                break;
+            }
         }
+        scoreTextGameOver.text = score.ToString();
+        bestScoreText.text = PlayerPrefs.GetInt("BestScore0", 0).ToString();
     }
 }
