@@ -1,3 +1,4 @@
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
 
     [Tooltip("Le parent qui regroupe tous les boutons/textes du menu de morts, à récupérer dans l'enfant du canvas")]
     [SerializeField] private GameObject deathMenu;
+    [SerializeField] private GameObject pause;
     
     #endregion
     
@@ -26,6 +28,8 @@ public class GameManager : MonoBehaviour
         
         //Active le menu de mort
         deathMenu.SetActive(true);
+        pause.SetActive(false);
+        
         Time.timeScale = 0;
         //Sauvegarde le jeu
         ScoreManager.instance.SaveBestScores();
