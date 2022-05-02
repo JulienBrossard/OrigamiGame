@@ -48,11 +48,11 @@ public class LevelManager : MonoBehaviour
         sectionLenght = nbSubsection * subSectionLenght;
         InitLevel();
 
-#if UNITY_EDITOR
+
         
         ldName.gameObject.SetActive(true);
         
-#endif
+
     }
 
     private void Update()
@@ -62,11 +62,11 @@ public class LevelManager : MonoBehaviour
             StartCoroutine(NewLevel());
         }
 
-#if UNITY_EDITOR
+
         
         UpdateName();
         
-#endif
+
         
     }
 
@@ -116,7 +116,7 @@ public class LevelManager : MonoBehaviour
     }
 
 
-#if UNITY_EDITOR
+
 
     private RaycastHit hit;
     private int currentID;
@@ -148,5 +148,5 @@ public class LevelManager : MonoBehaviour
         
     }
 
-#endif
+
 }
