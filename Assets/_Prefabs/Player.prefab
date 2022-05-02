@@ -19971,7 +19971,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7463337047499756878}
-  sensibility: 45
+  sensibility: 50
   externalForce: {x: 0, y: 0, z: 0}
 --- !u!114 &7463337047499756872
 MonoBehaviour:
@@ -20042,7 +20042,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d34777a1e2c01fd45836f3d82eca5957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cloudBoxCollider: {fileID: 0}
   origamis:
   - name: Plane
     speed: 11
@@ -20051,6 +20050,7 @@ MonoBehaviour:
     colliderCenter: -0.1561527
     transitionAnimationIndex: 2
     shadow: {fileID: 6637581720828207560}
+    layer: 
   - name: Boat
     speed: 10
     fallSpeed: 10
@@ -20058,6 +20058,7 @@ MonoBehaviour:
     colliderCenter: 0.3812962
     transitionAnimationIndex: 1
     shadow: {fileID: 6637581720828207560}
+    layer: 
   origamiText: {fileID: 0}
   layer:
     serializedVersion: 2
