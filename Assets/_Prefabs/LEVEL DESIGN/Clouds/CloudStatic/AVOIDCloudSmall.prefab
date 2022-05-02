@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 63589900957813578}
   - component: {fileID: 3416306771592577173}
   - component: {fileID: -3204713210013619334}
-  - component: {fileID: -9048138075124331642}
   m_Layer: 0
-  m_Name: CloudSmallMoving
+  m_Name: AVOIDCloudSmall
   m_TagString: Cloud
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,8 +96,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.047487922, y: 0.09231971, z: 0.0062778126}
-  m_Center: {x: -0.0010831737, y: 0.0027268315, z: 0.008358333}
+  m_Size: {x: 0.04685349, y: 0.09195997, z: 0.0039720554}
+  m_Center: {x: -0.0007659602, y: 0.0025146008, z: 0.009260273}
 --- !u!114 &-3204713210013619334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,21 +112,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 3416306771592577173}
   cloud: 0
---- !u!114 &-9048138075124331642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008912050034256543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f12a6fc2c1289d45a133942f7472455, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cloudSpeedX: 5
-  cloudSpeedZ: 5
-  goPlayer: 0
-  goForward: 0
-  goLeft: 0
-  goRight: 0
