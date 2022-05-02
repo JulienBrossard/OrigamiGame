@@ -6,7 +6,7 @@ public class CloudManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && movableCloudParent != null)
         {
             for (int i = 0; i < movableCloudParent.childCount; i++)
             {
