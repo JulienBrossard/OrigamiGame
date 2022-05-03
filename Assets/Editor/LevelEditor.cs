@@ -62,6 +62,33 @@ public class LevelEditor : EditorWindow
             pooler.poolKeys[i].pool.baseCount = 8;
             pooler.poolKeys[i].pool.baseRefreshSpeed = 5;
         }
+
+        filesPath = new List<string>();
+        files = Directory.GetFiles("Assets/_Prefabs/ART/High Score");
+        foreach (var file in files)
+        {
+            if (file.Contains(".meta"))
+            {
+                continue;
+            }
+            filesPath.Add(file);
+        }
+
+        prefabs = new List<GameObject>();
+        foreach (var file in filesPath)
+        {
+            prefabs.Add(AssetDatabase.LoadAssetAtPath<GameObject>(file));
+        }
+        
+        for (int i = 0; i < prefabs.Count; i++)
+        {
+            pooler.poolKeys.Add(new Pooler.PoolKey());
+            pooler.poolKeys[pooler.poolKeys.Count-1].pool = new Pooler.Pool();
+            pooler.poolKeys[pooler.poolKeys.Count-1].key = prefabs[i].name;
+            pooler.poolKeys[pooler.poolKeys.Count-1].pool.prefab = prefabs[i];
+            pooler.poolKeys[pooler.poolKeys.Count-1].pool.baseCount = 8;
+            pooler.poolKeys[pooler.poolKeys.Count-1].pool.baseRefreshSpeed = 5;
+        }
     }
     
 #endif
