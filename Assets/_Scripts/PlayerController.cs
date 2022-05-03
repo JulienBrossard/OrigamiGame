@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         if (Time.timeScale!=0)
         {
             //Cacule de la vitesse
-            rb.velocity = new Vector3((difference - startPosition) * sensibility, rb.velocity.y, rb.velocity.z) - externalForce;
+            rb.velocity = new Vector3((-difference + startPosition) * sensibility, rb.velocity.y, rb.velocity.z) - externalForce;
             // Clamp de la position sur le jeu
             transform.position = new Vector3(Mathf.Clamp(transform.position.x,-maxHorizontalPosition,maxHorizontalPosition), transform.position.y, transform.position.z);
         }

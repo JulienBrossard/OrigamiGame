@@ -118,7 +118,7 @@ public class PlayerManager : MonoBehaviour
     //Update de la position de l'ombre
     void Shadow()
     {
-        if (Physics.Raycast(transform.position,Vector3.down,out hit,Mathf.Infinity,layer))
+        if (Physics.Raycast(transform.position,Vector3.down,out hit,30,layer))
         {
             shadow.transform.position = hit.point;
         }
