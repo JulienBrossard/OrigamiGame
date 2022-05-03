@@ -7,18 +7,12 @@ public class InputManager : MonoBehaviour
     
     private Touch touch;
 
-    [HideInInspector] public float startTouchPosition; //Position du premier toucher
+    float startTouchPosition; //Position du premier toucher
 
-    [HideInInspector] public float difference; //Détecte si le joueur va à gauche ou à droite
+    float difference; //Détecte si le joueur va à gauche ou à droite
 
-    public static InputManager instance;
-    
     #endregion
 
-    private void Awake()
-    {
-        instance = this;
-    }
 
     void Update()
     {
@@ -94,5 +88,10 @@ public class InputManager : MonoBehaviour
             
             #endregion
         }
+    }
+
+    private void FixedUpdate()
+    {
+        PlayerController.instance.Controller(startTouchPosition, difference);
     }
 }
