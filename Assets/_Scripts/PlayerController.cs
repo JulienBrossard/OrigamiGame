@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [Header("Sensibility")]
     [Tooltip("La sensibilité du controller du joueur, de base à 65")]
     [SerializeField] private float sensibility;
-    [HideInInspector] public Vector3 externalForce;
+    [SerializeField] public Vector3 externalForce;
     
     #endregion
 
@@ -30,17 +30,12 @@ public class PlayerController : MonoBehaviour
         sensibility = PlayerPrefs.GetInt("Sensibility", 45);
     }
 
-    private void FixedUpdate()
-    {
-        Controller();
-    }
-
-    public void Controller()
+    public void Controller(float startPosition, float difference)
     {
         if (Time.timeScale!=0)
         {
             //Cacule de la vitesse
-            rb.velocity = new Vector3((InputManager.instance.startTouchPosition - InputManager.instance.difference) * sensibility, rb.velocity.y, rb.velocity.z) - externalForce;
+            rb.velocity = new Vector3((difference - startPosition) * sensibility, rb.velocity.y, rb.velocity.z) - externalForce;
             // Clamp de la position sur le jeu
             transform.position = new Vector3(Mathf.Clamp(transform.position.x,-maxHorizontalPosition,maxHorizontalPosition), transform.position.y, transform.position.z);
         }

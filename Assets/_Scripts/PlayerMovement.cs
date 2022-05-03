@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     [Tooltip("Le fov lors du décollage de l'avion, de base à 90")]
     [SerializeField] private float fov;
 
+    [SerializeField] private float baseFov = 60;
+
     Origami origamiChangement;
 
     #region Horizontal Speeds
@@ -127,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isExitCloud)
         {
-            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60, Time.deltaTime);
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, baseFov, Time.deltaTime);
             return;
         }
 
@@ -156,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
         
         else
         {
-            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, 60, Time.deltaTime);
+            Camera.main.fieldOfView = Mathf.Lerp(Camera.main.fieldOfView, baseFov, Time.deltaTime);
             fallSpeed = PlayerManager.origami[PlayerManager.state].fallSpeed;
             if (speed>0)
             {
