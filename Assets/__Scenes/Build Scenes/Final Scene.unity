@@ -224,7 +224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7463337047499756876, guid: f55345b846657234f9479dbf3508c276, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 7463337047499756876, guid: f55345b846657234f9479dbf3508c276, type: 3}
       propertyPath: m_LocalPosition.z
@@ -639,6 +639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathMenu: {fileID: 1614060814}
   pause: {fileID: 1054608662}
+  UIScore: {fileID: 1614060815}
 --- !u!4 &877934283
 Transform:
   m_ObjectHideFlags: 0
@@ -1768,6 +1769,11 @@ RectTransform:
 --- !u!1 &1614060814 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 44772148, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
+  m_PrefabInstance: {fileID: 1614060810}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1614060815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 333009359374372502, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
   m_PrefabInstance: {fileID: 1614060810}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1614060816 stripped
