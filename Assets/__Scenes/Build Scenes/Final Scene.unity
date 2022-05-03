@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: bee85663f6f3927499ee23d543b86f0e, type: 2}
+  slider: {fileID: 2020300351}
 --- !u!1001 &323235536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -420,16 +421,16 @@ MonoBehaviour:
   prefabsInformation: "Attention le pr\xE9fab et sa key dans le pooler doivent avoir
     exactement le m\xEAme nom"
   levels:
-  - {fileID: 6891972847499270421, guid: 3c521610244f2144bb4f10d12a563339, type: 3}
-  - {fileID: 900981180813015779, guid: cb099946db2041a44b926bd12abf12e5, type: 3}
-  - {fileID: 5754374619872180196, guid: 7ca9ecf473e25bb4aad818559f0efab4, type: 3}
-  - {fileID: 7839605756286630388, guid: e4c1a62b0376b814b9095c5935f6374a, type: 3}
-  - {fileID: 3572785181981932658, guid: 48e74ee636f351a4bb83f84a2f5c4d89, type: 3}
-  - {fileID: 2213818763812762492, guid: 7e6c6d615b1bf694f92bc55df747fee1, type: 3}
-  - {fileID: 7954738728477471456, guid: aa957894a3fcb264e809b63d54e84936, type: 3}
-  - {fileID: 3280747531930713517, guid: 421f1cbcc61b89346adba56c92f73220, type: 3}
-  - {fileID: 9156293503570982811, guid: dcb62b7b68b7ea348a1e43318d689766, type: 3}
-  - {fileID: 6039852494182191501, guid: 92a90e5622aed664397e3ad8699bcb67, type: 3}
+  - {fileID: 6192224067427256808, guid: 3c521610244f2144bb4f10d12a563339, type: 3}
+  - {fileID: 6494904869018901625, guid: cb099946db2041a44b926bd12abf12e5, type: 3}
+  - {fileID: 6692784706019936513, guid: 7ca9ecf473e25bb4aad818559f0efab4, type: 3}
+  - {fileID: 7415412505754608752, guid: e4c1a62b0376b814b9095c5935f6374a, type: 3}
+  - {fileID: 971767641879053152, guid: 40675b29921176f42a0cf13278bd41fa, type: 3}
+  - {fileID: 8754439670233550531, guid: dcb62b7b68b7ea348a1e43318d689766, type: 3}
+  - {fileID: 8336924473112243683, guid: 92a90e5622aed664397e3ad8699bcb67, type: 3}
+  - {fileID: 1468925391976122623, guid: 7e6c6d615b1bf694f92bc55df747fee1, type: 3}
+  - {fileID: 6934628422042197591, guid: aa957894a3fcb264e809b63d54e84936, type: 3}
+  - {fileID: 3241760649858809257, guid: 421f1cbcc61b89346adba56c92f73220, type: 3}
   - {fileID: 7275529538394039468, guid: ae05fade097d8df4aa06a5fdb827a9f8, type: 3}
   - {fileID: 4417947059666056348, guid: 09a6487c623d4724c8a8a82ce4b64151, type: 3}
   - {fileID: 2958237481181299026, guid: 48f78c74018176446b95b153a459d0fd, type: 3}
@@ -493,61 +494,61 @@ MonoBehaviour:
   poolKeys:
   - key: NAC_LD_01
     pool:
-      prefab: {fileID: 6891972847499270421, guid: 3c521610244f2144bb4f10d12a563339, type: 3}
+      prefab: {fileID: 6192224067427256808, guid: 3c521610244f2144bb4f10d12a563339, type: 3}
       baseCount: 8
       baseRefreshSpeed: 5
       refreshSpeed: 5
   - key: NAC_LD_02
     pool:
-      prefab: {fileID: 900981180813015779, guid: cb099946db2041a44b926bd12abf12e5, type: 3}
+      prefab: {fileID: 6494904869018901625, guid: cb099946db2041a44b926bd12abf12e5, type: 3}
       baseCount: 8
       baseRefreshSpeed: 5
       refreshSpeed: 5
   - key: NAC_LD_03
     pool:
-      prefab: {fileID: 5754374619872180196, guid: 7ca9ecf473e25bb4aad818559f0efab4, type: 3}
+      prefab: {fileID: 6692784706019936513, guid: 7ca9ecf473e25bb4aad818559f0efab4, type: 3}
       baseCount: 8
       baseRefreshSpeed: 5
       refreshSpeed: 5
   - key: NAC_LD_04
     pool:
-      prefab: {fileID: 7839605756286630388, guid: e4c1a62b0376b814b9095c5935f6374a, type: 3}
+      prefab: {fileID: 7415412505754608752, guid: e4c1a62b0376b814b9095c5935f6374a, type: 3}
       baseCount: 8
       baseRefreshSpeed: 5
       refreshSpeed: 5
   - key: NAC_LD_05
     pool:
-      prefab: {fileID: 3572785181981932658, guid: 48e74ee636f351a4bb83f84a2f5c4d89, type: 3}
+      prefab: {fileID: 971767641879053152, guid: 40675b29921176f42a0cf13278bd41fa, type: 3}
+      baseCount: 8
+      baseRefreshSpeed: 5
+      refreshSpeed: 5
+  - key: NAC_LD_06
+    pool:
+      prefab: {fileID: 8754439670233550531, guid: dcb62b7b68b7ea348a1e43318d689766, type: 3}
+      baseCount: 8
+      baseRefreshSpeed: 5
+      refreshSpeed: 5
+  - key: NAC_LD_07
+    pool:
+      prefab: {fileID: 8336924473112243683, guid: 92a90e5622aed664397e3ad8699bcb67, type: 3}
       baseCount: 8
       baseRefreshSpeed: 5
       refreshSpeed: 5
   - key: NAC_LD_08
     pool:
-      prefab: {fileID: 2213818763812762492, guid: 7e6c6d615b1bf694f92bc55df747fee1, type: 3}
+      prefab: {fileID: 1468925391976122623, guid: 7e6c6d615b1bf694f92bc55df747fee1, type: 3}
       baseCount: 8
       baseRefreshSpeed: 5
       refreshSpeed: 5
   - key: NAC_LD_09
     pool:
-      prefab: {fileID: 7954738728477471456, guid: aa957894a3fcb264e809b63d54e84936, type: 3}
+      prefab: {fileID: 6934628422042197591, guid: aa957894a3fcb264e809b63d54e84936, type: 3}
       baseCount: 8
       baseRefreshSpeed: 5
       refreshSpeed: 5
   - key: NAC_LD_10
     pool:
-      prefab: {fileID: 3280747531930713517, guid: 421f1cbcc61b89346adba56c92f73220, type: 3}
-      baseCount: 8
-      baseRefreshSpeed: 5
-      refreshSpeed: 5
-  - key: NAC_LD_6
-    pool:
-      prefab: {fileID: 9156293503570982811, guid: dcb62b7b68b7ea348a1e43318d689766, type: 3}
-      baseCount: 8
-      baseRefreshSpeed: 5
-      refreshSpeed: 5
-  - key: NAC_LD_7
-    pool:
-      prefab: {fileID: 6039852494182191501, guid: 92a90e5622aed664397e3ad8699bcb67, type: 3}
+      prefab: {fileID: 3241760649858809257, guid: 421f1cbcc61b89346adba56c92f73220, type: 3}
       baseCount: 8
       baseRefreshSpeed: 5
       refreshSpeed: 5
@@ -620,6 +621,12 @@ MonoBehaviour:
   - key: HighScore
     pool:
       prefab: {fileID: 7458297815744971254, guid: 88b13f5492692474c9c79e1dc9209b86, type: 3}
+      baseCount: 1
+      baseRefreshSpeed: 5
+      refreshSpeed: 5
+  - key: SYO_LD_02
+    pool:
+      prefab: {fileID: 3929415393421685641, guid: 6bfbb58476e8f124d9de4b352f55f545, type: 3}
       baseCount: 1
       baseRefreshSpeed: 5
       refreshSpeed: 5
@@ -1911,3 +1918,91 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2020300350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2020300352}
+  - component: {fileID: 2020300351}
+  m_Layer: 0
+  m_Name: FakeSlider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2020300351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020300350}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_FillRect: {fileID: 0}
+  m_HandleRect: {fileID: 0}
+  m_Direction: 0
+  m_MinValue: 0
+  m_MaxValue: 1
+  m_WholeNumbers: 0
+  m_Value: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!224 &2020300352
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020300350}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -29.572979}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.1675901, y: 3.5371284}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
