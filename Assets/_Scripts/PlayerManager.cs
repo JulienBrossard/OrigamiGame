@@ -101,7 +101,9 @@ public class PlayerManager : MonoBehaviour
     
     public void ChangeShadow()
     {
+        shadow.SetActive(false);
         shadow = origami[state].shadow;
+        shadow.SetActive(true);
     }
 
     public void ChangeLayer()
@@ -118,9 +120,9 @@ public class PlayerManager : MonoBehaviour
     //Update de la position de l'ombre
     void Shadow()
     {
-        if (Physics.Raycast(transform.position,Vector3.down,out hit,30,layer))
+        if (Physics.Raycast(transform.position + Vector3.forward*2,Vector3.down,out hit,30,layer))
         {
-            shadow.transform.position = hit.point;
+            shadow.transform.position = hit.point + Vector3.forward*2 + Vector3.up*0.51f;
         }
     }
 }
