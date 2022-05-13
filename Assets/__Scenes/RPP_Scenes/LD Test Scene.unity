@@ -858,6 +858,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6110eaeb728176b44924c7db2624c3e9, type: 3}
+--- !u!1 &847783090 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6145628374628478552, guid: 9fbe767ce0dd1c545b0bf7ccb7c1b139, type: 3}
+  m_PrefabInstance: {fileID: 1932140052}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &910227676
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,11 +2099,6 @@ MonoBehaviour:
   playerTransform: {fileID: 1140556456}
   scoreTextGameOver: {fileID: 2061731423}
   bestScoreText: {fileID: 2061731422}
---- !u!1 &1748935958 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2614120409124372313, guid: 6110eaeb728176b44924c7db2624c3e9, type: 3}
-  m_PrefabInstance: {fileID: 818201691}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1783061734
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,7 +2151,7 @@ MonoBehaviour:
   prefabsInformation: "Attention le pr\xE9fab et sa key dans le pooler doivent avoir
     exactement le m\xEAme nom"
   levels:
-  - {fileID: 1748935958}
+  - {fileID: 847783090}
   playerTransform: {fileID: 1140556456}
   ldName: {fileID: 2061731421}
   layer:
