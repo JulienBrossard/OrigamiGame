@@ -42,7 +42,10 @@ public class CloudCollision : MonoBehaviour
                 //Le bateau se pose sur le nuage
                 if(PlayerManager.state == PlayerManager.Shapes.BOAT)
                 {
-                    playerMovement.speed = PlayerManager.origami[PlayerManager.state].speed;
+                    if (playerMovement.speed < PlayerManager.origami[PlayerManager.state].speed)
+                    {
+                        playerMovement.speed = PlayerManager.origami[PlayerManager.state].speed;
+                    }
                     playerMovement.fallSpeed = 0;
                 }
                 
