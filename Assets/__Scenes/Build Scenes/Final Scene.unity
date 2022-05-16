@@ -226,6 +226,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7463337047499756877, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: fov
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463337047499756877, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: baseFov
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f55345b846657234f9479dbf3508c276, type: 3}
 --- !u!95 &323235537 stripped
@@ -356,6 +364,8 @@ MonoBehaviour:
   - {fileID: 1849899677199190336, guid: f177441415dce624fbd8dd46a40170c5, type: 3}
   - {fileID: 5292888769291187440, guid: a3711aec172343b4283d41452f7f7cd5, type: 3}
   - {fileID: 6969959503507958361, guid: 30f18c2b44825024b99b3c187d9562e4, type: 3}
+  - {fileID: 3929415393421685641, guid: 6bfbb58476e8f124d9de4b352f55f545, type: 3}
+  - {fileID: 2619005409243890955, guid: d50ed32d3a10104479cf2272d189b44d, type: 3}
   playerTransform: {fileID: 323235538}
   ldName: {fileID: 1731248085}
   layer:
@@ -532,16 +542,22 @@ MonoBehaviour:
       baseCount: 8
       baseRefreshSpeed: 5
       refreshSpeed: 5
-  - key: HighScore
-    pool:
-      prefab: {fileID: 7458297815744971254, guid: 88b13f5492692474c9c79e1dc9209b86, type: 3}
-      baseCount: 1
-      baseRefreshSpeed: 5
-      refreshSpeed: 5
   - key: SYO_LD_02
     pool:
       prefab: {fileID: 3929415393421685641, guid: 6bfbb58476e8f124d9de4b352f55f545, type: 3}
-      baseCount: 1
+      baseCount: 8
+      baseRefreshSpeed: 5
+      refreshSpeed: 5
+  - key: SYO_LD_03
+    pool:
+      prefab: {fileID: 2619005409243890955, guid: d50ed32d3a10104479cf2272d189b44d, type: 3}
+      baseCount: 8
+      baseRefreshSpeed: 5
+      refreshSpeed: 5
+  - key: HIGH_SCORE
+    pool:
+      prefab: {fileID: 7458297815744971254, guid: 88b13f5492692474c9c79e1dc9209b86, type: 3}
+      baseCount: 8
       baseRefreshSpeed: 5
       refreshSpeed: 5
 --- !u!114 &653892417 stripped
