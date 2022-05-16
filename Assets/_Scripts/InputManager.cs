@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour
             
             if (touch.phase == TouchPhase.Moved)
             {
-                difference = (touch.position.x-(Screen.width/2))/Screen.width - startTouchPosition; //ScreenToWorldPoint ne fontionne qu'avec cam ortho sur mobile
+                difference = (touch.position.x)/Screen.width - startTouchPosition; //ScreenToWorldPoint ne fontionne qu'avec cam ortho sur mobile
 
                 #region UI
                 
@@ -54,8 +54,7 @@ public class InputManager : MonoBehaviour
                 
                 #endregion
                 
-                startTouchPosition = (touch.position.x - (Screen.width / 2)) / Screen.width;
-                difference = startTouchPosition;
+                startTouchPosition = touch.position.x / Screen.width;
             }
 
             #endregion
@@ -92,6 +91,6 @@ public class InputManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        PlayerController.instance.Controller(startTouchPosition, difference);
+        PlayerController.instance.Controller(difference);
     }
 }
