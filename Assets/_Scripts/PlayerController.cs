@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
 
     public void Controller(float startPosition, float difference)
     {
+        Debug.Log("Start : "+startPosition + " Diff : "+difference);
         if (Time.timeScale!=0)
         {
             //Cacule de la vitesse
