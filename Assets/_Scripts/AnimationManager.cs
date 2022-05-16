@@ -7,9 +7,10 @@ public class AnimationManager : MonoBehaviour
 
     public static AnimationManager instance;
     
-    [Header("Animator")]
+    [Header("Animators")]
     [Tooltip("L'animator du joueur, à prendre directement sur le joueur")]
     public Animator playerAnimator;
+    public Animator buttonAnimator;
     
     [Header("Animator Controllers")]
     [Tooltip("L'animator controller de la transition d'origami, à récupérer dans le dossier Animation")]
@@ -60,5 +61,10 @@ public class AnimationManager : MonoBehaviour
     public void DoScale(Transform obj)
     {
         obj.DOScale(obj.transform.localScale + Vector3.one * 0.5f, 0.2f).OnComplete((() => obj.DOScale(obj.transform.localScale - Vector3.one * 0.5f, 0.2f)));
+    }
+
+    public void ButtonOrigami()
+    {
+        buttonAnimator.SetBool("PlaneButton", !buttonAnimator.GetBool("PlaneButton"));
     }
 }
