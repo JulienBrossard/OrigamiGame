@@ -14819,7 +14819,7 @@ GameObject:
   - component: {fileID: 4477846048548217988}
   - component: {fileID: 9187854512965041907}
   - component: {fileID: 5426142582445474885}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: VFX_TRAIL_PB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19810,7 +19810,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7463337047499756864}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -19854,8 +19854,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7463337047499756878}
-  fov: 120
-  baseFov: 90
+  fov: 105
+  baseFov: 75
   boostSpeed: 0.3
   boostRainSpeed: 0.46
   reduceSpeed: 0.3
@@ -19957,7 +19957,7 @@ MonoBehaviour:
     colliderCenter: -0.1561527
     transitionAnimationIndex: 2
     shadow: {fileID: 4004698607050739047}
-    layer: 
+    layer: Plane
   - name: Boat
     speed: 10
     fallSpeed: 10
@@ -19965,7 +19965,7 @@ MonoBehaviour:
     colliderCenter: 0.3812962
     transitionAnimationIndex: 1
     shadow: {fileID: 7178869003592068770}
-    layer: 
+    layer: Boat
   origamiText: {fileID: 0}
   layer:
     serializedVersion: 2
@@ -19995,8 +19995,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7463337049034524789}
-  m_LocalRotation: {x: 0.2651325, y: -0.081575185, z: 0.038784787, w: 0.95997196}
-  m_LocalPosition: {x: 2.99, y: 8.58, z: -13.59}
+  m_LocalRotation: {x: 0.16704819, y: -0.08506823, z: 0.030367173, w: 0.9818025}
+  m_LocalPosition: {x: 2.802, y: 6.973, z: -14.198}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20004,7 +20004,7 @@ Transform:
   - {fileID: 1991178994218089046}
   m_Father: {fileID: 7463337047499756876}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 31.022, y: -9.135, z: 2.087}
+  m_LocalEulerAnglesHint: {x: 19.462, y: -9.579, z: 1.897}
 --- !u!20 &7463337049034524791
 Camera:
   m_ObjectHideFlags: 0
@@ -20068,7 +20068,7 @@ GameObject:
   - component: {fileID: 6320374816916040824}
   - component: {fileID: 8093685554430482610}
   - component: {fileID: 7463337048218114028}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Boat
   m_TagString: Player
   m_Icon: {fileID: 0}
