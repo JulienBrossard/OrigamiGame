@@ -91,6 +91,9 @@ public class InputManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        PlayerController.instance.Controller(difference);
+        if (!Tools.instance.IsPointerOverUI())
+        {
+            PlayerController.instance.Controller(difference);
+        }
     }
 }
