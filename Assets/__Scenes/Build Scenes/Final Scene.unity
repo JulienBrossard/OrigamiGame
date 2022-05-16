@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.7735849, g: 0.16420445, b: 0.16420436, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 09c655407c2600e4aac3a1884f4c2412, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -225,6 +225,26 @@ PrefabInstance:
     - target: {fileID: 7463337047499756876, guid: f55345b846657234f9479dbf3508c276, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463337049034524791, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463337049034524791, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.92941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463337049034524791, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.93333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463337049034524791, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.6039216
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463337049034524791, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f55345b846657234f9479dbf3508c276, type: 3}
