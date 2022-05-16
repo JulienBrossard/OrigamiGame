@@ -31,7 +31,7 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         score = (int) Math.Round(playerTransform.position.z,0);
-        scoreText.text = "Score : " + score;
+        scoreText.text = score + "m";
     }
 
     public void SaveBestScores()
