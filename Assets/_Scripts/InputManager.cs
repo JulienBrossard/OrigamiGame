@@ -11,6 +11,8 @@ public class InputManager : MonoBehaviour
 
     float difference; //Détecte si le joueur va à gauche ou à droite
 
+    private bool isMoved;
+
     #endregion
 
 
@@ -55,6 +57,8 @@ public class InputManager : MonoBehaviour
                 #endregion
                 
                 startTouchPosition = touch.position.x / Screen.width;
+
+                isMoved = true;
             }
 
             #endregion
@@ -83,6 +87,7 @@ public class InputManager : MonoBehaviour
                 //Reset les variables
                 difference = 0;
                 startTouchPosition = 0;
+                isMoved = false;
             }
             
             #endregion
@@ -91,7 +96,7 @@ public class InputManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!Tools.instance.IsPointerOverUI())
+        if (isMoved)
         {
             PlayerController.instance.Controller(difference);
         }
