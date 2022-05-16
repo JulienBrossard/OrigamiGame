@@ -26,7 +26,7 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Text Button Origami")] 
     [Tooltip("Le texte affichant le prochain origami lorqu'on appuiera sur le bouton ChangeOrigami, à récupérer dans le texte du bouton Change Origami")]
-    [SerializeField] private TextMeshProUGUI origamiText;
+    [HideInInspector] private GameObject origamiButton;
     
     [Header("Layer")]
     [Tooltip("Les layers que le raycast pour l'ombre peut toucher, de base Everything sans Shadow et Player")]
@@ -45,7 +45,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        changeOrigami += UpdateText;
+        changeOrigami += UpdateButton;
         changeOrigami += ChangeState;
         changeOrigami += ChangeShadow;
         changeOrigami += ChangeLayer;
@@ -112,9 +112,9 @@ public class PlayerManager : MonoBehaviour
     }
     
     //Update le texte afficher sur le bouton de changement d'origami
-    void UpdateText()
+    void UpdateButton()
     {
-        origamiText.text = origami[state].name;
+        AnimationManager.instance.ButtonOrigami();
     }
 
     //Update de la position de l'ombre
