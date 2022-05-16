@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1823728915394308234}
   - component: {fileID: 3424699995981814754}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collider_Feuillages
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 160294196032088217}
   - component: {fileID: 6641390350309550215}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ColliderTronc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8854069775564208249}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LongTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,6 +134,10 @@ PrefabInstance:
     - target: {fileID: 8395226739976196844, guid: f1b847f4359aaa1409eec4e5350434b3, type: 3}
       propertyPath: m_Name
       value: Big_Tree_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 8395226739976196844, guid: f1b847f4359aaa1409eec4e5350434b3, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9208179611837663318, guid: f1b847f4359aaa1409eec4e5350434b3, type: 3}
       propertyPath: m_RootOrder

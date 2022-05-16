@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2932070468219917145}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LittleTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   m_Component:
   - component: {fileID: 393640102992825232}
   - component: {fileID: 7202340440996472005}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ColliderTronc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1120052325614075820}
   - component: {fileID: 8245195940547722399}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ColliderFeuillage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,6 +134,10 @@ PrefabInstance:
     - target: {fileID: 7099743919252627445, guid: c3804fcc7ebeab94489d0b61ed5ae277, type: 3}
       propertyPath: m_Name
       value: Small_Tree_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099743919252627445, guid: c3804fcc7ebeab94489d0b61ed5ae277, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7099743919252627445, guid: c3804fcc7ebeab94489d0b61ed5ae277, type: 3}
       propertyPath: m_IsActive
