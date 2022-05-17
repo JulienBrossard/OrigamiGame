@@ -1990,7 +1990,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1565504502}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AnimationManager, Assembly-CSharp
         m_MethodName: DoScale
         m_Mode: 2
@@ -2474,7 +2474,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1565504502}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AnimationManager, Assembly-CSharp
         m_MethodName: DoScale
         m_Mode: 2
@@ -2803,7 +2803,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857518687}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -400}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2814,7 +2814,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.217025, y: 65.36711}
+  m_AnchoredPosition: {x: -2.217025, y: 58}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &857518689
@@ -3008,7 +3008,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1565504502}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AnimationManager, Assembly-CSharp
         m_MethodName: DoScale
         m_Mode: 2
@@ -3934,7 +3934,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1565504502}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AnimationManager, Assembly-CSharp
         m_MethodName: DoScale
         m_Mode: 2
@@ -4350,7 +4350,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1565504502}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AnimationManager, Assembly-CSharp
         m_MethodName: DoScale
         m_Mode: 2
@@ -5084,7 +5084,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1565504500}
   - component: {fileID: 1565504501}
-  - component: {fileID: 1565504502}
   m_Layer: 0
   m_Name: Animations
   m_TagString: Untagged
@@ -5122,22 +5121,6 @@ MonoBehaviour:
   decors: {fileID: 461597236}
   cloudAnimator: {fileID: 355798963}
   planetAnimator: {fileID: 857518689}
---- !u!114 &1565504502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565504499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e304f0c2e842c54ea7e20fb0fa47307, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerAnimator: {fileID: 0}
-  buttonAnimator: {fileID: 0}
-  origamiTransition: {fileID: 0}
-  planeAnim: {fileID: 0}
 --- !u!1 &1601087436
 GameObject:
   m_ObjectHideFlags: 0
@@ -5306,10 +5289,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scenes:
-  - Finale Scene
+  - Final Scene
   - Tutorial
   - MainMenuFinal
   planetAnimatior: {fileID: 857518689}
+  index: 0
+  planet: {fileID: 857518688}
 --- !u!1 &1674439568
 GameObject:
   m_ObjectHideFlags: 0
@@ -5707,7 +5692,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9149933692270688076, guid: 2911d8750aacc224991f318e8799c610, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -446
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9149933692270688076, guid: 2911d8750aacc224991f318e8799c610, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5715,15 +5700,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9149933692270688076, guid: 2911d8750aacc224991f318e8799c610, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9149933692270688076, guid: 2911d8750aacc224991f318e8799c610, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9149933692270688076, guid: 2911d8750aacc224991f318e8799c610, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 9149933692270688076, guid: 2911d8750aacc224991f318e8799c610, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5998,27 +5983,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b871abeba03318e4b9f18449f3052929, type: 3}
       propertyPath: m_LocalScale.x
-      value: 55425.613
+      value: 55425.605
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b871abeba03318e4b9f18449f3052929, type: 3}
       propertyPath: m_LocalScale.y
-      value: 55425.613
+      value: 55425.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b871abeba03318e4b9f18449f3052929, type: 3}
       propertyPath: m_LocalScale.z
-      value: 55425.613
+      value: 55425.6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b871abeba03318e4b9f18449f3052929, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.2170248
+      value: -2.2170243
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b871abeba03318e4b9f18449f3052929, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 58
+      value: 57.99999
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b871abeba03318e4b9f18449f3052929, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -446.5088
+      value: -0.50878906
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b871abeba03318e4b9f18449f3052929, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6527,7 +6512,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1565504502}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AnimationManager, Assembly-CSharp
         m_MethodName: DoScale
         m_Mode: 2
