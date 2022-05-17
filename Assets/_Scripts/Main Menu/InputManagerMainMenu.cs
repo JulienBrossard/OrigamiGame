@@ -6,6 +6,8 @@ public class InputManagerMainMenu : MonoBehaviour
     float startTouchPosition; //Position du premier toucher
 
     float difference; //Détecte si le joueur va à gauche ou à droite
+
+    [SerializeField] private bool isChooseLevel;
     
     void Update()
     {
@@ -15,9 +17,14 @@ public class InputManagerMainMenu : MonoBehaviour
 
             #region Began
 
-            if (touch.phase == TouchPhase.Began && !Tools.instance.IsPointerOverUI())
+            if (touch.phase == TouchPhase.Began)
             {
-                startTouchPosition = touch.position.x / Screen.width;
+                Debug.Log(touch.position.y + " "+Screen.height);
+                if (touch.position.y>Screen.height/2) 
+                {
+                    isChooseLevel = true;
+                    startTouchPosition = touch.position.x / Screen.width;
+                }
             }
 
             #endregion
@@ -26,7 +33,13 @@ public class InputManagerMainMenu : MonoBehaviour
             
             if (touch.phase == TouchPhase.Ended)
             {
-                difference = (touch.position.x)/Screen.width - startTouchPosition;
+                if (isChooseLevel)
+                {
+                    difference = (touch.position.x)/Screen.width - startTouchPosition;
+                    isChooseLevel = false;
+                    ChooseLevel.instance.Level(difference);
+                    Debug.Log(isChooseLevel);
+                }
             }
             
             #endregion
