@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -11,14 +10,16 @@ public class PlayerController : MonoBehaviour
     [Header("Rigidbody")]
     [Tooltip("Le rigidbody du joueur, à récupérer sur le joueur")]
     [SerializeField] private Rigidbody rb;
-    private float maxHorizontalPosition;
+    [Header("Max Horizontal Position")]
+    [SerializeField] private float maxHorizontalPosition;
     [Header("Sensibility")]
     [Tooltip("La sensibilité du controller du joueur, de base à 65")]
     [SerializeField] private float sensibility;
     [SerializeField] public Vector3 externalForce;
     
     #endregion
-
+    
+   
     private void Awake()
     {
         instance = this;
@@ -26,7 +27,10 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        maxHorizontalPosition = LevelManager.instance.levelWidth;
+        if (LevelManager.instance != null)
+        {
+            maxHorizontalPosition = LevelManager.instance.levelWidth;
+        }
         sensibility = PlayerPrefs.GetInt("Sensibility", 45);
     }
 
