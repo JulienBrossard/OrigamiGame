@@ -1,21 +1,40 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ChooseLevel : MonoBehaviour
 {
-    [SerializeField] private Scene scenes;
-    private int index;
+    [SerializeField] private string[] scenes;
+    [SerializeField] private Animator planetAnimatior;
+    [SerializeField] private int index;
 
-    public static void Level(float sign)
+    public static ChooseLevel instance;
+
+    private void Awake()
     {
-        if (sign<0)
+        instance = this;
+    }
+
+    public void Level(float sign)
+    {
+        index += (int) Mathf.Sign(sign);
+        if (index>=scenes.Length)
         {
-            
+            index = 0;
         }
-        else
+        else if(index<0)
         {
-            
+            index = scenes.Length - 1;
         }
+        Menu.instance.resetSceneName = scenes[index];
+        planetAnimatior.SetInteger("Index",index);
+        StartCoroutine(StopAnim());
+    }
+
+    IEnumerator StopAnim()
+    {
+        yield return new WaitForSeconds(0.2f);
+        planetAnimatior.SetInteger("Index",-1);
     }
 }
