@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour
     {
         if (Time.timeScale !=0)
         {
-            controller.transform.position = new Vector3(Mathf.Clamp(position.x,startPosition.x-150,startPosition.x+150),startPosition.y,startPosition.z);
+            controller.transform.position = new Vector3(Mathf.Clamp(position.x,startPosition.x-300,startPosition.x+300),startPosition.y,startPosition.z);
         }
     }
 
