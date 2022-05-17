@@ -29,12 +29,12 @@ public class ChooseLevel : MonoBehaviour
         }
         Menu.instance.resetSceneName = scenes[index];
         planetAnimatior.SetInteger("Index",index);
-        StartCoroutine(StopAnim());
+        //StartCoroutine(StopAnim());
     }
 
     IEnumerator StopAnim()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(1);
         planetAnimatior.SetInteger("Index",-1);
     }
 }
