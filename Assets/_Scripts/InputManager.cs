@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
@@ -9,8 +10,11 @@ public class InputManager : MonoBehaviour
     float startTouchPosition; //Position du premier toucher
 
     float difference; //Détecte si le joueur va à gauche ou à droite
-    
+
+    private bool isMoved;
+
     #endregion
+
 
     void Update()
     {
@@ -22,7 +26,7 @@ public class InputManager : MonoBehaviour
             
             if (touch.phase == TouchPhase.Moved)
             {
-                difference = (touch.position.x-(Screen.width/2))/Screen.width - startTouchPosition; //ScreenToWorldPoint ne fontionne qu'avec cam ortho sur mobile
+                difference = (touch.position.x)/Screen.width - startTouchPosition; //ScreenToWorldPoint ne fontionne qu'avec cam ortho sur mobile
 
                 #region UI
                 
@@ -52,8 +56,9 @@ public class InputManager : MonoBehaviour
                 
                 #endregion
                 
-                startTouchPosition = (touch.position.x - (Screen.width / 2)) / Screen.width;
-                difference = startTouchPosition;
+                startTouchPosition = touch.position.x / Screen.width;
+
+                isMoved = true;
             }
 
             #endregion
@@ -82,15 +87,18 @@ public class InputManager : MonoBehaviour
                 //Reset les variables
                 difference = 0;
                 startTouchPosition = 0;
+                isMoved = false;
             }
             
             #endregion
         }
+    }
 
-        #region Controller
-
-        PlayerController.instance.Controller(difference,startTouchPosition);
-            
-        #endregion
+    private void FixedUpdate()
+    {
+        if (isMoved)
+        {
+            PlayerController.instance.Controller(difference);
+        }
     }
 }

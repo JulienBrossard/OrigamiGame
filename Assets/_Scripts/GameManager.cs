@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     [Tooltip("Le parent qui regroupe tous les boutons/textes du menu de morts, à récupérer dans l'enfant du canvas")]
     [SerializeField] private GameObject deathMenu;
+    [SerializeField] private GameObject pause;
+    [SerializeField] private GameObject UIScore;
     
     #endregion
     
@@ -26,9 +28,12 @@ public class GameManager : MonoBehaviour
         
         //Active le menu de mort
         deathMenu.SetActive(true);
+        pause.SetActive(false);
+        UIScore.SetActive(false);
+        
         Time.timeScale = 0;
         //Sauvegarde le jeu
-        ScoreManager.instance.SaveBestScore();
+        ScoreManager.instance.SaveBestScores();
         PaperPieceManager.instance.SavePiece();
         Save();
     }

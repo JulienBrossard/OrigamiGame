@@ -35,30 +35,24 @@ public class CloudCollision : MonoBehaviour
                 playerMovement.isExitCloud = false;
                 playerMovement.isCloud = true;
                 
-                PlayerManager.instance.cloudBoxCollider = boxCollider;
-
-                #region Plane
-
-                //L'avion passe à travers le nuage
-                if (PlayerManager.state == PlayerManager.Shapes.PLANE)
-                {
-                    boxCollider.isTrigger = true;
-                }
-                
-                #endregion
+                //PlayerManager.instance.cloudBoxCollider = boxCollider;
 
                 #region Boat
                 
                 //Le bateau se pose sur le nuage
-                else
+                if(PlayerManager.state == PlayerManager.Shapes.BOAT)
                 {
-                    playerMovement.speed = PlayerManager.origami[PlayerManager.state].speed;
+                    if (playerMovement.speed < PlayerManager.origami[PlayerManager.state].speed)
+                    {
+                        playerMovement.speed = PlayerManager.origami[PlayerManager.state].speed;
+                    }
                     playerMovement.fallSpeed = 0;
                 }
                 
                 #endregion
                 
             }
+            Debug.Log("Enter");
         }
     }
 
@@ -96,6 +90,7 @@ public class CloudCollision : MonoBehaviour
         //Reset les variables
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("Exit");
             playerMovement.isExitCloud = true;
             playerMovement.isCloud = false;
         }

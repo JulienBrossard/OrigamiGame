@@ -14,9 +14,7 @@ public class PlayerManager : MonoBehaviour
     public static Shapes state = Shapes.PLANE;
 
     public static Dictionary<Shapes, Origami> origami = new Dictionary<Shapes, Origami>();
-    
-    [HideInInspector] public BoxCollider cloudBoxCollider;
-    
+
     public static PlayerManager instance;
     
     public delegate void ChangeOrigami();
@@ -28,7 +26,7 @@ public class PlayerManager : MonoBehaviour
 
     [Header("Text Button Origami")] 
     [Tooltip("Le texte affichant le prochain origami lorqu'on appuiera sur le bouton ChangeOrigami, à récupérer dans le texte du bouton Change Origami")]
-    [SerializeField] private TextMeshProUGUI origamiText;
+    [HideInInspector] private GameObject origamiButton;
     
     [Header("Layer")]
     [Tooltip("Les layers que le raycast pour l'ombre peut toucher, de base Everything sans Shadow et Player")]
@@ -47,10 +45,10 @@ public class PlayerManager : MonoBehaviour
 
     private void Start()
     {
-        changeOrigami += UpdateText;
-        changeOrigami += TriggerCloud;
+        changeOrigami += UpdateButton;
         changeOrigami += ChangeState;
         changeOrigami += ChangeShadow;
+        changeOrigami += ChangeLayer;
         shadow = origami[state].shadow;
     }
     
@@ -103,31 +101,28 @@ public class PlayerManager : MonoBehaviour
     
     public void ChangeShadow()
     {
+        shadow.SetActive(false);
         shadow = origami[state].shadow;
+        shadow.SetActive(true);
+    }
+
+    public void ChangeLayer()
+    {
+        gameObject.layer = LayerMask.NameToLayer(origami[state].layer);
     }
     
     //Update le texte afficher sur le bouton de changement d'origami
-    void UpdateText()
+    void UpdateButton()
     {
-        origamiText.text = origami[state].name;
+        AnimationManager.instance.ButtonOrigami();
     }
-    
-    //Change l'état Trigger du dernier nuage touché
-    void TriggerCloud()
-    {
-        if (cloudBoxCollider != null)
-        {
-            cloudBoxCollider.isTrigger = !cloudBoxCollider.isTrigger;
-        }
-    }
-
 
     //Update de la position de l'ombre
     void Shadow()
     {
-        if (Physics.Raycast(transform.position,Vector3.down,out hit,Mathf.Infinity,layer))
+        if (Physics.Raycast(transform.position + Vector3.forward*2,Vector3.down,out hit,30,layer))
         {
-            shadow.transform.position = hit.point;
+            shadow.transform.position = hit.point + Vector3.forward*2 + Vector3.up*0.51f;
         }
     }
 }
@@ -154,5 +149,7 @@ public class Origami
     [Header("SHadow")] 
     [Tooltip("L'ombre de cet origami")]
     public GameObject shadow;
+    [Header("Layer")] 
+    public string layer;
 }
 
