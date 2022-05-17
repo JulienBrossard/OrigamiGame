@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class ChooseLevel : MonoBehaviour
 {
@@ -23,12 +21,7 @@ public class ChooseLevel : MonoBehaviour
         Menu.instance.resetSceneName = scenes[index];
         planetAnimatior.SetInteger("Index",index);
     }
-
-    private void Update()
-    {
-        Debug.Log(planet.eulerAngles.x);
-    }
-
+    
     public void Level(float sign)
     {
         index += (int) Mathf.Sign(sign);
