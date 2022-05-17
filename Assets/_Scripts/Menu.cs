@@ -27,6 +27,10 @@ public class Menu : MonoBehaviour
 
     public void Reset()
     {
+        if (ChooseLevel.instance != null)
+        {
+            ChooseLevel.instance.SaveChooseLevel();
+        }
         Time.timeScale = 1;
         SceneManager.LoadScene(resetSceneName);
     }

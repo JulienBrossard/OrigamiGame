@@ -19,7 +19,6 @@ public class InputManagerMainMenu : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
-                Debug.Log(touch.position.y + " "+Screen.height);
                 if (touch.position.y>Screen.height/2) 
                 {
                     isChooseLevel = true;
@@ -38,7 +37,6 @@ public class InputManagerMainMenu : MonoBehaviour
                     difference = (touch.position.x)/Screen.width - startTouchPosition;
                     isChooseLevel = false;
                     ChooseLevel.instance.Level(difference);
-                    Debug.Log(isChooseLevel);
                 }
             }
             
