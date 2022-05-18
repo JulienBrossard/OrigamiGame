@@ -172,6 +172,17 @@ public class Tools : MonoBehaviour
         EventSystem.current.RaycastAll(pe, hits);
         return hits.Count > 0;
     }
+
+    public List<RaycastResult> ObjectPointerOverUI()
+    {
+        var pe = new PointerEventData(EventSystem.current)
+        {
+            position = Input.GetTouch(0).position
+        };
+        var hits = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pe, hits);
+        return hits;
+    }
     
     #endregion
 }
