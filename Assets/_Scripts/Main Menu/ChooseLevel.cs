@@ -40,6 +40,5 @@ public class ChooseLevel : MonoBehaviour
     public void SaveChooseLevel()
     {
         PlayerPrefs.SetInt("IndexAnimPlanet",index);
-        PlayerPrefs.Save();
     }
 }
