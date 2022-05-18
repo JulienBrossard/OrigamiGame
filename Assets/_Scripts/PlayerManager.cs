@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour
     private RaycastHit hit;
     
     [Header("Shadow")]
-    private GameObject shadow;
+    public GameObject shadow;
     
 
     private void Awake()
