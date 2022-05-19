@@ -47,12 +47,12 @@ public class CloudCollision : MonoBehaviour
                         playerMovement.speed = PlayerManager.origami[PlayerManager.state].speed;
                     }
                     playerMovement.fallSpeed = 0;
+                    PlayerManager.instance.shadow.SetActive(false);
                 }
                 
                 #endregion
                 
             }
-            Debug.Log("Enter");
         }
     }
 
@@ -90,9 +90,9 @@ public class CloudCollision : MonoBehaviour
         //Reset les variables
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Exit");
             playerMovement.isExitCloud = true;
             playerMovement.isCloud = false;
+            PlayerManager.instance.shadow.SetActive(true);
         }
     }
 }

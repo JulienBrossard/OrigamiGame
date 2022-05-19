@@ -14,8 +14,7 @@ public class InputManager : MonoBehaviour
     private bool isMoved;
 
     #endregion
-
-
+    
     void Update()
     {
         if (Input.touchCount > 0)

@@ -8,7 +8,7 @@ public class Menu : MonoBehaviour
     #region Declarations
 
     [Tooltip("Le nom de la scène chargée lors du reset")]
-    [SerializeField] private string resetSceneName;
+    [SerializeField] public string resetSceneName;
     [Tooltip("Le nom de la scène du menu principal")]
     [SerializeField] private string mainMenu;
     [Tooltip("Le son d'un bouton lorqu'il est pressé, à récupérer dans le dossier Sounds")]
@@ -16,10 +16,22 @@ public class Menu : MonoBehaviour
     [Tooltip("Le parent regroupant tous les boutons du menu pause")]
     [SerializeField] private Transform pauseMenu;
 
+    public static Menu instance;
+
     #endregion
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public void Reset()
     {
+        if (ChooseLevel.instance != null)
+        {
+            ChooseLevel.instance.SaveChooseLevel();
+        }
+        PlayerPrefs.Save();
         Time.timeScale = 1;
         SceneManager.LoadScene(resetSceneName);
     }

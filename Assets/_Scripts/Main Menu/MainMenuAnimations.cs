@@ -5,8 +5,7 @@ public class MainMenuAnimations : MonoBehaviour
 {
     [SerializeField] private Transform decors;
     [SerializeField] private Animator cloudAnimator;
-    [SerializeField] private Animator planetAnimator;
-    
+
 
     private void Start()
     {
@@ -19,6 +18,5 @@ public class MainMenuAnimations : MonoBehaviour
     public void Decors()
     {
         cloudAnimator.SetBool("VerticalAnimation",true);
-        planetAnimator.SetBool("VerticalAnimation",true);
     }
 }
