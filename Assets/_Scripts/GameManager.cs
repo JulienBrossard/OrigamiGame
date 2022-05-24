@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject UIScore;
 
     [Header("Sound")] [SerializeField] private AudioClip gameOverSound;
+
+    [Header("Dead Particle")] [SerializeField] private GameObject deadParticle;
+
+    [Header("Player")] [SerializeField] private GameObject[] origami;
+    [SerializeField] private Animator playerAnimator;
     
     #endregion
     
@@ -33,7 +38,14 @@ public class GameManager : MonoBehaviour
         pause.SetActive(false);
         UIScore.SetActive(false);
         AudioManager.instance.PlaySound(gameOverSound,1,1,0);
+        deadParticle.SetActive(true);
+        playerAnimator.enabled = false;
         Time.timeScale = 0;
+        for (int i = 0; i < origami.Length; i++)
+        {
+            origami[i].SetActive(false);
+            Debug.Log(origami[i].activeSelf);
+        }
         //Sauvegarde le jeu
         ScoreManager.instance.SaveBestScores();
         PaperPieceManager.instance.SavePiece();
