@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     [Tooltip("La sensibilité du controller du joueur, de base à 65")]
     [SerializeField] private float sensibility;
     [SerializeField] public Vector3 externalForce;
+
+    [Header("Sound")]
+    [SerializeField] public AudioClip planeTurnSound;
     
     #endregion
     

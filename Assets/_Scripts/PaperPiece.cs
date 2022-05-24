@@ -6,6 +6,8 @@ public class PaperPiece : MonoBehaviour, ICollectible
 
     [Tooltip("Le nombre de pièces du joueur, rien à changer ici, c'est juste un Debug")]
     [SerializeField] private int pieces;
+    [Header("Sounds")]
+    [SerializeField] private AudioClip[] sounds;
     
     #endregion
 
@@ -14,6 +16,7 @@ public class PaperPiece : MonoBehaviour, ICollectible
         //Collecte les pièces
         pieces = PlayerPrefs.GetInt("PaperPieces", 0);
         PlayerPrefs.SetInt("PaperPieces",++pieces);
+        AudioManager.instance.PlaySound(sounds[Random.Range(0,sounds.Length)],1,1,0);
         gameObject.SetActive(false);
     }
 }

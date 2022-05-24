@@ -10,6 +10,9 @@ public class AudioManager : MonoBehaviour
     [Header("Music")]
     [Tooltip("La musique du jeu, à récupérer dans le dossier Sounds")]
     [SerializeField] private AudioSource music;
+
+    [Header("Turn Plane Sound")] [SerializeField]
+    private AudioSource wind;
     
     [Header("Sounds Effects")]
     [Tooltip("La liste des AudioSources qui vont jouer les effets sonores du jeu, à récupérer directement sur l'objet actuel")]
@@ -25,7 +28,7 @@ public class AudioManager : MonoBehaviour
     {
         instance = this;
     }
-    
+
     // Joue le son
     public void PlaySound(AudioClip sound, float volume, float speed, float time)
     {
