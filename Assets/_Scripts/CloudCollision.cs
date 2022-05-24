@@ -21,7 +21,6 @@ public class CloudCollision : MonoBehaviour
     [Header("Type of cloud")]
     [Tooltip("Le type de nuage, à changer en fonction du type de notre nuage")]
     [SerializeField] private Cloud cloud;
-
     #endregion
 
     private void OnCollisionEnter(Collision other)

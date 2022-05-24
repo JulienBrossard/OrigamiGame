@@ -35,6 +35,9 @@ public class PlayerManager : MonoBehaviour
     
     [Header("Shadow")]
     public GameObject shadow;
+
+    [Header("Sound")] 
+    [SerializeField] private AudioClip transformationSound;
     
 
     private void Awake()
@@ -97,6 +100,7 @@ public class PlayerManager : MonoBehaviour
         {
             state = Shapes.PLANE;
         }
+        AudioManager.instance.PlaySound(transformationSound,1,1,0);
     }
     
     public void ChangeShadow()

@@ -52,9 +52,9 @@ public class InputManager : MonoBehaviour
                 
                 //Spawn de l'UI du controller
                 UIManager.instance.SpawnControllers(touch.position);
-                
+
                 #endregion
-                
+
                 startTouchPosition = touch.position.x / Screen.width;
 
                 isMoved = true;

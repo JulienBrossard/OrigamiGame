@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject deathMenu;
     [SerializeField] private GameObject pause;
     [SerializeField] private GameObject UIScore;
+
+    [Header("Sound")] [SerializeField] private AudioClip gameOverSound;
     
     #endregion
     
@@ -30,7 +32,7 @@ public class GameManager : MonoBehaviour
         deathMenu.SetActive(true);
         pause.SetActive(false);
         UIScore.SetActive(false);
-        
+        AudioManager.instance.PlaySound(gameOverSound,1,1,0);
         Time.timeScale = 0;
         //Sauvegarde le jeu
         ScoreManager.instance.SaveBestScores();
