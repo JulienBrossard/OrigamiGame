@@ -1744,6 +1744,9 @@ MonoBehaviour:
   pause: {fileID: 1054608662}
   UIScore: {fileID: 1614060815}
   gameOverSound: {fileID: 0}
+  deadParticle: {fileID: 0}
+  origami: []
+  playerAnimator: {fileID: 0}
 --- !u!4 &877934283
 Transform:
   m_ObjectHideFlags: 0
@@ -2270,7 +2273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCheckpoint: {fileID: 636532945}
   tuto: {fileID: 568922259}
-  isSucceed: 0
+  isSucceed: 1
   player: {fileID: 323235538}
 --- !u!1001 &1266762225
 PrefabInstance:
@@ -4346,7 +4349,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2134019243}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
