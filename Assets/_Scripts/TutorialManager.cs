@@ -20,7 +20,8 @@ public class TutorialManager : MonoBehaviour
     public void Retry()
     {
         player.position = currentCheckpoint.position;
-        // Pool l'ancien tuto
+        NextCheckpoint(currentCheckpoint);
+        tuto.SetActive(true);
         Time.timeScale = 0;
     }
     
