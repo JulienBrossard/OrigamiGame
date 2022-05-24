@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
         AudioManager.instance.PlaySound(gameOverSound,1,1,0);
         deadParticle.SetActive(true);
         playerAnimator.enabled = false;
+        AnimationManager.instance.DoMove(deathMenu.transform,-Screen.width / 2, 1);
         Time.timeScale = 0;
         for (int i = 0; i < origami.Length; i++)
         {
