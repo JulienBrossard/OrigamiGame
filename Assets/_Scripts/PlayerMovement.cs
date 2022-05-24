@@ -36,9 +36,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float ascendSpeed;
     [SerializeField] public float fallSpeed;
 
-    [Header("Sound")] 
-    [SerializeField] private AudioClip liftoffSound;
-    
     #endregion
     
     
@@ -140,7 +137,6 @@ public class PlayerMovement : MonoBehaviour
         
         if (PlayerManager.state == PlayerManager.Shapes.PLANE)
         {
-            AudioManager.instance.PlaySound(liftoffSound, 1,1,0);
             if (speed>PlayerManager.origami[PlayerManager.state].speed)
             {
                 speed -= reduceSpeed;

@@ -45,7 +45,6 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < origami.Length; i++)
         {
             origami[i].SetActive(false);
-            Debug.Log(origami[i].activeSelf);
         }
         //Sauvegarde le jeu
         ScoreManager.instance.SaveBestScores();

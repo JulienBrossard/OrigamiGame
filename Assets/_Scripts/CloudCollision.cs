@@ -21,6 +21,8 @@ public class CloudCollision : MonoBehaviour
     [Header("Type of cloud")]
     [Tooltip("Le type de nuage, à changer en fonction du type de notre nuage")]
     [SerializeField] private Cloud cloud;
+
+    [Header("Sounds")] [SerializeField] private AudioClip liftoffSound;
     #endregion
 
     private void OnCollisionEnter(Collision other)
@@ -92,6 +94,11 @@ public class CloudCollision : MonoBehaviour
             playerMovement.isExitCloud = true;
             playerMovement.isCloud = false;
             PlayerManager.instance.shadow.SetActive(true);
+            if (PlayerManager.state == PlayerManager.Shapes.PLANE)
+            {
+                AudioManager.instance.PlaySound(liftoffSound, 1,1f,0);
+            }
         }
+        
     }
 }
