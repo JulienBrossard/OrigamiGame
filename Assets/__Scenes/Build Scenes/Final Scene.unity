@@ -16,8 +16,8 @@ RenderSettings:
   serializedVersion: 9
   m_Fog: 1
   m_FogColor: {r: 0.8784314, g: 0.8784314, b: 0.8784314, a: 1}
-  m_FogMode: 3
-  m_FogDensity: 0.005
+  m_FogMode: 2
+  m_FogDensity: 0.0012
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.7735849, g: 0.16420445, b: 0.16420436, a: 1}
@@ -225,6 +225,22 @@ PrefabInstance:
     - target: {fileID: 7463337047499756876, guid: f55345b846657234f9479dbf3508c276, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463337049034524791, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463337049034524791, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.8666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463337049034524791, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 7463337049034524791, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.32156864
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f55345b846657234f9479dbf3508c276, type: 3}
@@ -986,10 +1002,42 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 142991930}
+    - target: {fileID: 794482808756644638, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 4517.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 794482808756644638, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 10914.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 794482808756644638, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5932
+      objectReference: {fileID: 0}
+    - target: {fileID: 794482808756644638, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1373
+      objectReference: {fileID: 0}
     - target: {fileID: 2172274852051600842, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 653892417}
+    - target: {fileID: 7231130208920749942, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 4692.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 7231130208920749942, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 8955.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 7231130208920749942, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -975
+      objectReference: {fileID: 0}
+    - target: {fileID: 7231130208920749942, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -578
+      objectReference: {fileID: 0}
     - target: {fileID: 8134016516409867132, guid: f091369609e6fbe4dbb5218af54831e6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
