@@ -38,6 +38,7 @@ public class RPP_Music : MonoBehaviour
         }
         musicSource.clip = clipsOrder[currentlipPlaying];
         musicSource.Play();
+        Debug.Log(clipsOrder[currentlipPlaying]);
         yield return new WaitForSeconds(secondsToNewClip);
         StartCoroutine(PlayDaMusique());
     }
