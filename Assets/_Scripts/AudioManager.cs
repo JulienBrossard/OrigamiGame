@@ -1,10 +1,4 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEditor;
-using UnityEngine.Events;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(AudioSource))]
