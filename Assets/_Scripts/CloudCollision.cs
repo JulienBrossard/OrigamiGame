@@ -32,6 +32,8 @@ public class CloudCollision : MonoBehaviour
             playerMovement = other.gameObject.GetComponent<PlayerMovement>();
             if (!playerMovement.isCloud)
             {
+                AudioManager.instance.ChangeWindSound();
+                
                 //Reset les variables
                 playerMovement.isExitCloud = false;
                 playerMovement.isCloud = true;
@@ -91,6 +93,7 @@ public class CloudCollision : MonoBehaviour
         //Reset les variables
         if (other.gameObject.CompareTag("Player"))
         {
+            AudioManager.instance.ChangeWindSound();
             playerMovement.isExitCloud = true;
             playerMovement.isCloud = false;
             PlayerManager.instance.shadow.SetActive(true);
