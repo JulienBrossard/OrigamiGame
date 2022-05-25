@@ -37,4 +37,14 @@ public class PaperPieceManager : MonoBehaviour
     {
         pieces = PlayerPrefs.GetInt("PaperPieces", 0);
     }
+
+    public void TutoReward(int reward)
+    {
+        if (PlayerPrefs.GetInt("FirstTime",0)==0)
+        {
+            pieces = PlayerPrefs.GetInt("PaperPieces", 0);
+            PlayerPrefs.SetInt("PaperPieces",pieces+reward);
+            PlayerPrefs.SetInt("FirstTime",1);
+        }
+    }
 }

@@ -38,6 +38,7 @@ public class Menu : MonoBehaviour
 
     public void MainMenu()
     {
+        GameManager.instance.Save();
         AudioManager.instance.PlaySound(buttonPress, 1, 1, 0);
         Time.timeScale = 1;
         SceneManager.LoadScene(mainMenu);
