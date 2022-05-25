@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         Save();
     }
 
-    void Save()
+    public void Save()
     {
         PlayerPrefs.Save();
     }
