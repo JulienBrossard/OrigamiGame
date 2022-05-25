@@ -13,10 +13,6 @@ public class AudioManager : MonoBehaviour
 
     #region Declarations
     
-    [Header("Music")]
-    [Tooltip("La musique du jeu, à récupérer dans le dossier Sounds")]
-    [SerializeField] private AudioSource music;
-
     [Header("Wind Sounds")] [SerializeField]
     private AudioClip windPlane;
     [SerializeField] private AudioClip windCloud;
