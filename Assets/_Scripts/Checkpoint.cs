@@ -7,14 +7,7 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!TutorialManager.instance.isSucceed)
-        {
-            TutorialManager.instance.Retry();
-        }
-        else
-        {
-            TutorialManager.instance.EnableObject(go);
-            TutorialManager.instance.NextCheckpoint(checkpoint);
-        }
+        TutorialManager.instance.EnableObject(go);
+        TutorialManager.instance.NextCheckpoint(checkpoint); 
     }
 }

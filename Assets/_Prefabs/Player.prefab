@@ -9709,7 +9709,6 @@ MonoBehaviour:
   speed: 11
   ascendSpeed: -7
   fallSpeed: 1
-  liftoffSound: {fileID: 8300000, guid: 696941a066f18de4bbb5dfa0960d539a, type: 3}
   isExitCloud: 0
   isCloud: 0
   boxCollider: {fileID: 7463337047499756873}
@@ -9821,6 +9820,7 @@ MonoBehaviour:
     m_Bits: 319
   shadow: {fileID: 0}
   transformationSound: {fileID: 8300000, guid: 7b6675e5989d37342857405c4d87c86d, type: 3}
+  boatFallSound: {fileID: 8300000, guid: 11e1130ae447afd44b359925459bb7ac, type: 3}
 --- !u!1 &7463337049034524789
 GameObject:
   m_ObjectHideFlags: 0
@@ -10525,7 +10525,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 80a0e53950a57ca40ac3260cfb5c1fac, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10813,7 +10813,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: aee0d6b278abca0468245b4b98d5fc92, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -11198,13 +11198,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 801350380}
-  wind: {fileID: 7077433939527297705}
+  windPlane: {fileID: 8300000, guid: aee0d6b278abca0468245b4b98d5fc92, type: 3}
+  windCloud: {fileID: 8300000, guid: 66e297ffdd3ded340bdcb8ce554e1761, type: 3}
+  windAudioSource: {fileID: 7077433939527297705}
   audioSources:
   - {fileID: 3613998398679175240}
   - {fileID: 8558500793446322035}
   - {fileID: 9038387825404299811}
   - {fileID: 2509998726030537332}
   - {fileID: 8696681402116652495}
+  UISounds:
+  - {fileID: 8300000, guid: 7e8f88f451ee1b4408aabe359aeafd38, type: 3}
+  - {fileID: 8300000, guid: eee84fb3f7b49dc4dab9e8b885aa2531, type: 3}
+  - {fileID: 8300000, guid: 50e7fa552d0976143bc63dda69636875, type: 3}
   audioSourceLenght: 5
   audioSourcesEditor:
   - {fileID: 3613998398679175240}

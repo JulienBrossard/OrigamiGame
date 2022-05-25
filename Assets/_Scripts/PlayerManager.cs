@@ -36,8 +36,9 @@ public class PlayerManager : MonoBehaviour
     [Header("Shadow")]
     public GameObject shadow;
 
-    [Header("Sound")] 
+    [Header("Sounds")] 
     [SerializeField] private AudioClip transformationSound;
+    [SerializeField] private AudioClip boatFallSound;
     
 
     private void Awake()
@@ -95,6 +96,7 @@ public class PlayerManager : MonoBehaviour
         if (state == Shapes.PLANE)
         {
             state = Shapes.BOAT;
+            AudioManager.instance.PlaySound(boatFallSound,1,1,0);
         }
         else
         {

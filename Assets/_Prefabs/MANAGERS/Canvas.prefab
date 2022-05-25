@@ -343,18 +343,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 3685551816041485892}
-        m_TargetAssemblyTypeName: RPP_UIAudioManager, Assembly-CSharp
-        m_MethodName: NormalClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!1 &100399416
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,18 +1014,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3685551816041485892}
-        m_TargetAssemblyTypeName: RPP_UIAudioManager, Assembly-CSharp
-        m_MethodName: ReturnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1086704191
 GameObject:
   m_ObjectHideFlags: 0
@@ -1162,18 +1138,6 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: Reset
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3685551816041485892}
-        m_TargetAssemblyTypeName: RPP_UIAudioManager, Assembly-CSharp
-        m_MethodName: NormalClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1896,18 +1860,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3685551816041485892}
-        m_TargetAssemblyTypeName: RPP_UIAudioManager, Assembly-CSharp
-        m_MethodName: ReturnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &1700489332
 GameObject:
   m_ObjectHideFlags: 0
@@ -2032,18 +1984,6 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: Reset
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3685551816041485892}
-        m_TargetAssemblyTypeName: RPP_UIAudioManager, Assembly-CSharp
-        m_MethodName: NormalClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3237,18 +3177,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3685551816041485892}
-        m_TargetAssemblyTypeName: RPP_UIAudioManager, Assembly-CSharp
-        m_MethodName: NormalClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &8134016516507350595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3712,7 +3640,6 @@ RectTransform:
   - {fileID: 44772149}
   - {fileID: 925675022347205745}
   - {fileID: 1731248084}
-  - {fileID: 3685551816041485889}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3896,76 +3823,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &6205372609071398484
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 8134016517451120460}
-    m_Modifications:
-    - target: {fileID: 7293681143022446609, guid: 00efc5221a5eca64bb18efd0b5db83d9, type: 3}
-      propertyPath: m_Name
-      value: UIAudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293681143022446613, guid: 00efc5221a5eca64bb18efd0b5db83d9, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293681143022446613, guid: 00efc5221a5eca64bb18efd0b5db83d9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.4387145
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293681143022446613, guid: 00efc5221a5eca64bb18efd0b5db83d9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 18.151237
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293681143022446613, guid: 00efc5221a5eca64bb18efd0b5db83d9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.9926069
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293681143022446613, guid: 00efc5221a5eca64bb18efd0b5db83d9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293681143022446613, guid: 00efc5221a5eca64bb18efd0b5db83d9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293681143022446613, guid: 00efc5221a5eca64bb18efd0b5db83d9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293681143022446613, guid: 00efc5221a5eca64bb18efd0b5db83d9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293681143022446613, guid: 00efc5221a5eca64bb18efd0b5db83d9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293681143022446613, guid: 00efc5221a5eca64bb18efd0b5db83d9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7293681143022446613, guid: 00efc5221a5eca64bb18efd0b5db83d9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 00efc5221a5eca64bb18efd0b5db83d9, type: 3}
---- !u!4 &3685551816041485889 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7293681143022446613, guid: 00efc5221a5eca64bb18efd0b5db83d9, type: 3}
-  m_PrefabInstance: {fileID: 6205372609071398484}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3685551816041485892 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7293681143022446608, guid: 00efc5221a5eca64bb18efd0b5db83d9, type: 3}
-  m_PrefabInstance: {fileID: 6205372609071398484}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e03c174fb1508fe4a99d0fb6bdf6cc39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

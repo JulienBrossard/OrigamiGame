@@ -4,7 +4,6 @@ public class TutorialManager : MonoBehaviour
 {
     [SerializeField] public Transform currentCheckpoint;
     [SerializeField] public GameObject tuto;
-    [SerializeField] public bool isSucceed;
     [SerializeField] private Transform player;
     public static TutorialManager instance;
 
