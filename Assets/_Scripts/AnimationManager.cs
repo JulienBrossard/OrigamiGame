@@ -53,16 +53,19 @@ public class AnimationManager : MonoBehaviour
         }
     }
 
+    //Animation des UI (Translation)
     public void DoMove(Transform obj, float translate, float speed)
     {
         obj.DOMove(obj.position + Vector3.right *translate, speed).SetEase(Ease.OutBack, speed).SetUpdate(true);
     }
     
+    // Animation des UI (Bump des boutons)
     public void DoScale(Transform obj)
     {
         obj.DOScale(obj.transform.localScale + Vector3.one * 0.5f, 0.2f).OnComplete((() => obj.DOScale(obj.transform.localScale - Vector3.one * 0.5f, 0.2f)));
     }
 
+    // Animator du bouton de change d'origami
     public void ButtonOrigami()
     {
         buttonAnimator.SetBool("PlaneButton", !buttonAnimator.GetBool("PlaneButton"));

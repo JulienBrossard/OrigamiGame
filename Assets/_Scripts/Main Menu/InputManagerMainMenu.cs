@@ -7,8 +7,6 @@ public class InputManagerMainMenu : MonoBehaviour
 
     float difference; //Détecte si le joueur va à gauche ou à droite
 
-    [SerializeField] private bool isChooseLevel;
-
     void Update()
     {
         if (Input.touchCount > 0)

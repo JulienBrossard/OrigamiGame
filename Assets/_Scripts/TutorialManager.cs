@@ -16,6 +16,7 @@ public class TutorialManager : MonoBehaviour
         instance = this;
     }
 
+    //Reccomencer si le joueur loupe le tuto
     public void Retry()
     {
         player.position = currentCheckpoint.position;
@@ -25,12 +26,14 @@ public class TutorialManager : MonoBehaviour
         Time.timeScale = 0;
     }
     
+    //Activer l'objet
     public void EnableObject(GameObject go)
     {
         tuto = go;
         tuto.SetActive(!tuto.activeSelf);
     }
 
+    //Update le checkpoint
     public void NextCheckpoint(Transform nextCheckpoint)
     {
         currentCheckpoint = nextCheckpoint;

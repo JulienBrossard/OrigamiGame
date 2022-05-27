@@ -10,11 +10,11 @@ public class PlayerCollision : MonoBehaviour
         if (!other.gameObject.CompareTag("Cloud") && !other.gameObject.CompareTag("Paper Piece"))
         {
             scene = SceneManager.GetActiveScene();
-            if (scene.name == "Tutorial")
+            if (scene.name == "Tutorial") //Si dans tuto active la fonction retry
             {
                 TutorialManager.instance.Retry();
             }
-            else
+            else //Sinon failed
             {
                 GameManager.instance.Failed();
             }

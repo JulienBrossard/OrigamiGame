@@ -10,7 +10,7 @@ public class CloudManager : MonoBehaviour
         {
             for (int i = 0; i < movableCloudParent.childCount; i++)
             {
-                movableCloudParent.GetChild(i).GetComponent<CloudMovement>().enabled = true;
+                movableCloudParent.GetChild(i).GetComponent<CloudMovement>().enabled = true; //Active les nuages dynamiques lorsque l'on rentre dans un nouveau LD
             }
         }
     }

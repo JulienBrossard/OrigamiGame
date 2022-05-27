@@ -10,17 +10,23 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
+        #region Initialisation
+        
         skins[0].index = PlayerPrefs.GetInt("IndexShopBoat");
         NextSkinBoat(0);
         skins[1].index = PlayerPrefs.GetInt("IndexShopPlane");
         NextSkinPlane(0);
         DisplayMoney();
-        PlayerPrefs.SetInt("Purchased Skin Boat" + 0, 1);
-        PlayerPrefs.SetInt("Purchased Skin Plane" + 0, 1);
+        PlayerPrefs.SetInt("Purchased Skin Boat" + 0, 1); // Skin de base gratuit
+        PlayerPrefs.SetInt("Purchased Skin Plane" + 0, 1); // Skin de base gratuit
+        
+        #endregion
     }
 
+    //Skins du bateau
     public void NextSkinBoat(int next)
     {
+        // Index du shop
         skins[0].index -= next;
         if (skins[0].index<0)
         {
@@ -30,6 +36,8 @@ public class Shop : MonoBehaviour
         {
             skins[0].index = 0;
         }
+        
+        // Sprites affichés dans le shop
         for (int i = -1; i < 2; i++)
         {
             if (skins[0].index+i<0)
@@ -46,6 +54,7 @@ public class Shop : MonoBehaviour
             }
         }
 
+        // Si déjà acheté
         if (PlayerPrefs.GetInt("Purchased Skin Boat"+skins[0].index,0)==1)
         {
             skins[0].origami.GetComponent<MeshRenderer>().material = skins[0].materials[skins[0].index];
@@ -53,6 +62,7 @@ public class Shop : MonoBehaviour
             skins[0].purshasedButton.SetActive(false);
             skins[0].padlock.SetActive(false);
         }
+        //Si pas acheté
         else
         {
             skins[0].purshasedButton.gameObject.SetActive(true);
@@ -61,8 +71,10 @@ public class Shop : MonoBehaviour
         }
     }
     
+    //Skins de l'avion
     public void NextSkinPlane(int next)
     {
+        // Index du shop
         skins[1].index -= next;
         if (skins[1].index<0)
         {
@@ -72,6 +84,8 @@ public class Shop : MonoBehaviour
         {
             skins[1].index = 0;
         }
+        
+        // Sprites affichés dans le shop
         for (int i = -1; i < 2; i++)
         {
             if (skins[1].index+i<0)
@@ -87,6 +101,8 @@ public class Shop : MonoBehaviour
                 skins[1].images[i+1].sprite = skins[1].sprites[skins[1].index+i];
             }
         }
+        
+        // Si déjà acheté
         if (PlayerPrefs.GetInt("Purchased Skin Plane"+skins[1].index,0)==1)
         {
             skins[1].origami.GetComponent<SkinnedMeshRenderer>().material = skins[1].materials[skins[1].index];
@@ -94,6 +110,7 @@ public class Shop : MonoBehaviour
             skins[1].purshasedButton.SetActive(false);
             skins[1].padlock.SetActive(false);
         }
+        //Si pas acheté
         else
         {
             skins[1].purshasedButton.gameObject.SetActive(true);
@@ -102,8 +119,10 @@ public class Shop : MonoBehaviour
         }
     }
 
+    //Acheter un skin
     public void Purchased(string origami)
     {
+        //Si avion et assez d'argent
         if (origami == "Plane" && PlayerPrefs.GetInt("PaperPieces",0)>=skins[1].prices[skins[1].index])
         {
             PlayerPrefs.SetInt("PaperPieces",PlayerPrefs.GetInt("PaperPieces",0)-skins[1].prices[skins[1].index]);
@@ -113,6 +132,7 @@ public class Shop : MonoBehaviour
             skins[1].purshasedButton.SetActive(false);
             skins[1].padlock.SetActive(false);
         }
+        //Si bateau et assez d'argent
         else if(origami == "Boat" && PlayerPrefs.GetInt("PaperPieces",0)>=skins[0].prices[skins[0].index])
         {
             PlayerPrefs.SetInt("PaperPieces",PlayerPrefs.GetInt("PaperPieces",0)-skins[0].prices[skins[0].index]);
@@ -122,9 +142,11 @@ public class Shop : MonoBehaviour
             skins[0].purshasedButton.SetActive(false);
             skins[0].padlock.SetActive(false);
         }
+        //Afficher l'argent restant
         DisplayMoney();
     }
 
+    //Afficher l'argent du joueur
     public void DisplayMoney()
     {
         money.text = PlayerPrefs.GetInt("PaperPieces", 0).ToString();

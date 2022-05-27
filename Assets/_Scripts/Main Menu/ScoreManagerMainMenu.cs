@@ -10,7 +10,7 @@ public class ScoreManagerMainMenu : MonoBehaviour
     {
         for (int i = 0; i < bestScores.Length; i++)
         {
-            bestScores[i].text = PlayerPrefs.GetInt("BestScore" + i, 0).ToString();
+            bestScores[i].text = PlayerPrefs.GetInt("BestScore" + i, 0).ToString(); // Affichage des meilleurs scores dans le main menu
         }
     }
 }
