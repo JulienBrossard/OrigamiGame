@@ -15,6 +15,8 @@ public class Shop : MonoBehaviour
         skins[1].index = PlayerPrefs.GetInt("IndexShopPlane");
         NextSkinPlane(0);
         DisplayMoney();
+        PlayerPrefs.SetInt("Purchased Skin Boat" + 0, 1);
+        PlayerPrefs.SetInt("Purchased Skin Plane" + 0, 1);
     }
 
     public void NextSkinBoat(int next)
@@ -44,7 +46,7 @@ public class Shop : MonoBehaviour
             }
         }
 
-        if (PlayerPrefs.GetInt("Purchased Skin"+skins[0].index,0)==1)
+        if (PlayerPrefs.GetInt("Purchased Skin Boat"+skins[0].index,0)==1)
         {
             skins[0].origami.GetComponent<MeshRenderer>().material = skins[0].materials[skins[0].index];
             PlayerPrefs.SetInt("IndexShopBoat",skins[0].index);
@@ -85,7 +87,7 @@ public class Shop : MonoBehaviour
                 skins[1].images[i+1].sprite = skins[1].sprites[skins[1].index+i];
             }
         }
-        if (PlayerPrefs.GetInt("Purchased Skin"+skins[1].index,0)==1)
+        if (PlayerPrefs.GetInt("Purchased Skin Plane"+skins[1].index,0)==1)
         {
             skins[1].origami.GetComponent<SkinnedMeshRenderer>().material = skins[1].materials[skins[1].index];
             PlayerPrefs.SetInt("IndexShopPlane",skins[1].index);
@@ -105,16 +107,16 @@ public class Shop : MonoBehaviour
         if (origami == "Plane" && PlayerPrefs.GetInt("PaperPieces",0)>=skins[1].prices[skins[1].index])
         {
             PlayerPrefs.SetInt("PaperPieces",PlayerPrefs.GetInt("PaperPieces",0)-skins[1].prices[skins[1].index]);
-            PlayerPrefs.SetInt("Purchased Skin"+skins[1].index,1);
+            PlayerPrefs.SetInt("Purchased Skin Plane"+skins[1].index,1);
             PlayerPrefs.SetInt("IndexShopPlane",skins[1].index);
-            skins[1].origami.GetComponent<MeshRenderer>().material = skins[1].materials[skins[1].index];
+            skins[1].origami.GetComponent<SkinnedMeshRenderer>().material = skins[1].materials[skins[1].index];
             skins[1].purshasedButton.SetActive(false);
             skins[1].padlock.SetActive(false);
         }
         else if(origami == "Boat" && PlayerPrefs.GetInt("PaperPieces",0)>=skins[0].prices[skins[0].index])
         {
             PlayerPrefs.SetInt("PaperPieces",PlayerPrefs.GetInt("PaperPieces",0)-skins[0].prices[skins[0].index]);
-            PlayerPrefs.SetInt("Purchased Skin"+skins[0].index,1);
+            PlayerPrefs.SetInt("Purchased Skin Boat"+skins[0].index,1);
             PlayerPrefs.SetInt("IndexShopPlane",skins[0].index);
             skins[0].origami.GetComponent<MeshRenderer>().material = skins[0].materials[skins[0].index];
             skins[0].purshasedButton.SetActive(false);
