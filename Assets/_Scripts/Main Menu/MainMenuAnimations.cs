@@ -16,11 +16,13 @@ public class MainMenuAnimations : MonoBehaviour
     {
         fade.DOFade(0, 1.0f) // Anim du fade
             .OnComplete(() =>
-            (decors.DOLocalMoveY(Screen.height / 4, 2).SetEase(Ease.OutBack, 2).SetUpdate(true)) // Anim du décors qui translate vers le bas
-            .OnComplete(() => 
-            Decors()) // Lancement de l'animation haut-Bas du Décors
-            .OnComplete(() => 
-                fade.gameObject.SetActive(false) )); // Désactivation de l'objet du fade
+                (decors.DOLocalMoveY(Screen.height / 4, 2).SetEase(Ease.OutBack, 2)
+                    .SetUpdate(true)) // Anim du décors qui translate vers le bas
+                .OnComplete(() =>
+                {
+                    Decors(); // Lancement de l'animation haut-Bas du Décors
+                    fade.gameObject.SetActive(false); // Désactivation de l'objet du fade
+                })); 
     }
 
     public void Decors()
