@@ -15,7 +15,9 @@ public class MainMenuAnimations : MonoBehaviour
             .OnComplete(() =>
             (decors.DOLocalMoveY(Screen.height / 4, 2).SetEase(Ease.OutBack, 2).SetUpdate(true))
             .OnComplete(() => 
-            Decors()));
+            Decors())
+            .OnComplete(() => 
+                fade.gameObject.SetActive(false) ));
     }
 
     public void Decors()
