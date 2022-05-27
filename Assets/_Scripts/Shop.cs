@@ -12,14 +12,14 @@ public class Shop : MonoBehaviour
     {
         #region Initialisation
         
+        PlayerPrefs.SetInt("Purchased Skin Boat" + 0, 1); // Skin de base gratuit
+        PlayerPrefs.SetInt("Purchased Skin Plane" + 0, 1); // Skin de base gratuit
         skins[0].index = PlayerPrefs.GetInt("IndexShopBoat");
         NextSkinBoat(0);
         skins[1].index = PlayerPrefs.GetInt("IndexShopPlane");
         NextSkinPlane(0);
         DisplayMoney();
-        PlayerPrefs.SetInt("Purchased Skin Boat" + 0, 1); // Skin de base gratuit
-        PlayerPrefs.SetInt("Purchased Skin Plane" + 0, 1); // Skin de base gratuit
-        
+
         #endregion
     }
 
