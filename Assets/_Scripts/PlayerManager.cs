@@ -96,13 +96,13 @@ public class PlayerManager : MonoBehaviour
         if (state == Shapes.PLANE)
         {
             state = Shapes.BOAT;
-            AudioManager.instance.PlaySound(boatFallSound,1,1,0);
+            AudioManager.instance.PlaySound(boatFallSound,0.2f,1,0);
         }
         else
         {
             state = Shapes.PLANE;
         }
-        AudioManager.instance.PlaySound(transformationSound,1,1,0);
+        AudioManager.instance.PlaySound(transformationSound,0.5f,1,0);
     }
     
     public void ChangeShadow()
