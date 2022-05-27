@@ -99,5 +99,9 @@ public class InputManager : MonoBehaviour
         {
             PlayerController.instance.Controller(difference);
         }
+        else
+        {
+            PlayerController.instance.ExternalForce();
+        }
     }
 }
