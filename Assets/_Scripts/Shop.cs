@@ -102,19 +102,19 @@ public class Shop : MonoBehaviour
 
     public void Purchased(string origami)
     {
-        if (origami == "Plane" && PlayerPrefs.GetInt("PaperPieces",0)>skins[1].prices[skins[1].index])
+        if (origami == "Plane" && PlayerPrefs.GetInt("PaperPieces",0)>=skins[1].prices[skins[1].index])
         {
             PlayerPrefs.SetInt("PaperPieces",PlayerPrefs.GetInt("PaperPieces",0)-skins[1].prices[skins[1].index]);
-            PlayerPrefs.SetInt("Purchased Skin"+skins[1].index,skins[1].index);
+            PlayerPrefs.SetInt("Purchased Skin"+skins[1].index,1);
             PlayerPrefs.SetInt("IndexShopPlane",skins[1].index);
             skins[1].origami.GetComponent<MeshRenderer>().material = skins[1].materials[skins[1].index];
             skins[1].purshasedButton.SetActive(false);
             skins[1].padlock.SetActive(false);
         }
-        else if(origami == "Boat" && PlayerPrefs.GetInt("PaperPieces",0)>skins[0].prices[skins[0].index])
+        else if(origami == "Boat" && PlayerPrefs.GetInt("PaperPieces",0)>=skins[0].prices[skins[0].index])
         {
             PlayerPrefs.SetInt("PaperPieces",PlayerPrefs.GetInt("PaperPieces",0)-skins[0].prices[skins[0].index]);
-            PlayerPrefs.SetInt("Purchased Skin"+skins[0].index,skins[0].index);
+            PlayerPrefs.SetInt("Purchased Skin"+skins[0].index,1);
             PlayerPrefs.SetInt("IndexShopPlane",skins[0].index);
             skins[0].origami.GetComponent<MeshRenderer>().material = skins[0].materials[skins[0].index];
             skins[0].purshasedButton.SetActive(false);
