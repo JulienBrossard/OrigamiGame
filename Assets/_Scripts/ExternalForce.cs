@@ -14,7 +14,7 @@ public class ExternalForce : MonoBehaviour
         //Ajoute de la force quand le joueur rentre en collision avec l'objet
         if (other.CompareTag("Player"))
         {
-            PlayerController.instance.externalForce += externalForce;
+            PlayerController.instance.externalForce += -externalForce;
         }
     }
 
@@ -23,7 +23,7 @@ public class ExternalForce : MonoBehaviour
         //Supprime la force quand le joueur sort du point de contact avec l'objet
         if (other.CompareTag("Player"))
         {
-            PlayerController.instance.externalForce -= externalForce;
+            PlayerController.instance.externalForce -= -externalForce;
         }
     }
 }
