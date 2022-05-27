@@ -87,7 +87,7 @@ public class Shop : MonoBehaviour
         }
         if (PlayerPrefs.GetInt("Purchased Skin"+skins[1].index,0)==1)
         {
-            skins[1].origami.GetComponent<MeshRenderer>().material = skins[1].materials[skins[1].index];
+            skins[1].origami.GetComponent<SkinnedMeshRenderer>().material = skins[1].materials[skins[1].index];
             PlayerPrefs.SetInt("IndexShopPlane",skins[1].index);
             skins[1].purshasedButton.SetActive(false);
             skins[1].padlock.SetActive(false);
