@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
     public void ExternalForce()
     {
-        rb.velocity = new Vector3(-externalForce.x,rb.velocity.y-externalForce.y,rb.velocity.z+-externalForce.z);
+        rb.velocity = new Vector3(-externalForce.x,rb.velocity.y+externalForce.y,rb.velocity.z+externalForce.z);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x,-maxHorizontalPosition,maxHorizontalPosition), transform.position.y, transform.position.z);
     }
 }
