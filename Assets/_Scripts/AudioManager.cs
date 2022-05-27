@@ -31,13 +31,17 @@ public class AudioManager : MonoBehaviour
     }
 
 
+    //Si doigt au-dessus d'un UI jouer le son des boutons
     private void OnMouseUpAsButton()
     {
         PlaySound(UISounds[Random.Range(0, UISounds.Length)],1,1,0);
     }
 
+    // Son du vent sur nuage ou en avion dans les airs
     public void ChangeWindSound()
     {
+        #region Cloud
+
         if (windAudioSource.clip == windPlane)
         {
             windAudioSource.Stop();
@@ -45,9 +49,16 @@ public class AudioManager : MonoBehaviour
             windAudioSource.Play();
             return;
         }
+
+        #endregion
+
+        #region Plane
+
         windAudioSource.Stop();
         windAudioSource.clip = windPlane;
         windAudioSource.Play();
+
+        #endregion
     }
 
     // Joue le son

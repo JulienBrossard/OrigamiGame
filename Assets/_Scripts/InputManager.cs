@@ -95,10 +95,12 @@ public class InputManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Déplacement seulement si il ne touche pas d'UI
         if (isMoved)
         {
             PlayerController.instance.Controller(difference);
         }
+        //Active les forces extérieurs même si le joueur ne se déplace pas
         else
         {
             PlayerController.instance.ExternalForce();

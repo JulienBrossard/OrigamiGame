@@ -7,7 +7,7 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        TutorialManager.instance.EnableObject(go);
-        TutorialManager.instance.NextCheckpoint(checkpoint); 
+        TutorialManager.instance.EnableObject(go); //Active l'objet
+        TutorialManager.instance.NextCheckpoint(checkpoint); // Dernier checkpoint atteint
     }
 }

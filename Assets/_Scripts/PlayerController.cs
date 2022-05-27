@@ -17,9 +17,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float sensibility;
     [SerializeField] public Vector3 externalForce;
 
-    [Header("Sound")]
-    [SerializeField] public AudioClip planeTurnSound;
-    
     #endregion
     
    
