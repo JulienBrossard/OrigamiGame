@@ -64,4 +64,10 @@ public class Menu : MonoBehaviour
         AnimationManager.instance.DoMove(pauseMenu, Screen.width / 2,1);
         Time.timeScale = 1;
     }
+
+    public void ContinueTuto()
+    {
+        AudioManager.instance.PlaySound(buttonPress, 1, 1, 0);
+        Time.timeScale = 1;
+    }
 }
