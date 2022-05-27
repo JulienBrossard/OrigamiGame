@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEditor;
 
@@ -8,7 +7,7 @@ public class ShopEditor : MonoBehaviour
     private static GameObject origami;
 
     // Creates a new menu item 'Examples > Create Prefab' in the main menu.
-    static public void ChangeMaterial(string prefab, Material material)
+    static void ChangeMaterial(string prefab, Material material)
     {
         // Loop through every GameObject in the array above
         localPath = "Assets/Prefabs/" + prefab + ".prefab";
