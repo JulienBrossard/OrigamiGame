@@ -22,57 +22,10 @@ MonoBehaviour:
     defaultState: 1
   intensity:
     overrideState: 1
-    value: 0.05
+    value: 0.04
   fastMode:
     overrideState: 1
     value: 1
---- !u!114 &-1830005670561933345
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48a79b01ea5641d4aa6daa2e23605641, type: 3}
-  m_Name: Bloom
-  m_EditorClassIdentifier: 
-  active: 1
-  enabled:
-    overrideState: 1
-    value: 1
-  intensity:
-    overrideState: 1
-    value: 10
-  threshold:
-    overrideState: 0
-    value: 1
-  softKnee:
-    overrideState: 0
-    value: 0.5
-  clamp:
-    overrideState: 0
-    value: 65472
-  diffusion:
-    overrideState: 0
-    value: 7
-  anamorphicRatio:
-    overrideState: 0
-    value: 0
-  color:
-    overrideState: 1
-    value: {r: 0.21115166, g: 0.4432693, b: 0.6132076, a: 1}
-  fastMode:
-    overrideState: 1
-    value: 1
-  dirtTexture:
-    overrideState: 0
-    value: {fileID: 0}
-    defaultState: 1
-  dirtIntensity:
-    overrideState: 0
-    value: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,7 +39,6 @@ MonoBehaviour:
   m_Name: PostProcess Profile
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: -1830005670561933345}
   - {fileID: -4387436894228643333}
   - {fileID: 3510090553220446735}
   - {fileID: 2677751807258638597}
@@ -112,10 +64,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.05
+    value: 0.1
   size:
     overrideState: 1
-    value: 3
+    value: 2
   lumContrib:
     overrideState: 0
     value: 0.8
@@ -146,7 +98,7 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.02
+    value: 0.3
   smoothness:
     overrideState: 0
     value: 0.2
@@ -216,10 +168,10 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: 15
+    value: 5
   tint:
     overrideState: 1
-    value: -10
+    value: -5
   colorFilter:
     overrideState: 0
     value: {r: 1, g: 1, b: 1, a: 1}
@@ -228,16 +180,16 @@ MonoBehaviour:
     value: 0
   saturation:
     overrideState: 1
-    value: 40
+    value: 10
   brightness:
     overrideState: 0
-    value: 0
+    value: 2
   postExposure:
     overrideState: 0
     value: 0
   contrast:
-    overrideState: 1
-    value: 10
+    overrideState: 0
+    value: 5
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
