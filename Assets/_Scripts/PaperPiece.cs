@@ -16,7 +16,7 @@ public class PaperPiece : MonoBehaviour, ICollectible
         //Collecte les pièces
         pieces = PlayerPrefs.GetInt("PaperPieces", 0);
         PlayerPrefs.SetInt("PaperPieces",++pieces);
-        AudioManager.instance.PlaySound(sounds[Random.Range(0,sounds.Length)],1,1,0);
+        AudioManager.instance.PlaySound(sounds[Random.Range(0,sounds.Length)],0.1f,1,0);
         gameObject.SetActive(false);
     }
 }

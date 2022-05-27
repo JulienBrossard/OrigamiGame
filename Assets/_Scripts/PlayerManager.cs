@@ -96,7 +96,7 @@ public class PlayerManager : MonoBehaviour
         if (state == Shapes.PLANE)
         {
             state = Shapes.BOAT;
-            AudioManager.instance.PlaySound(boatFallSound,0.2f,1,0);
+            AudioManager.instance.PlaySound(boatFallSound,0.1f,1,0);
         }
         else
         {
