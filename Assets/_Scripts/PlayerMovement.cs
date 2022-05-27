@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(BoxCollider), typeof(Animator))]
@@ -14,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float baseFov = 60;
 
     Origami origamiChangement;
+
+    public static PlayerMovement instance;
 
     #region Horizontal Speeds
 
@@ -64,6 +67,11 @@ public class PlayerMovement : MonoBehaviour
             speed = value;
             AnimationManager.instance.OrigamiTransition();
         }
+    }
+
+    private void Awake()
+    {
+        instance = this;
     }
 
     private void Start()

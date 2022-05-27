@@ -21,6 +21,7 @@ public class TutorialManager : MonoBehaviour
         player.position = currentCheckpoint.position;
         NextCheckpoint(currentCheckpoint);
         tuto.SetActive(true);
+        PlayerMovement.instance.ChangeOrigami();
         Time.timeScale = 0;
     }
     
