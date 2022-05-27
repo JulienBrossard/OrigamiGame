@@ -99,7 +99,7 @@ public class CloudCollision : MonoBehaviour
             PlayerManager.instance.shadow.SetActive(true);
             if (PlayerManager.state == PlayerManager.Shapes.PLANE)
             {
-                AudioManager.instance.PlaySound(liftoffSound, 1,1f,0);
+                AudioManager.instance.PlaySound(liftoffSound, 0.65f,1f,0);
             }
         }
         
