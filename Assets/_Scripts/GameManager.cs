@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -34,14 +35,14 @@ public class GameManager : MonoBehaviour
         //Debug.Log(Application.persistentDataPath + "/" + "testImage");
         
         //Active le menu de mort
-        deathMenu.SetActive(true);
+        StartCoroutine(DeathMenu());
         pause.SetActive(false);
         UIScore.SetActive(false);
         AudioManager.instance.PlaySound(gameOverSound,1,1,0);
         deadParticle.SetActive(true);
         playerAnimator.enabled = false;
         AnimationManager.instance.DoMove(deathMenu.transform,-Screen.width / 2, 1);
-        Time.timeScale = 0;
+        PlayerController.instance.enabled = false;
         for (int i = 0; i < origami.Length; i++)
         {
             origami[i].SetActive(false);
@@ -50,6 +51,13 @@ public class GameManager : MonoBehaviour
         ScoreManager.instance.SaveBestScores();
         PaperPieceManager.instance.SavePiece();
         Save();
+    }
+
+    public IEnumerator DeathMenu()
+    {
+        yield return new WaitForSeconds(1);
+        Time.timeScale = 0;
+        deathMenu.SetActive(true);
     }
 
     public void Save()
