@@ -434,7 +434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e0f4f6a09caa84a8a4116d5547ef1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isChooseLevel: 0
 --- !u!1 &294016306
 GameObject:
   m_ObjectHideFlags: 0
@@ -4117,7 +4116,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.7
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -6258,8 +6257,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decors: {fileID: 461597236}
-  cloudAnimator: {fileID: 355798963}
   fade: {fileID: 601572410}
+  cloudAnimator: {fileID: 355798963}
 --- !u!1 &1601087436
 GameObject:
   m_ObjectHideFlags: 0
@@ -6433,8 +6432,6 @@ MonoBehaviour:
   - Final Scene
   - MainMenuFinal
   planetAnimatior: {fileID: 857518689}
-  index: 0
-  planet: {fileID: 857518688}
 --- !u!114 &1614793181
 MonoBehaviour:
   m_ObjectHideFlags: 0
