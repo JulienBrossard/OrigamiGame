@@ -19,7 +19,7 @@ public class Shop : MonoBehaviour
         skins[1].index = PlayerPrefs.GetInt("IndexShopPlane");
         NextSkinPlane(0);
         DisplayMoney();
-
+        gameObject.SetActive(false);
         #endregion
     }
 

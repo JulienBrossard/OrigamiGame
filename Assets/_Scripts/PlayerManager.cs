@@ -39,6 +39,10 @@ public class PlayerManager : MonoBehaviour
     [Header("Sounds")] 
     [SerializeField] private AudioClip transformationSound;
     [SerializeField] private AudioClip boatFallSound;
+
+    [Header("Origami")] 
+    [SerializeField] private SkinnedMeshRenderer planeMesh;
+    [SerializeField] private MeshRenderer boatMesh;
     
 
     private void Awake()
@@ -54,6 +58,8 @@ public class PlayerManager : MonoBehaviour
         changeOrigami += ChangeShadow;
         changeOrigami += ChangeLayer;
         shadow = origami[state].shadow;
+        planeMesh.material = ChangeMaterialPlane.go.GetComponent<SkinnedMeshRenderer>().material;
+        boatMesh.material = ChangeMaterialBoat.go.GetComponent<MeshRenderer>().material;
     }
     
     private void FixedUpdate()
