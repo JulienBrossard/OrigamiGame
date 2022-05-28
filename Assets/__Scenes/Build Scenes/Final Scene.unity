@@ -186,6 +186,14 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: 24300002, guid: bee85663f6f3927499ee23d543b86f0e, type: 2}
+    - target: {fileID: 6637581720832346804, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: boatMesh
+      value: 
+      objectReference: {fileID: 2096690216}
+    - target: {fileID: 6637581720832346804, guid: f55345b846657234f9479dbf3508c276, type: 3}
+      propertyPath: planeMesh
+      value: 
+      objectReference: {fileID: 2096690215}
     - target: {fileID: 7463337047499756864, guid: f55345b846657234f9479dbf3508c276, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1384,6 +1392,16 @@ RectTransform:
   m_AnchoredPosition: {x: 2.1675901, y: 3.5371284}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!137 &2096690215 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1181257455022704238, guid: f55345b846657234f9479dbf3508c276, type: 3}
+  m_PrefabInstance: {fileID: 323235536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &2096690216 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8093685554430482610, guid: f55345b846657234f9479dbf3508c276, type: 3}
+  m_PrefabInstance: {fileID: 323235536}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2137107751
 GameObject:
   m_ObjectHideFlags: 0
