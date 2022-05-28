@@ -50,7 +50,7 @@ public class LevelManager : MonoBehaviour
 
 
         
-        ldName.gameObject.SetActive(true);
+        //ldName.gameObject.SetActive(true);
         
 
     }
@@ -64,7 +64,7 @@ public class LevelManager : MonoBehaviour
 
 
         
-        UpdateName();
+        //UpdateName();
         
 
         
@@ -124,7 +124,7 @@ public class LevelManager : MonoBehaviour
 
 
 
-    private RaycastHit hit;
+    /*private RaycastHit hit;
     private int currentID;
     private int temp;
     private Transform nextTransform;
@@ -152,7 +152,7 @@ public class LevelManager : MonoBehaviour
             ldName.text = currentTransform.name;
         }
         
-    }
+    }*/
 
 
 }
