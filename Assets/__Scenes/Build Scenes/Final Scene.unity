@@ -178,22 +178,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6173843373759535692, guid: f55345b846657234f9479dbf3508c276, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: bee85663f6f3927499ee23d543b86f0e, type: 2}
-    - target: {fileID: 6173843373759535693, guid: f55345b846657234f9479dbf3508c276, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 24300002, guid: bee85663f6f3927499ee23d543b86f0e, type: 2}
-    - target: {fileID: 6637581720832346804, guid: f55345b846657234f9479dbf3508c276, type: 3}
-      propertyPath: boatMesh
-      value: 
-      objectReference: {fileID: 2096690216}
-    - target: {fileID: 6637581720832346804, guid: f55345b846657234f9479dbf3508c276, type: 3}
-      propertyPath: planeMesh
-      value: 
-      objectReference: {fileID: 2096690215}
     - target: {fileID: 7463337047499756864, guid: f55345b846657234f9479dbf3508c276, type: 3}
       propertyPath: m_Name
       value: Player
@@ -254,76 +238,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7463337047499756876, guid: f55345b846657234f9479dbf3508c276, type: 3}
   m_PrefabInstance: {fileID: 323235536}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &323235539 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7463337049034524784, guid: f55345b846657234f9479dbf3508c276, type: 3}
-  m_PrefabInstance: {fileID: 323235536}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &323235540 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7463337049034524789, guid: f55345b846657234f9479dbf3508c276, type: 3}
-  m_PrefabInstance: {fileID: 323235536}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &323235541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 323235540}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 323235539}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 8192
-  stopNaNPropagation: 1
-  finalBlitToCameraTarget: 0
-  antialiasingMode: 1
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 1
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
 --- !u!1 &463797573
 GameObject:
   m_ObjectHideFlags: 0
@@ -1392,16 +1306,6 @@ RectTransform:
   m_AnchoredPosition: {x: 2.1675901, y: 3.5371284}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!137 &2096690215 stripped
-SkinnedMeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1181257455022704238, guid: f55345b846657234f9479dbf3508c276, type: 3}
-  m_PrefabInstance: {fileID: 323235536}
-  m_PrefabAsset: {fileID: 0}
---- !u!23 &2096690216 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 8093685554430482610, guid: f55345b846657234f9479dbf3508c276, type: 3}
-  m_PrefabInstance: {fileID: 323235536}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2137107751
 GameObject:
   m_ObjectHideFlags: 0
